@@ -1,0 +1,19 @@
+{
+  "key": "features",
+  "name": "Features",
+  "fields": {
+    "items": "array"
+  },
+  "defaults": {
+    "items": [
+      {"icon": "mdi-rocket", "title": "Fast", "text": "Blazing-fast editor"},
+      {"icon": "mdi-palette", "title": "Theming", "text": "Vuetify theme tokens"},
+      {"icon": "mdi-arrange-bring-forward", "title": "Blocks", "text": "Reusable blocks library"}
+    ]
+  },
+  "component": "FeaturesBlock",
+  "preview": "<section class=\"features\"><h2>Features</h2></section>",
+  "category": "content",
+  "version": 1
+}
+

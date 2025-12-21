@@ -1,0 +1,29 @@
+{
+  "name": "dapunjabi/tenancy-adapter",
+  "description": "Tenancy-Adapter: Multi-tenant resolution, CRUD, domains, settings, admin UI for Laravel.",
+  "type": "library",
+  "license": "proprietary",
+  "version": "0.1.0",
+  "require": {
+    "php": ">=8.2",
+    "illuminate/support": ">=10.0|^11.0|^12.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dapunjabi\\TenancyAdapter\\": "src/"
+    },
+    "files": [
+      "src/aliases.php",
+      "src/helpers.php"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Dapunjabi\\TenancyAdapter\\TenancyServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

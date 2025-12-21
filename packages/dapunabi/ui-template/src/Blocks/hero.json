@@ -1,0 +1,21 @@
+{
+  "key": "hero",
+  "name": "Hero",
+  "fields": {
+    "title": "string",
+    "subtitle": "string",
+    "cta_text": "string",
+    "cta_url": "string"
+  },
+  "defaults": {
+    "title": "Welcome to Your Product",
+    "subtitle": "Build pages visually with UI-Template",
+    "cta_text": "Get Started",
+    "cta_url": "/register"
+  },
+  "component": "HeroBlock",
+  "preview": "<section class=\"hero\"><h1>Welcome</h1><p>Subtitle</p></section>",
+  "category": "content",
+  "version": 1
+}
+

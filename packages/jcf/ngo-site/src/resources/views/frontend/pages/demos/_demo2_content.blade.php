@@ -1,0 +1,2 @@
+﻿{!! SEO::generate(true) !!}
+

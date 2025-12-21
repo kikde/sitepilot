@@ -1,0 +1,25 @@
+{
+  "name": "jcf/ngo-site",
+  "description": "JCF NGO site feature plugin (legacy migration target).",
+  "type": "library",
+  "license": "proprietary",
+  "version": "0.1.0",
+  "require": {
+    "php": ">=8.2",
+    "illuminate/support": "^12.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Jcf\\NgoSite\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Jcf\\NgoSite\\NgoSiteServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

@@ -1,0 +1,15 @@
+{
+  "key": "footer",
+  "name": "Footer",
+  "fields": {
+    "copyright": "string"
+  },
+  "defaults": {
+    "copyright": "© 2025 Dapunabi"
+  },
+  "component": "FooterBlock",
+  "preview": "<footer class=\"footer\">© 2025</footer>",
+  "category": "layout",
+  "version": 1
+}
+

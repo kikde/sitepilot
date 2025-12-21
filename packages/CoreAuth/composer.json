@@ -1,0 +1,29 @@
+{
+    "name": "dapunjabi/coreauth",
+    "description": "CoreAuth: Multi-tenant auth, roles/permissions, MFA, license/billing for Laravel.",
+    "type": "library",
+    "license": "proprietary",
+    "version": "0.1.0",
+    "require": {
+        "php": ">=8.2",
+        "illuminate/support": ">=10.0|^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dapunjabi\\CoreAuth\\": "src/",
+            "Dapunjabi\\CoreAuth\\Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [
+            "src/aliases.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dapunjabi\\CoreAuth\\CoreAuthServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

@@ -1,0 +1,9 @@
+{
+    "ApiShotWebhook": true,
+    "Gallery": true,
+    "Member": true,
+    "Page": true,
+    "Partner": true,
+    "Setting": true,
+    "User": true
+}
