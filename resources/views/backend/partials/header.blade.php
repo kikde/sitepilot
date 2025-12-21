@@ -1,4 +1,24 @@
 <!-- BEGIN: Header-->
+@php
+  $user = \Illuminate\Support\Facades\Auth::user();
+  $role = $user?->role;
+  $isAdmin = ($role == 1);
+
+  // Prefer CoreAuth tenant permissions when available (multi-tenant customers may not rely on legacy roles).
+  try {
+    if ($user && class_exists(\Dapunjabi\CoreAuth\Support\TenantManager::class)) {
+      $tm = app(\Dapunjabi\CoreAuth\Support\TenantManager::class);
+      $tenantId = $tm->current()?->id ?? (function_exists('tenant_id') ? tenant_id() : null);
+      if ($tenantId) {
+        $uid = (int) $user->id;
+        $tid = (int) $tenantId;
+        $isAdmin = $tm->userHasPermission($uid, 'content.manage', $tid)
+          || $tm->userHasPermission($uid, 'manage-roles', $tid)
+          || $tm->userHasPermission($uid, 'manage-permissions', $tid);
+      }
+    }
+  } catch (\Throwable $e) {}
+@endphp
 <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow">
     <div class="navbar-container d-flex content">
         <div class="bookmark-wrapper d-flex align-items-center">
@@ -31,9 +51,9 @@
                 </div>
             </li>
             <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">{{Auth::user()->name}}</span><span class="user-status"> @if(Auth::user()->role == 1)Admin @else Member @endif</span></div><span class="avatar">
+                    <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">{{Auth::user()->name}}</span><span class="user-status"> @if($isAdmin)Admin @else Member @endif</span></div><span class="avatar">
                         
-                        @if(Auth::user()->role == 1)
+                        @if($isAdmin)
                          @if(Auth::user()->profile_image)
                         <img class="round" src="{{asset('/backend/uploads/admin/'.Auth::user()->profile_image)}}" alt="avatar" height="40" width="40">
                         @else
@@ -50,11 +70,7 @@
                         <span class="avatar-status-online"></span></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
-                     @if(Auth::user()->role == '1')
-                    <a class="dropdown-item" href="{{url('/profile/'.Auth::user()->id)}}"><i class="mr-50" data-feather="user"></i> Profile</a>
-                     @elseif(Auth::user()->role == '2')
-                     <a class="dropdown-item" href="{{url('/user-edit/'.Auth::user()->id)}}"><i class="mr-50" data-feather="user"></i> Profile</a>
-                     @endif
+                    <a class="dropdown-item" href="{{ $isAdmin ? url('/profile/'.Auth::user()->id) : url('/user-edit/'.Auth::user()->id) }}"><i class="mr-50" data-feather="user"></i> Profile</a>
                     <!-- <a class="dropdown-item" href="{{url('/setting')}}"><i class="mr-50" data-feather="settings"></i> Settings</a> -->
 
                         <a class="dropdown-item" href="{{route('logout')}}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="mr-50" data-feather="power"></i> 
@@ -79,4 +95,3 @@
         </a></li>
 </ul>
 <!-- END: Header-->
-

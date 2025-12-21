@@ -19,6 +19,7 @@
 /*----------------------------------------------------------------------------------------------------------------------------
  | CLIENT AREA ROUTES
  |----------------------------------------------------------------------------------------------------------------------------*/
+ Route::middleware(['web','auth','tenant','license','seat','permission:content.manage'])->group(function () {
  Route::group(['prefix' => 'partner'], function () {
     Route::get('/', 'PartnerController@index')->name('admin.partner');
     Route::post('/', 'PartnerController@store');
@@ -26,4 +27,4 @@
     Route::post('/delete/{id}', 'PartnerController@destroy')->name('admin.partner.delete');
     Route::post('/bulk-action', 'PartnerController@bulk_action')->name('admin.partner.bulk.action');
 });
-
+});

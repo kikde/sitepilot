@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Dapunjabi\CoreAuth\Models\Tenant;
+use Illuminate\Support\Facades\Schema;
 
 class TenantManager
 {
@@ -25,6 +26,41 @@ class TenantManager
 
     public function resolveFromRequest(): void
     {
+        // If TenancyAdapter is installed, prefer its resolved tenant (domain-based).
+        try {
+            if (function_exists('currentTenant')) {
+                $t = currentTenant();
+                if ($t && isset($t->id)) {
+                    // Ensure a matching CoreAuth tenant row exists (ids align with tenancy tenants).
+                    if (Schema::hasTable('coreauth_tenants')) {
+                        $id = (int) $t->id;
+                        $payload = [
+                            'name' => (string) ($t->name ?? ('Tenant '.$t->id)),
+                            'slug' => (string) ($t->slug ?? ('tenant-'.$t->id)),
+                        ];
+                        $exists = DB::table('coreauth_tenants')->where('id', $id)->exists();
+                        if ($exists) {
+                            DB::table('coreauth_tenants')->where('id', $id)->update($payload);
+                        } else {
+                            DB::table('coreauth_tenants')->insert($payload + [
+                                'id' => $id,
+                                'license_status' => 'active',
+                                'created_at' => now(),
+                                'updated_at' => now(),
+                            ]);
+                        }
+                    }
+                    if ($ct = Tenant::query()->find((int) $t->id)) {
+                        $this->tenant = $ct;
+                        $this->remember($ct);
+                        return;
+                    }
+                }
+            }
+        } catch (\Throwable $e) {
+            // ignore and fall back to CoreAuth resolution
+        }
+
         // header > session > host
         $header = $this->request->header('X-Tenant');
         if ($header && ($t = Tenant::query()->where('slug', $header)->orWhere('id', $header)->first())) {

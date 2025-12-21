@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('web')->group(function () {
     // Admin + editor routes (protected)
-    Route::middleware(['auth','uitpl.can'])->group(function () {
+    Route::middleware(['auth','tenant','license','seat','uitpl.can'])->group(function () {
         // Admin UI — Pages index
         Route::get('/admin/ui/pages', [\Dapunabi\UiTemplate\Http\Controllers\Admin\PageController::class, 'index'])
             ->name('uitpl.admin.pages');

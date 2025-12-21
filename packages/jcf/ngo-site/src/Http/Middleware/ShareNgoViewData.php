@@ -16,6 +16,38 @@ class ShareNgoViewData
      */
     public function handle(Request $request, Closure $next): Response
     {
+        $tenantId = null;
+        try {
+            $attrTenant = $request->attributes->get('tenant');
+            if ($attrTenant && isset($attrTenant->id)) {
+                $tenantId = (int) $attrTenant->id;
+            }
+        } catch (\Throwable $e) {
+        }
+        if (! $tenantId) {
+            try {
+                if (function_exists('tenant_id')) {
+                    $tid = tenant_id();
+                    $tenantId = $tid ? (int) $tid : null;
+                }
+            } catch (\Throwable $e) {
+            }
+        }
+        if (! $tenantId) {
+            try {
+                if (Schema::hasTable('tenant_domains')) {
+                    $domainRow = DB::table('tenant_domains')
+                        ->where('domain', $request->getHost())
+                        ->where('status', 'verified')
+                        ->first(['tenant_id']);
+                    if ($domainRow && isset($domainRow->tenant_id)) {
+                        $tenantId = (int) $domainRow->tenant_id;
+                    }
+                }
+            } catch (\Throwable $e) {
+            }
+        }
+
         $setting = null;
         try {
             if (class_exists(\Modules\Setting\Entities\Setting::class)) {
@@ -74,7 +106,13 @@ class ShareNgoViewData
         $homebanner = collect();
         try {
             if (Schema::hasTable('home_banners')) {
-                $homebanner = DB::table('home_banners')->orderByDesc('id')->get();
+                $q = DB::table('home_banners')->orderByDesc('id');
+                if ($tenantId && Schema::hasColumn('home_banners', 'tenant_id')) {
+                    $rows = (clone $q)->where('tenant_id', $tenantId)->get();
+                    $homebanner = $rows->isEmpty() ? $q->whereNull('tenant_id')->get() : $rows;
+                } else {
+                    $homebanner = $q->get();
+                }
             } elseif (Schema::hasTable('homebanner')) {
                 $homebanner = DB::table('homebanner')->orderByDesc('id')->get();
             } elseif (Schema::hasTable('banners')) {
@@ -87,7 +125,13 @@ class ShareNgoViewData
         $whato = collect();
         try {
             if (Schema::hasTable('home_todos')) {
-                $whato = DB::table('home_todos')->orderByDesc('id')->get();
+                $q = DB::table('home_todos')->orderByDesc('id');
+                if ($tenantId && Schema::hasColumn('home_todos', 'tenant_id')) {
+                    $rows = (clone $q)->where('tenant_id', $tenantId)->get();
+                    $whato = $rows->isEmpty() ? $q->whereNull('tenant_id')->get() : $rows;
+                } else {
+                    $whato = $q->get();
+                }
             } elseif (Schema::hasTable('home_todo')) {
                 $whato = DB::table('home_todo')->orderByDesc('id')->get();
             }
@@ -173,10 +217,22 @@ class ShareNgoViewData
         $award = collect();
         try {
             if (Schema::hasTable('home_award_static')) {
-                $statics = DB::table('home_award_static')->first();
+                $q = DB::table('home_award_static');
+                if ($tenantId && Schema::hasColumn('home_award_static', 'tenant_id')) {
+                    $row = (clone $q)->where('tenant_id', $tenantId)->first();
+                    $statics = $row ?: $q->whereNull('tenant_id')->first();
+                } else {
+                    $statics = $q->first();
+                }
             }
             if (Schema::hasTable('home_award_section')) {
-                $award = DB::table('home_award_section')->orderByDesc('id')->get();
+                $q = DB::table('home_award_section')->orderByDesc('id');
+                if ($tenantId && Schema::hasColumn('home_award_section', 'tenant_id')) {
+                    $rows = (clone $q)->where('tenant_id', $tenantId)->get();
+                    $award = $rows->isEmpty() ? $q->whereNull('tenant_id')->get() : $rows;
+                } else {
+                    $award = $q->get();
+                }
             }
         } catch (\Throwable $e) {
             $statics = null;

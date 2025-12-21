@@ -54,6 +54,15 @@ class MediaServiceProvider extends ServiceProvider
                 \Dapunabi\Media\Console\PostUpdateCommand::class,
             ]);
         }
+
+        // Admin navigation (optional, when CoreAuth is present)
+        try {
+            if (class_exists(\Dapunjabi\CoreAuth\Support\AdminNavRegistry::class)) {
+                $nav = $this->app->make(\Dapunjabi\CoreAuth\Support\AdminNavRegistry::class);
+                $nav->section('builder', 'Builder', 40)
+                    ->add('builder', ['label' => 'Media Library', 'icon' => 'image', 'route' => 'media.admin.index', 'permission' => 'media.manage', 'order' => 10]);
+            }
+        } catch (\Throwable $e) {}
     }
 }
 

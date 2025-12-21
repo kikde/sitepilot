@@ -31,8 +31,6 @@ It checks required tables/routes and prints the main URLs to test.
 
 ## Media Manager
 
-Note: Media Manager uses `mm_*` tables to avoid colliding with other packages that use a `media` table.
-
 **Admin UI**
 - `http://127.0.0.1:8000/admin/media`
 
@@ -45,3 +43,4 @@ Default mount is `/ngo`:
 - `http://127.0.0.1:8000/ngo`
 
 If you disable legacy routes (`NGO_LEGACY_ROUTES=false`), only `/ngo/*` routes should work.
+

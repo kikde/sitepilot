@@ -13,11 +13,7 @@ use Dapunabi\Media\Services\PresignService;
 use Dapunabi\Media\Jobs\BulkZipJob;
 
 // Determine optional permission middleware when CoreAuth is present
-$mediaMw = ['web','auth'];
-try {
-    // If your app uses a permission middleware alias, you can add it by editing below
-    // $mediaMw[] = 'permission:manage-media';
-} catch (\Throwable $e) {}
+$mediaMw = ['web','auth','tenant','license','seat','permission:media.manage'];
 
 Route::middleware($mediaMw)->group(function () {
     // Admin: basic media upload page (Phase 1)

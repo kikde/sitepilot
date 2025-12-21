@@ -8,9 +8,10 @@ use Illuminate\Routing\Controller;
 
 use Modules\Setting\Entities\Setting;
 use Modules\Page\Entities\Manageteam;
-use Image;
 use Auth;
 use View;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class ManageteamController extends Controller
 {
@@ -62,8 +63,13 @@ class ManageteamController extends Controller
     
         if ($request->hasFile('images')) {
             $postimage = $request->file('images');
-            $filename = '_prd_'. time() . '.' . $postimage->getClientOriginalExtension();
-            Image::make($postimage)->save(public_path('/backend/teams/'. $filename));
+            $base = $request->name ? Str::slug($request->name) : 'team';
+            $filename = $base . '_prd_'. time() . '.' . $postimage->getClientOriginalExtension();
+            $dest = public_path('backend/teams');
+            if (!File::exists($dest)) {
+                File::makeDirectory($dest, 0755, true);
+            }
+            $postimage->move($dest, $filename);
             
             $testing->images = $filename;
             // return $filename;
@@ -119,10 +125,13 @@ class ManageteamController extends Controller
         $testing = Manageteam::where('id',$request->id)->first();
         if ($request->hasFile('images')) {
             $postimage = $request->file('images');
-            $filename = $request->name . '_prd_'. time() . '.' . $postimage->getClientOriginalExtension();
-            Image::make($postimage)->resize(670, 500, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save(public_path('/backend/teams/'. $filename));
+            $base = $request->name ? Str::slug($request->name) : 'team';
+            $filename = $base . '_prd_'. time() . '.' . $postimage->getClientOriginalExtension();
+            $dest = public_path('backend/teams');
+            if (!File::exists($dest)) {
+                File::makeDirectory($dest, 0755, true);
+            }
+            $postimage->move($dest, $filename);
             
             $testing->images = $filename;
             //return $filename;

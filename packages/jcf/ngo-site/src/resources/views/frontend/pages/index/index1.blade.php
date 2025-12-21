@@ -6,15 +6,14 @@
 @section('content')
 
 {!! SEO::generate(true) !!}
-  
+
    @include ("frontend.partials.ticker.style-2")
-   @include ("frontend.partials.banner.style-1") 
-   
+   @include ("frontend.partials.banner.style-1")
+
   @include ("frontend.partials.message.presidentmessage")
-  
   @include ("frontend.partials.ticker.style-1")
    @include ("frontend.partials.ticker.style-4") <!--Frams Ticker-->
-   {{--@include ("frontend.partials.about.style-4") 
+   {{--@include ("frontend.partials.about.style-4")
     <!--SocialPost-->
   @include ("frontend.partials.socialpost.style-7")--}}
 
@@ -22,11 +21,11 @@
   @include('frontend.partials.join.join-3')
 
   @include ("frontend.partials.crowdfunding.style-1")
-  
+
   {{--@include('frontend.partials.story.style-1')--}}
   @include('frontend.partials.youtube.style-11')
   @include ("frontend.partials.blog.style-1")
- 
+
   <!-- Breaking News  -->
   @include ("frontend.partials.breakingnews.style-1")
   @include ("frontend.partials.breakingnews.style-2")
@@ -37,10 +36,10 @@
   @include('frontend.partials.team.style-2')
   {{--@include('frontend.partials.team.style-4')--}} <!--Frams Management Team-->
   <!-- Management team -->
-   
-   
-   @include ("frontend.partials.review.style-1") 
- 
+
+
+   @include ("frontend.partials.review.style-1")
+
    <!-- Members -->
         @include('frontend.partials.volunteers.style-1')
     {{--@include('frontend.partials.volunteers.style-2')--}}  <!--Frams view-->
@@ -48,7 +47,7 @@
 
     @include ("frontend.partials.ads.style-7")
     @include ("frontend.partials.ads.style-8")
-    
+
     @include('frontend.partials.forms.donation.style-3')
 
 

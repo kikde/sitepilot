@@ -47,16 +47,19 @@ Route::get('/member/payment', [PaymentController::class, 'showPaymentPage'])
 
 Route::post('/member/payment/callback', [PaymentController::class, 'handleCallback'])
     ->name('payment.callback');
-    
-  Route::get('members/{user}/payments', [PaymentController::class, 'userPayments'])
+
+// Admin: membership payments management (must be logged in and in tenant context)
+Route::middleware(['web','auth','tenant','license','seat','permission:content.manage'])->group(function () {
+    Route::get('members/{user}/payments', [PaymentController::class, 'userPayments'])
         ->name('admin.members.payments');
 
     // verify one payment + activate member
     Route::post('payments/{payment}/verify', [PaymentController::class, 'verify'])
-        ->name('admin.payments.verify');  
-    
+        ->name('admin.payments.verify');
+
     Route::post('members/{user}/payments/manual', [PaymentController::class, 'storeManual'])
-    ->name('admin.members.payments.manual');
+        ->name('admin.members.payments.manual');
+});
     
     //UPI AutoPay 
     Route::get('/member/autopay', [PaymentController::class, 'showMembershipAutopay'])
@@ -71,17 +74,8 @@ Route::post('/member/autopay/callback', [PaymentController::class, 'membershipAu
 | - Remain public for headless fetch, but require a valid signature
 |--------------------------------------------------------------------------
 */
-// Use 'relative' mode so signature validation ignores host/scheme mismatches
-// Route::middleware('signed:relative')->group(function () {
-//     Route::get('/idcard/{id}',          [UserController::class, 'letterCard'])->name('render.idcard');
-//     Route::get('/joining-letter/{id}',  [UserController::class, 'joinLetter'])->name('render.joining');
-//     Route::get('/honor-letter/{id}',    [UserController::class, 'honarLetter'])->name('render.honor');
-//     Route::get('/off1-letter/{id}',     [UserController::class, 'offLetter'])->name('render.off1');
-//     Route::get('/off2-letter/{id}',     [UserController::class, 'offtwoetter'])->name('render.off2');
-//     Route::get('/affi-letter/{id}',     [UserController::class, 'affiLatter'])->name('render.affidavit');
-//     Route::get('/payment-receipt/{id}', [UserController::class, 'recPayment'])->name('render.receipt');
-// });
-
+// Use 'relative' mode so signature validation ignores host/scheme mismatches (important for multi-domain).
+Route::middleware('signed:relative')->group(function () {
     Route::get('/idcard/{id}',          [UserController::class, 'letterCard'])->name('render.idcard');
     Route::get('/joining-letter/{id}',  [UserController::class, 'joinLetter'])->name('render.joining');
     Route::get('/honor-letter/{id}',    [UserController::class, 'honarLetter'])->name('render.honor');
@@ -89,6 +83,7 @@ Route::post('/member/autopay/callback', [PaymentController::class, 'membershipAu
     Route::get('/off2-letter/{id}',     [UserController::class, 'offtwoetter'])->name('render.off2');
     Route::get('/affi-letter/{id}',     [UserController::class, 'affiLatter'])->name('render.affidavit');
     Route::get('/payment-receipt/{id}', [UserController::class, 'recPayment'])->name('render.receipt');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -96,7 +91,8 @@ Route::post('/member/autopay/callback', [PaymentController::class, 'membershipAu
 | - Sidebar expects route('users.index') and /users/create for admins (role=1)
 |--------------------------------------------------------------------------
 */
-Route::middleware(['web','auth'])->group(function () {
+// Tenant admin/user management (protected)
+Route::middleware(['web','auth','tenant','license','seat','permission:manage-roles'])->group(function () {
 Route::resource('/users', UserController::class)->only(['index', 'create']);
 Route::post('/admins',            [UserController::class, 'Adminstore'])->name('admins.store');
 Route::put('/admins-update/{id}', [UserController::class, 'Adminupdate'])->name('admins.update');
@@ -190,6 +186,10 @@ Route::post('/upload-affi/{id}', [UserController::class, 'updateAffi'])->name('a
 | Notes
 |--------------------------------------------------------------------------
 */
+});
+
+// Tenant content/support tools (tenant admins/editors)
+Route::middleware(['web','auth','tenant','license','seat','permission:content.manage'])->group(function () {
 Route::post('/add-notes',         [UserController::class, 'Notestore'])->name('notes.store');
 Route::put('/notes-edit/{id}',    [UserController::class, 'updateNote'])->name('notes.update');
 Route::delete('/notes-del/{id}',  [UserController::class, 'noteDestroy'])->name('notes.destroy');
@@ -212,7 +212,7 @@ Route::post('/page-settings',     [SupportTicketController::class,'update_page_s
 
 
 
-Route::middleware(['web','auth','verified'])->group(function () {
+Route::middleware(['web','auth','verified','tenant','license','seat'])->group(function () {
     Route::get('/home', [MemberController::class, 'index'])->name('home');
 
     // Single source of truth for payments

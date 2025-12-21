@@ -22,6 +22,28 @@ class TenantController extends Controller
             DB::table('coreauth_role_user')->where('user_id', $userId)->where('role_slug', 'superadmin')->exists();
 
         if ($isSuperAdmin) {
+            // Prefer TenancyAdapter tenants if present, and mirror them into CoreAuth tenants table.
+            try {
+                if (Schema::hasTable('tenants') && Schema::hasTable('coreauth_tenants')) {
+                    $rows = DB::table('tenants')->select('id', 'name', 'slug')->orderBy('id')->get();
+                    foreach ($rows as $r) {
+                        $id = (int) $r->id;
+                        $payload = ['name' => (string) $r->name, 'slug' => (string) $r->slug];
+                        $exists = DB::table('coreauth_tenants')->where('id', $id)->exists();
+                        if ($exists) {
+                            DB::table('coreauth_tenants')->where('id', $id)->update($payload);
+                        } else {
+                            DB::table('coreauth_tenants')->insert($payload + [
+                                'id' => $id,
+                                'license_status' => 'active',
+                                'created_at' => now(),
+                                'updated_at' => now(),
+                            ]);
+                        }
+                    }
+                }
+            } catch (\Throwable $e) {}
+
             $tenants = Tenant::query()->orderBy('name')->get();
             return view('coreauth::tenant.select', ['tenants' => $tenants]);
         }

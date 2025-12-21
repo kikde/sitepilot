@@ -14,6 +14,9 @@ use App\Models\User;
 use Hash;
 use View;
 use Auth;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
+use Dapunjabi\CoreAuth\Support\TenantManager;
 
 class SupportTicketController extends Controller
 {
@@ -23,7 +26,14 @@ class SupportTicketController extends Controller
         $this->middleware('auth');
         if (! app()->runningInConsole()) {
             try {
-                $setting = Setting::first();
+                $setting = null;
+                if (Schema::hasTable('settings')) {
+                    $q = Setting::query();
+                    if (function_exists('tenant_id') && Schema::hasColumn('settings', 'tenant_id')) {
+                        $q->where('tenant_id', tenant_id());
+                    }
+                    $setting = $q->first();
+                }
             } catch (\Throwable $e) {
                 $setting = null;
             }
@@ -36,16 +46,30 @@ class SupportTicketController extends Controller
      */
     public function index()
     {
-        $id = Auth::user()->id;
-        if(Auth::user()->role ==2 or Auth::user()->status == 1){
-            
-           $all_tickets = SupportTicket::where('user_id',$id)->get();
-           return view('user::support-ticket.index', compact('all_tickets'));
-        }
-        $all_tickets = SupportTicket::orderBy('id','desc')->get();
-        // return $all_tickets;
+        $user = Auth::user();
+        $uid = (int) ($user?->id ?? 0);
+
+        // Tenant admin/editor can see all tickets in the tenant, others only their own.
+        $isAdmin = false;
+        try {
+            if ($uid && class_exists(TenantManager::class)) {
+                $tm = app(TenantManager::class);
+                $tid = $tm->current()?->id ?? (function_exists('tenant_id') ? tenant_id() : null);
+                if ($tid) {
+                    $isAdmin =
+                        $tm->userHasPermission($uid, 'content.manage', (int) $tid) ||
+                        $tm->userHasPermission($uid, 'manage-roles', (int) $tid) ||
+                        $tm->userHasPermission($uid, 'manage-permissions', (int) $tid);
+                }
+            }
+        } catch (\Throwable $e) {}
+
+        $all_tickets = $isAdmin
+            ? SupportTicket::orderBy('id','desc')->get()
+            : SupportTicket::where('user_id', $uid)->orderBy('id','desc')->get();
+
         return view('user::support-ticket.index', compact('all_tickets'));
-       
+        
         // return view('user::index');
     }
 
@@ -55,11 +79,23 @@ class SupportTicketController extends Controller
      */
     public function create()
     {
-        $all_users = User::where('role', 2)->get();
+        // Only list users who belong to this tenant (by CoreAuth role assignment) when available.
+        $all_users = collect();
+        try {
+            $tid = function_exists('tenant_id') ? tenant_id() : null;
+            if ($tid && Schema::hasTable('coreauth_role_user')) {
+                $ids = DB::table('coreauth_role_user')->where('tenant_id', (int) $tid)->distinct()->pluck('user_id')->toArray();
+                $all_users = User::whereIn('id', $ids)->get();
+            } else {
+                $all_users = User::where('role', 2)->get();
+            }
+        } catch (\Throwable $e) {
+            $all_users = User::where('role', 2)->get();
+        }
         // return $all_users;
         $all_departments = TicketDepartment::where(['status' => 'publish'])->get();
         return view('user::support-ticket.add',compact('all_users', 'all_departments'));
-       
+        
     }
 
     /**
@@ -97,7 +133,7 @@ class SupportTicketController extends Controller
             'admin_id' => Auth::user()->id
         ]);
         // $msg =  __('new ticket created successfully');
-        return redirect('/support-tickets')->back()->with('message', "new ticket created successfully");
+        return redirect('/support-tickets')->with('message', "new ticket created successfully");
     }
 
     /**
@@ -105,13 +141,13 @@ class SupportTicketController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $ticket_details = SupportTicket::findOrFail($id);
         $all_messages = SupportTicketMessage::where(['support_ticket_id'=>$id])->get();
         $q = $request->q ?? '';
         return view('user::support-ticket.edit')->with(['ticket_details' => $ticket_details,'all_messages' => $all_messages,'q' => $q]);
-      
+       
     }
 
     /**
@@ -191,7 +227,6 @@ class SupportTicketController extends Controller
         $ticket_info = SupportTicketMessage::create([
             'support_ticket_id' => $request->ticket_id,
             'type' => $request->user_type,
-            'admin_id' => Auth::user()->id,
             'message' => $request->message,
             'notify' => $request->send_notify_mail ? 'on' : 'off',
         ]);

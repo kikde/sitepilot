@@ -58,15 +58,15 @@ class DonarsController extends Controller
      */
     public function create()
     {
-        $getlist = Config::get('constants.state');
+        $getlist = Config::get('constants.state', []);
         return view('page::donors.add', compact('getlist'));
     }
 
     public function listCity(Request $request)
     {
 
-       $getlist = Config::get('constants.state');
-       $result= $getlist[$request->sid];
+       $getlist = Config::get('constants.state', []);
+       $result = $getlist[$request->sid] ?? [];
        $html='<option value="">Select City</option>';
        foreach($result as $list){
    
@@ -116,7 +116,7 @@ class DonarsController extends Controller
     public function show($id)
     {
         $donarlist = Donor::find($id); 
-        $getlist = Config::get('constants.state');
+        $getlist = Config::get('constants.state', []);
         return view('page::donors.edit', compact('donarlist', 'getlist'));
         
     }
@@ -783,7 +783,6 @@ public function autopayCallback(Request $request, RazorpayRecurringService $recu
 
 
 }
-
 
 
 

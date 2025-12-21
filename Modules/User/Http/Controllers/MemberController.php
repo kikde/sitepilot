@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use Modules\Setting\Entities\Setting;
 use Modules\User\Entities\Note;
 use Modules\User\Entities\User;
 use Modules\User\Entities\Payment;
-use Intervention\Image\Facades\Image;
+use Image;
 
 class MemberController extends Controller
 {
@@ -38,6 +40,9 @@ class MemberController extends Controller
             return redirect()->route('login');
         }
 
+        // This route is the customer-facing (legacy) admin panel dashboard.
+        // Keep it independent from CoreAuth's /dashboard to avoid redirect loops.
+
         // block inactive users (kept behavior)
         if ((int)$me->useractive === 0) {
             return back()->with('notfound', 'Please Contact admin for Your Account Activation');
@@ -45,7 +50,17 @@ class MemberController extends Controller
 
         // Admin → backend home
         if ((int)$me->role === 1) {
-            return view('backend.home.home');
+            $id      = (int)$me->id;
+            $mobile  = $me->mobile;
+
+            // keep old variable names so your blade does not break
+            $rec     = Payment::where('user_id', $id)->latest('id')->first();
+            $perfor  = User::where('pow', 1)->first();
+            $davit   = User::find($id);
+            $top     = User::where('topten', 1)->limit(10)->get();
+            $notice  = Note::latest()->limit(4)->get();
+
+            return view('home', compact('perfor','top','mobile','rec','davit','notice'));
         }
 
         // Member / role 2 or 0 → dashboard

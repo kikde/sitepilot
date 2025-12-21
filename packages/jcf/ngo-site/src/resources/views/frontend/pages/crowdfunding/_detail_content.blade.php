@@ -181,7 +181,7 @@
       <article class="cfd-main-card">
 
         <div class="cfd-breadcrumb">
-          <a href="{{ url('/ngo') }}">Home</a>
+          <a href="{{ url('/') }}">Home</a>
           <span>/</span>
           <a href="{{ url('/crowdfunding') }}">Crowdfunding</a>
           <span>/</span>

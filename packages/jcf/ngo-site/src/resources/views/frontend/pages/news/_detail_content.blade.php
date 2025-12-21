@@ -190,7 +190,7 @@
       <article class="nd-main">
 
         <div class="nd-breadcrumb">
-          <a href="{{ url('/ngo') }}">Home</a>
+          <a href="{{ url('/') }}">Home</a>
           <span>/</span>
           <a href="{{ url('/news-post') }}">News</a>
           <span>/</span>

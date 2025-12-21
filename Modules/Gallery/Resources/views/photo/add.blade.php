@@ -96,12 +96,11 @@
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label" for="status">Status</label>
                   <div class="col-sm-9">
-                    {!! Form::select(
-                        'status',
-                        Config::get('constants.pagestatus'),
-                        null,
-                        ['class' => 'form-control', 'id' => 'status']
-                    ) !!}
+                    <select name="status" id="status" class="form-control">
+                      @foreach((array) Config::get('constants.pagestatus', ['Published'=>'Published','Draft'=>'Draft','Pending'=>'Pending']) as $k => $v)
+                        <option value="{{ $k }}">{{ $v }}</option>
+                      @endforeach
+                    </select>
                   </div>
                 </div>
 

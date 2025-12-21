@@ -12,7 +12,13 @@ class ThemeApiController extends BaseController
     public function config()
     {
         $tenant = function_exists('currentTenant') ? currentTenant() : null;
-        $tokens = [
+        $presets = (array) config('ui-template.theme_presets', []);
+        $presetKey = null;
+        try {
+            $presetKey = data_get($tenant?->settings, 'theme.preset') ?: data_get($tenant?->settings, 'theme_preset');
+        } catch (\Throwable $e) {}
+
+        $tokens = $presets[$presetKey] ?? $presets['default'] ?? [
             'primary' => '#1976D2',
             'secondary' => '#10b981',
         ];
@@ -25,7 +31,9 @@ class ThemeApiController extends BaseController
                 if ($row && is_array($row->tokens)) {
                     $tokens = array_merge($tokens, $row->tokens);
                 } elseif (isset($tenant->settings['theme'])) {
-                    $tokens = array_merge($tokens, (array) $tenant->settings['theme']);
+                    $themeTokens = (array) $tenant->settings['theme'];
+                    unset($themeTokens['preset']);
+                    $tokens = array_merge($tokens, $themeTokens);
                 }
             }
         } catch (\Throwable $e) {}

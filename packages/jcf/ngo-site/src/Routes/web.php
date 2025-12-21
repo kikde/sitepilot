@@ -12,21 +12,20 @@ Route::get('/_ngo/health', function () {
 
 // Payment / webhook routes used by legacy blades (non-prefixed).
 if (config('ngo-site.legacy_payment_routes', true)) {
-    Route::post('/donate/start', [DonarsController::class, 'startDonation'])->name('donate.start');
-    Route::post('/donate/callback', [DonarsController::class, 'callback'])->name('donate.callback');
-    Route::post('/razorpay/webhook', [DonarsController::class, 'webhook'])->name('razorpay.webhook');
-    Route::get('/donation-cancelled', [DonarsController::class, 'donationCancelled'])->name('donation.cancelled');
+    Route::middleware(['web', 'tenant'])->group(function () {
+        Route::post('/donate/start', [DonarsController::class, 'startDonation'])->name('donate.start');
+        Route::post('/donate/callback', [DonarsController::class, 'callback'])->name('donate.callback');
+        Route::post('/razorpay/webhook', [DonarsController::class, 'webhook'])->name('razorpay.webhook');
+        Route::get('/donation-cancelled', [DonarsController::class, 'donationCancelled'])->name('donation.cancelled');
+    });
 }
 
-Route::middleware([ShareNgoViewData::class])->group(function () {
+// The tenant middleware is required so tenant_id() resolves on the frontend and data stays isolated per domain.
+Route::middleware(['web', 'tenant', ShareNgoViewData::class])->group(function () {
     $mount = trim((string) config('ngo-site.mount_path', 'ngo'), '/');
-    if ($mount === '') {
-        $mount = 'ngo';
-    }
 
-    // Primary mounted NGO site routes: /{mount}/...
-    Route::prefix($mount)->group(function () {
-        Route::get('/', [FrontendController::class, 'home']);
+    $register = function () {
+        Route::get('/', [FrontendController::class, 'home'])->name('ngo.home');
         Route::get('/_landing', fn () => view('ngo::landing'));
 
         Route::get('/about', [FrontendController::class, 'about']);
@@ -63,10 +62,19 @@ Route::middleware([ShareNgoViewData::class])->group(function () {
         Route::post('/donate/callback', [DonarsController::class, 'callback'])->name('ngo.donate.callback');
         Route::post('/razorpay/webhook', [DonarsController::class, 'webhook'])->name('ngo.razorpay.webhook');
         Route::get('/donation-cancelled', [DonarsController::class, 'donationCancelled'])->name('ngo.donation.cancelled');
-    });
+    };
+
+    // Primary mounted NGO site routes: /{mount}/...
+    if ($mount !== '') {
+        Route::prefix($mount)->group($register);
+    } else {
+        // No prefix (root site)
+        Route::group([], $register);
+    }
 
     // Legacy URLs (non-prefixed). Keep enabled while migrating menus/links.
-    if (config('ngo-site.legacy_routes', true)) {
+    // If mount is empty, legacy routes would duplicate paths, so skip them.
+    if ($mount !== '' && config('ngo-site.legacy_routes', true)) {
         Route::get('/about', [FrontendController::class, 'about']);
         Route::get('/contact', [FrontendController::class, 'contact']);
         Route::get('/faq', [FrontendController::class, 'faq']);

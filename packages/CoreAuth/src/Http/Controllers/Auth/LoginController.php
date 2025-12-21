@@ -5,11 +5,15 @@ namespace Dapunjabi\CoreAuth\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Controller;
+use Dapunjabi\CoreAuth\Support\TenantManager;
 
 class LoginController extends Controller
 {
     public function create()
     {
+        if (Auth::check()) {
+            return redirect()->route('tenant.select');
+        }
         return view('coreauth::auth.login');
     }
 
@@ -42,6 +46,15 @@ class LoginController extends Controller
 
         $request->session()->regenerate();
         \Dapunjabi\CoreAuth\Support\Audit::log('login_success', ['email' => $credentials['email']]);
+
+        // Customer admins should land on the legacy /home panel by default when in tenant context.
+        try {
+            app(TenantManager::class)->resolveFromRequest();
+            if (app(TenantManager::class)->current()) {
+                return redirect()->intended('/home');
+            }
+        } catch (\Throwable $e) {}
+
         return redirect()->intended(route('dashboard'));
     }
 

@@ -102,12 +102,12 @@
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label" for="status">Status</label>
                   <div class="col-sm-9">
-                    {!! Form::select(
-                        'status',
-                        Config::get('constants.pagestatus'),
-                        old('status', $gall->status),
-                        ['class' => 'form-control', 'id' => 'status']
-                    ) !!}
+                    <select name="status" id="status" class="form-control">
+                      @php($opts = (array) Config::get('constants.pagestatus', ['Published'=>'Published','Draft'=>'Draft','Pending'=>'Pending']))
+                      @foreach($opts as $k => $v)
+                        <option value="{{ $k }}" @selected((string)old('status', $gall->status) === (string)$k)>{{ $v }}</option>
+                      @endforeach
+                    </select>
                   </div>
                 </div>
 

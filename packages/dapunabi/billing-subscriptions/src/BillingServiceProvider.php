@@ -53,6 +53,20 @@ class BillingServiceProvider extends ServiceProvider
             $router->aliasMiddleware('seat', \Dapunabi\Billing\Http\Middleware\RequireSeat::class);
         }
 
+        // Admin navigation (optional, when CoreAuth is present)
+        try {
+            if (class_exists(\Dapunjabi\CoreAuth\Support\AdminNavRegistry::class)) {
+                $nav = $this->app->make(\Dapunjabi\CoreAuth\Support\AdminNavRegistry::class);
+                $nav->section('billing', 'Billing', 30)
+                    ->add('billing', ['label' => 'Billing Portal', 'icon' => 'credit-card', 'route' => 'billing', 'order' => 10])
+                    ->add('billing', ['label' => 'Seats', 'icon' => 'users', 'route' => 'billing.seats', 'order' => 20]);
+
+                $nav->section('platform', 'Platform', 5)
+                    ->add('platform', ['label' => 'Plans', 'icon' => 'package', 'route' => 'billing.admin.plans', 'platform' => true, 'order' => 25])
+                    ->add('platform', ['label' => 'Invoices', 'icon' => 'file-text', 'route' => 'billing.admin.invoices', 'platform' => true, 'order' => 26]);
+            }
+        } catch (\Throwable $e) {}
+
         // Schedule auto-suspend checker daily
         $this->app->booted(function () {
             try {

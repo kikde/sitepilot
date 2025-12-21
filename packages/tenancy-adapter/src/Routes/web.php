@@ -7,6 +7,7 @@ use Dapunjabi\TenancyAdapter\Http\Controllers\TenantMediaController;
 Route::middleware(['web'])
     ->prefix('admin')
     ->group(function () {
+        Route::middleware(['auth', 'platform'])->group(function () {
         Route::get('/tenants', [TenantAdminController::class, 'index'])->name('tenancy.admin.tenants.index');
         // Place fixed paths before dynamic {id} to avoid collisions
         Route::get('/tenants/create', [TenantAdminController::class, 'create'])->name('tenancy.admin.tenants.create');
@@ -17,9 +18,10 @@ Route::middleware(['web'])
         Route::get('/tenants/{id}/domains', [TenantAdminController::class, 'domains'])->name('tenancy.admin.tenants.domains');
         Route::post('/tenants/{id}/domains', [TenantAdminController::class, 'addDomain'])->name('tenancy.admin.tenants.domains.add');
         Route::post('/tenants/{id}/status', [TenantAdminController::class, 'updateStatus'])->name('tenancy.admin.tenants.status');
+        });
     });
 
-Route::middleware(['web'])->get('/tenant/debug', function () {
+Route::middleware(['web','auth','platform'])->get('/tenant/debug', function () {
     $t = currentTenant();
     return response()->json([
         'resolved' => (bool) $t,

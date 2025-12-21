@@ -88,15 +88,13 @@
                                     
                                 
                                     <td>
-                                        
                                         <a href="" id="editfaq" data-toggle="modal" data-target="#editfaq{{$faqs->id}}" data-id="{{$faqs->id}}"><i data-feather='edit'></i></a>
 
                                         <a href="" onclick="event.preventDefault(); document.getElementById('delete-form-{{$faqs->id}}').submit();"><i data-feather="trash-2" class="mr-50"></i></a>
-                                                        <form id="delete-form-{{$faqs->id}}"  
-                                                        + action="{{url('/category/'.$faqs->id)}}" 
-                                                        method="post"> 
-                                                       @csrf @method('DELETE') 
-                                                       </form>
+                                        <form id="delete-form-{{$faqs->id}}" action="{{url('/category/'.$faqs->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                        </form>
                                     </td>
                                 </tr>
                     <!-- Modal -->
@@ -111,6 +109,7 @@
                                 </div>
                                 <form action="{{url('/category/'.$faqs->id)}}" method="POST">
                                     @csrf
+                                    @method('PUT')
                                     <div class="modal-body">
                                         <label>Category: </label>
                                         <div class="form-group">

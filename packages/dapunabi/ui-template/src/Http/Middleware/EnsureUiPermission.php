@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class EnsureUiPermission
 {
@@ -32,6 +33,16 @@ class EnsureUiPermission
         $tenantId = function_exists('tenant_id') ? tenant_id() : null;
         $allowed = ['tenant_admin','admin','editor'];
 
+        // Prefer permission-based gating when CoreAuth permissions exist (fallback to roles).
+        try {
+            if ($tenantId && class_exists(\Dapunjabi\CoreAuth\Support\TenantManager::class) && Schema::hasTable('coreauth_permissions')) {
+                $tm = app(\Dapunjabi\CoreAuth\Support\TenantManager::class);
+                if ($tm->userHasPermission($user->id, 'ui.manage', (int) $tenantId)) {
+                    return $next($request);
+                }
+            }
+        } catch (\Throwable $e) {}
+
         if ($tenantId) {
             $has = DB::table('coreauth_role_user')
                 ->where('user_id', $user->id)
@@ -52,4 +63,3 @@ class EnsureUiPermission
         abort(403, 'UI-Template: insufficient permissions');
     }
 }
-

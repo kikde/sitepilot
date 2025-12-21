@@ -187,12 +187,28 @@ class PageController extends Controller
 
 
 //================================================Create Pages==============================//
-public function pageList()
-{
-   
-    $allsector = Page::latest()->SimplePaginate(10);
-    return view('page::pages.index', compact('allsector'));
-}
+    public function pageList()
+    {
+    // If this is a new tenant and legacy template pages exist (tenant_id is NULL),
+    // clone template content once so each tenant starts with baseline pages.
+    try {
+        if (function_exists('tenant_id') && tenant_id() && \Schema::hasColumn('pages', 'tenant_id')) {
+            $tenantId = (int) tenant_id();
+            $hasAny = \Modules\Page\Entities\Page::withoutGlobalScopes()->where('tenant_id', $tenantId)->exists();
+            if (! $hasAny) {
+                $templates = \Modules\Page\Entities\Page::withoutGlobalScopes()->whereNull('tenant_id')->get();
+                foreach ($templates as $tpl) {
+                    $copy = $tpl->replicate();
+                    $copy->tenant_id = $tenantId;
+                    $copy->save();
+                }
+            }
+        }
+    } catch (\Throwable $e) {}
+
+        $allsector = Page::latest()->SimplePaginate(10);
+        return view('page::pages.index', compact('allsector'));
+    }
 
 /**
  * Show the form for creating a new resource.
@@ -334,6 +350,22 @@ public function deletePage($id)
     public function newsList()                           
     {
        
+        // Clone legacy template posts (tenant_id is NULL) into a new tenant on first visit.
+        try {
+            if (function_exists('tenant_id') && tenant_id() && \Schema::hasColumn('posts', 'tenant_id')) {
+                $tenantId = (int) tenant_id();
+                $hasAny = \Modules\Page\Entities\Post::withoutGlobalScopes()->where('tenant_id', $tenantId)->exists();
+                if (! $hasAny) {
+                    $templates = \Modules\Page\Entities\Post::withoutGlobalScopes()->whereNull('tenant_id')->get();
+                    foreach ($templates as $tpl) {
+                        $copy = $tpl->replicate();
+                        $copy->tenant_id = $tenantId;
+                        $copy->save();
+                    }
+                }
+            }
+        } catch (\Throwable $e) {}
+
         $newspost= Post::latest()->SimplePaginate(10);
         return view('page::post.index', compact('newspost'));
     }
@@ -507,5 +539,4 @@ public function deletePage($id)
 
 
 }
-
 

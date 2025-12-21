@@ -45,7 +45,8 @@ class FaqController extends Controller
      */
     public function create()
     {
-        return view('page::create');
+        // UI uses modal on index
+        return redirect()->route('faqs.index');
     }
 
     /**
@@ -74,7 +75,7 @@ class FaqController extends Controller
      */
     public function show($id)
     {
-        return view('page::show');
+        return redirect()->route('faqs.index');
     }
 
     /**
@@ -84,10 +85,8 @@ class FaqController extends Controller
      */
     public function edit($id)
     {
-         return $id;
-        $faqs = Faq::find($id);
-
-        return view('page::faq.edit', copmact('ques'));
+        // UI uses modal on index
+        return redirect()->route('faqs.index');
     }
 
     /**

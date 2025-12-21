@@ -13,7 +13,6 @@ use Dapunjabi\CoreAuth\Http\Controllers\AdminPermissionController;
 use Dapunjabi\CoreAuth\Http\Controllers\MfaSetupController;
 use Dapunjabi\CoreAuth\Http\Controllers\MfaVerifyController;
 use Dapunjabi\CoreAuth\Http\Controllers\SessionsController;
-use Dapunjabi\CoreAuth\Http\Controllers\BillingController;
 use Illuminate\Support\Facades\DB;
 use Dapunjabi\CoreAuth\Support\TenantManager;
 use Dapunjabi\CoreAuth\Http\Controllers\InviteController;
@@ -23,7 +22,7 @@ Route::group(['prefix' => 'coreauth', 'as' => 'coreauth.', 'middleware' => ['web
     Route::get('/', function () { return view('coreauth::welcome'); })->name('index');
 });
 
-// Public routes (no login required)
+// Public auth routes (UI-first)
 Route::middleware(['web', 'guest'])->group(function () {
     // Register
     Route::get('/register', [RegisterController::class, 'create'])->name('register');
@@ -46,7 +45,7 @@ Route::middleware(['web', 'guest'])->group(function () {
     Route::post('/tenant/invite/accept', [InviteController::class, 'accept']);
 });
 
-// Protected routes (login required)
+// Protected routes (must be logged in)
 Route::middleware(['web', 'auth'])->group(function () {
     // Logout
     Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
@@ -70,12 +69,6 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::middleware(['tenant', 'license', 'permission:manage-permissions'])->group(function () {
         Route::get('/admin/permissions', [AdminPermissionController::class, 'index'])->name('admin.permissions');
         Route::post('/admin/permissions', [AdminPermissionController::class, 'update']);
-    });
-
-    // Billing UI (always allowed for tenant users)
-    Route::middleware(['tenant'])->group(function () {
-        Route::get('/billing', [BillingController::class, 'index'])->name('billing');
-        Route::post('/billing/invoices/{id}/pay', [BillingController::class, 'pay'])->name('billing.pay');
     });
 
     // Invite & Team Management

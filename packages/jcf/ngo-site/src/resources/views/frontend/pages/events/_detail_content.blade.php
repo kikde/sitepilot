@@ -145,7 +145,7 @@
       <article class="ed-main-card">
 
         <div class="ed-breadcrumb">
-          <a href="{{ url('/ngo') }}">Home</a>
+          <a href="{{ url('/') }}">Home</a>
           <span>/</span>
           <a href="{{ url('/event') }}">Events</a>
           <span>/</span>
@@ -206,4 +206,3 @@
     </div>
   </div>
 </section>
-

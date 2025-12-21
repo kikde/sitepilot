@@ -1,45 +1,55 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Create Tenant</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-  </head>
-  <body class="container">
-    <nav>
-      <ul>
-        <li><strong>Tenancy Admin</strong></li>
-      </ul>
-      <ul>
-        <li><a href="{{ route('tenancy.admin.tenants.index') }}">Back</a></li>
-      </ul>
-    </nav>
+@extends('coreauth::layouts.base')
 
-    <h2>Create Tenant</h2>
-    <form method="post" action="{{ route('tenancy.admin.tenants.store') }}">
-      @csrf
-      <label>
-        Name
-        <input type="text" name="name" value="{{ old('name') }}" required>
-      </label>
-      <label>
-        Slug (optional)
-        <input type="text" name="slug" value="{{ old('slug') }}" placeholder="auto from name if empty">
-      </label>
+@section('content')
+  <div class="content-header row">
+    <div class="content-header-left col-md-9 col-12 mb-2">
+      <div class="row breadcrumbs-top">
+        <div class="col-12">
+          <h2 class="content-header-title float-left mb-0">Create Tenant</h2>
+          <div class="breadcrumb-wrapper">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{{ route('tenancy.admin.tenants.index') }}">Tenants</a></li>
+              <li class="breadcrumb-item active">Create</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      @if($errors->any())
-        <article class="contrast">
-          <ul>
-            @foreach($errors->all() as $error)
-              <li>{{ $error }}</li>
-            @endforeach
-          </ul>
-        </article>
-      @endif
+  <div class="card">
+    <div class="card-body">
+      <form method="post" action="{{ route('tenancy.admin.tenants.store') }}">
+        @csrf
 
-      <button type="submit">Create</button>
-    </form>
-  </body>
-</html>
+        <div class="form-group">
+          <label for="t-name">Name</label>
+          <input id="t-name" type="text" class="form-control" name="name" value="{{ old('name') }}" required>
+        </div>
 
+        <div class="form-group">
+          <label for="t-slug">Slug (optional)</label>
+          <input id="t-slug" type="text" class="form-control" name="slug" value="{{ old('slug') }}" placeholder="tenant1.test (or leave blank)">
+          <small class="text-muted">This is also used as the default domain slug.</small>
+        </div>
+
+        @if($errors->any())
+          <div class="alert alert-danger">
+            <ul class="mb-0" style="padding-left:18px;">
+              @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
+
+        <div class="d-flex" style="gap:10px;">
+          <button type="submit" class="btn btn-primary">
+            <i data-feather="check" class="mr-50"></i>Create
+          </button>
+          <a href="{{ route('tenancy.admin.tenants.index') }}" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+@endsection

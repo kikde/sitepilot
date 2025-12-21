@@ -41,7 +41,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('member::add.create');
+        return redirect()->route('category.index');
     }
 
     /**
@@ -69,7 +69,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        return view('member::show');
+        return redirect()->route('category.index');
     }
 
     /**
@@ -79,8 +79,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $cat = Faq::find($id);
-        return view('faq::edit', copmact('cat'));
+        return redirect()->route('category.index');
     }
 
     /**

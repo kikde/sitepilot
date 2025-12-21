@@ -68,7 +68,7 @@ class PaymentController extends Controller
         // store binary via Intervention to the same filename
         $absPath = storage_path('app/public/' . $folder . '/' . $filename);
         Image::make($file->getPathname())->save($absPath, 90);
-    } catch (\Intervention\Image\Exception\NotReadableException $e) {
+    } catch (\Throwable $e) {
         // fallback: just move it if Intervention can’t read (shouldn’t happen with the validation)
         Storage::disk('public')->putFileAs($folder, $file, $filename);
     }

@@ -66,7 +66,11 @@
                                                             <label for="messages">Status</label>
                                                         </div>
                                                         <div class="col-sm-9">
-                                                            {!!Form::select('status',Config::get('constants.pagestatus'),null,["Class" =>"form-control"])!!}
+                                                            <select name="status" class="form-control">
+                                                                @foreach((array) Config::get('constants.pagestatus', ['Published'=>'Published','Draft'=>'Draft','Pending'=>'Pending']) as $k => $v)
+                                                                    <option value="{{ $k }}">{{ $v }}</option>
+                                                                @endforeach
+                                                            </select>
                                                             
                                                         </div>
                                                     </div>

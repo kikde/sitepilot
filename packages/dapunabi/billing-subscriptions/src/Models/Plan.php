@@ -8,7 +8,6 @@ class Plan extends Model
 {
     protected $table = 'billing_plans';
     protected $fillable = [
-        'code','name','interval','price','currency','trial_days','active'
+        'code','name','interval','price','currency','trial_days','seat_limit','active'
     ];
 }
-

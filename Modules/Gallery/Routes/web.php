@@ -15,12 +15,9 @@
 //     Route::get('/', 'GalleryController@index');
 // });
 
-Route::resource('/photogallery', 'GalleryController');
-
-
-Route::get('/videogallery', 'GalleryController@indexVideo');
-
-
-Route::get('/videogallery/create', 'GalleryController@videoCreate');
-
-Route::get('/videogallery/{id}/video', 'GalleryController@videoEdit');
+Route::middleware(['web','auth','tenant','license','seat','permission:content.manage'])->group(function () {
+    Route::resource('/photogallery', 'GalleryController');
+    Route::get('/videogallery', 'GalleryController@indexVideo');
+    Route::get('/videogallery/create', 'GalleryController@videoCreate');
+    Route::get('/videogallery/{id}/video', 'GalleryController@videoEdit');
+});

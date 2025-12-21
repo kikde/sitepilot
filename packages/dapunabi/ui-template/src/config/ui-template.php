@@ -12,5 +12,27 @@ return [
     'multi_tenant' => [
         'enabled' => true,
     ],
-];
 
+    // Theme presets are default token sets you can switch per-tenant (tenant.settings.theme.preset).
+    // Tenants can still override individual tokens via the Theme model or tenant.settings.theme.*
+    'theme_presets' => [
+        'default' => [
+            'primary' => '#1976D2',
+            'secondary' => '#10b981',
+            'background' => '#ffffff',
+            'surface' => '#ffffff',
+        ],
+        'ngo' => [
+            'primary' => '#0ea5e9',
+            'secondary' => '#22c55e',
+            'background' => '#ffffff',
+            'surface' => '#ffffff',
+        ],
+        'news' => [
+            'primary' => '#ef4444',
+            'secondary' => '#111827',
+            'background' => '#ffffff',
+            'surface' => '#ffffff',
+        ],
+    ],
+];

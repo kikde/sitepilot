@@ -8,6 +8,8 @@ use Illuminate\Support\Str;
 use Dapunjabi\TenancyAdapter\Models\Tenant;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class TenantAdminController extends Controller
 {
@@ -47,9 +49,27 @@ class TenantAdminController extends Controller
                 'theme' => [
                     'primary' => '#3b82f6',
                     'accent' => '#f59e0b',
+                    'preset' => 'default',
                 ],
             ],
         ]);
+
+        // Mirror to CoreAuth tenants (so auth/roles can target the same tenant ids).
+        try {
+            if (Schema::hasTable('coreauth_tenants')) {
+                $exists = DB::table('coreauth_tenants')->where('id', $tenant->id)->exists();
+                $payload = ['name' => $tenant->name, 'slug' => $tenant->slug, 'updated_at' => now()];
+                if ($exists) {
+                    DB::table('coreauth_tenants')->where('id', $tenant->id)->update($payload);
+                } else {
+                    DB::table('coreauth_tenants')->insert($payload + [
+                        'id' => $tenant->id,
+                        'license_status' => 'active',
+                        'created_at' => now(),
+                    ]);
+                }
+            }
+        } catch (\Throwable $e) {}
 
         return redirect()->route('tenancy.admin.tenants.index')
             ->with('status', "Tenant '{$tenant->name}' created.");
@@ -98,7 +118,8 @@ class TenantAdminController extends Controller
         $settings = $tenant->settings ?? [];
         $theme = $settings['theme'] ?? [];
         $features = $settings['features'] ?? [];
-        return view('tenancy::admin.tenants.theme', compact('tenant', 'theme', 'features'));
+        $themePresets = array_keys((array) config('ui-template.theme_presets', ['default' => []]));
+        return view('tenancy::admin.tenants.theme', compact('tenant', 'theme', 'features', 'themePresets'));
     }
 
     public function updateTheme($id, Request $request)
@@ -106,6 +127,7 @@ class TenantAdminController extends Controller
         $tenant = Tenant::withoutGlobalScopes()->findOrFail($id);
 
         $data = $request->validate([
+            'theme_preset' => 'nullable|string|max:64',
             'primary' => 'nullable|string|max:20',
             'logo' => 'nullable|image|max:2048',
             'feature_mfa' => 'nullable|boolean',
@@ -118,6 +140,10 @@ class TenantAdminController extends Controller
         $settings = $tenant->settings ?? [];
         $settings['theme'] = $settings['theme'] ?? [];
         $settings['features'] = $settings['features'] ?? [];
+
+        if (isset($data['theme_preset'])) {
+            $settings['theme']['preset'] = $data['theme_preset'] ?: 'default';
+        }
 
         if (isset($data['primary'])) {
             $settings['theme']['primary'] = $data['primary'];

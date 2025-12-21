@@ -39,7 +39,7 @@
                             @if(!empty($dmessage->image))
                               <img src="{{ asset('backend/uploads/'.$dmessage->image) }}" alt="Signature" class="img-fluid mb-2" style="max-width:180px;">
                             @endif
-                            <p><strong><h2>Director,</h2> <div class="fw-bold lh-sm">{{$setting->title}}xxx</div>
+                            <p><strong><h2>Director,</h2> <div class="fw-bold lh-sm">{{$setting->title}}</div>
                                 </strong></p>
                         </div>
                     </div>

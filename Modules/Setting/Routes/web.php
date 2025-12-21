@@ -15,6 +15,7 @@
 //     Route::get('/', 'SettingController@index');
 // });
 
+Route::middleware(['web','auth','tenant','license','seat','permission:content.manage'])->group(function () {
 Route::resource('/settings', 'SettingController');
 
 /*----------------------------------------------------
@@ -41,3 +42,4 @@ Route::resource('/settings', 'SettingController');
     Route::get('/payment-gateways', 'SettingController@editPayment');
 
      Route::post('/payment-gateways', 'SettingController@updatePayment');
+});

@@ -1,6 +1,6 @@
 <?php
 namespace Modules\User\Http\Controllers;
-use App\Models\Payment;   
+use Modules\User\Entities\Payment;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -10,7 +10,7 @@ use Modules\User\Entities\User;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
+use Image;
 use Modules\User\Services\ApiShot;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File; // for directory ensure

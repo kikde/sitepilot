@@ -18,7 +18,7 @@ Route::middleware('web')->group(function () {
     Route::get('/admin/plans', function () {
         $plans = Plan::orderBy('price')->get();
         return view('billing::admin.plans.index', compact('plans'));
-    })->name('billing.admin.plans');
+    })->middleware(['auth','platform'])->name('billing.admin.plans');
 
     Route::post('/admin/plans', function () {
         request()->validate([
@@ -26,6 +26,7 @@ Route::middleware('web')->group(function () {
             'name' => 'required|string',
             'interval' => 'required|in:monthly,yearly',
             'price' => 'required|numeric|min:0',
+            'seat_limit' => 'nullable|integer|min:1',
         ]);
         Plan::create([
             'code' => request('code'),
@@ -34,10 +35,11 @@ Route::middleware('web')->group(function () {
             'price' => request('price'),
             'currency' => config('billing.currency', 'USD'),
             'trial_days' => 0,
+            'seat_limit' => request('seat_limit') !== null ? (int) request('seat_limit') : null,
             'active' => true,
         ]);
         return redirect()->route('billing.admin.plans')->with('status', 'Plan created');
-    })->name('billing.admin.plans.store');
+    })->middleware(['auth','platform'])->name('billing.admin.plans.store');
 
     // Tenant billing dashboard
     Route::get('/billing', function () {
@@ -45,7 +47,7 @@ Route::middleware('web')->group(function () {
         $subs = $tenantId ? Subscription::where('tenant_id', $tenantId)->orderByDesc('id')->get() : collect();
         $plans = Plan::where('active', true)->orderBy('price')->get();
         return view('billing::billing.index', compact('subs', 'plans', 'tenantId'));
-    })->name('billing.index');
+    })->middleware(['auth','tenant'])->name('billing');
 
     // Phase 2: Local gateway checkout (development stub)
     Route::post('/billing/checkout/local', function () {
@@ -62,7 +64,7 @@ Route::middleware('web')->group(function () {
         $invoice = $adapter->createInvoice($tenantId, $plan);
 
         return redirect()->route('billing.checkout.confirm', ['id' => $invoice->id]);
-    })->name('billing.checkout.local');
+    })->middleware(['auth','tenant'])->name('billing.checkout.local');
 
     Route::get('/billing/checkout/confirm/{id}', function ($id) {
         $tenantId = function_exists('tenant_id') ? tenant_id() : null;
@@ -102,7 +104,7 @@ Route::middleware('web')->group(function () {
                 }
 
         return redirect()->route('billing.index')->with('status', 'Payment confirmed and subscription activated.');
-    })->name('billing.checkout.confirm');
+    })->middleware(['auth','tenant'])->name('billing.checkout.confirm');
 
     // Stripe checkout (redirect to Stripe Hosted Checkout)
     Route::post('/billing/checkout', function () {
@@ -123,7 +125,7 @@ Route::middleware('web')->group(function () {
         }
 
         return redirect()->away($url);
-    })->name('billing.checkout');
+    })->middleware(['auth','tenant'])->name('billing.checkout');
 
     // Stripe webhook endpoint (idempotent)
     Route::post('/webhooks/stripe', function () {
@@ -236,7 +238,7 @@ Route::middleware('web')->group(function () {
         }
         $invoices = Invoice::where('tenant_id', $tenantId)->orderByDesc('id')->get();
         return view('billing::billing.invoices', compact('invoices'));
-    })->name('billing.invoices');
+    })->middleware(['auth','tenant'])->name('billing.invoices');
 
     Route::get('/billing/invoices/{id}/download', function ($id) {
         $tenant = function_exists('currentTenant') ? currentTenant() : null;
@@ -255,7 +257,7 @@ Route::middleware('web')->group(function () {
         $rel = InvoicePdf::generateAndStore($invoice, $tenant->slug ?? ('tenant-'.$tenant->id));
         $abs = Storage::disk('local')->path($rel);
         return response()->download($abs, basename($abs));
-    })->name('billing.invoices.download');
+    })->middleware(['auth','tenant'])->name('billing.invoices.download');
 
     // Phase 5: Seats management UI and actions
     Route::get('/billing/seats', function () {
@@ -281,7 +283,7 @@ Route::middleware('web')->group(function () {
         $seats = \Dapunabi\Billing\Models\SubscriptionSeat::whereIn('subscription_id', $subIds)->get();
         $users = $userModel::whereIn('id', $seats->pluck('user_id')->filter())->get()->keyBy('id');
         return view('billing::billing.seats', compact('tenant','sub','allowed','used','seats','users'));
-    })->name('billing.seats');
+    })->middleware(['auth','tenant'])->name('billing.seats');
 
     Route::post('/billing/seats/assign', function () {
         $tenant = function_exists('currentTenant') ? currentTenant() : null;
@@ -312,7 +314,7 @@ Route::middleware('web')->group(function () {
             return back()->withErrors(['assign' => 'No seats available. Upgrade your plan.']);
         }
         return back()->with('status', 'Seat assigned.');
-    })->name('billing.seats.assign');
+    })->middleware(['auth','tenant'])->name('billing.seats.assign');
 
     Route::post('/billing/seats/release', function () {
         $tenant = function_exists('currentTenant') ? currentTenant() : null;
@@ -331,7 +333,7 @@ Route::middleware('web')->group(function () {
         $sm = new \Dapunabi\Billing\Support\SeatManager();
         $count = $sm->release($tenant->id, (int) request('user_id'));
         return back()->with('status', $count ? 'Seat released.' : 'No seat to release.');
-    })->name('billing.seats.release');
+    })->middleware(['auth','tenant'])->name('billing.seats.release');
 
     // Phase 7: Admin tools - Manual invoice, Refund, Webhook logs + replay
     Route::get('/admin/billing/invoices', function () {
@@ -345,7 +347,7 @@ Route::middleware('web')->group(function () {
         } catch (\Throwable $e) {}
         $invoices = Invoice::orderByDesc('id')->limit(50)->get();
         return view('billing::admin.invoices.index', compact('invoices','tenants'));
-    })->name('billing.admin.invoices');
+    })->middleware(['auth','platform'])->name('billing.admin.invoices');
 
     Route::post('/admin/billing/invoices', function () {
         request()->validate([
@@ -365,19 +367,19 @@ Route::middleware('web')->group(function () {
             'due_date' => request('due_date'),
         ]);
         return back()->with('status','Invoice created');
-    })->name('billing.admin.invoices.store');
+    })->middleware(['auth','platform'])->name('billing.admin.invoices.store');
 
     Route::post('/admin/billing/invoices/{id}/refund', function ($id) {
         $inv = Invoice::findOrFail($id);
         $inv->status = 'void';
         $inv->save();
         return back()->with('status', 'Invoice voided (refund simulated).');
-    })->name('billing.admin.invoices.refund');
+    })->middleware(['auth','platform'])->name('billing.admin.invoices.refund');
 
     Route::get('/admin/webhooks', function () {
         $logs = DB::table('billing_webhook_logs')->orderByDesc('id')->limit(100)->get();
         return view('billing::admin.webhooks.index', compact('logs'));
-    })->name('billing.admin.webhooks');
+    })->middleware(['auth','platform'])->name('billing.admin.webhooks');
 
     Route::post('/admin/webhooks/{id}/replay', function ($id) {
         $row = DB::table('billing_webhook_logs')->where('id', $id)->first();
@@ -388,5 +390,5 @@ Route::middleware('web')->group(function () {
             return back()->withErrors(['webhook' => 'Replay failed: '.$e->getMessage()]);
         }
         return back()->with('status', 'Webhook processed again.');
-    })->name('billing.admin.webhooks.replay');
+    })->middleware(['auth','platform'])->name('billing.admin.webhooks.replay');
 });

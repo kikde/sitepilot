@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Http;           // For simple HTTP calls (Laravel wrapper)
-use Intervention\Image\Facades\Image;          // Image handling
+use Image;                                    // Image handling (fallback provided in app/helpers.php if Intervention is absent)
+use Illuminate\Validation\Rule;
 
 class MemberController extends Controller
 {
@@ -57,11 +58,13 @@ class MemberController extends Controller
   
     public function store(Request $request)
     {
+        $tenantId = function_exists('tenant_id') ? tenant_id() : null;
+
         // Basic validation (extend as needed)
         $request->validate([
             'name'   => 'required|string|max:190',
-            'mobile' => 'nullable|string|max:20|unique:users,mobile',
-            'email'  => 'nullable|email|max:190|unique:users,email',
+            'mobile' => ['nullable','string','max:20', Rule::unique('members', 'mobile')->where('tenant_id', (int) $tenantId)],
+            'email'  => ['nullable','email','max:190', Rule::unique('members', 'email')->where('tenant_id', (int) $tenantId)],
             'images'   => 'nullable|image|max:2048',
             'document' => 'nullable|mimes:pdf,jpg,jpeg,png|max:4096',
             'uploadfile'=> 'nullable|file|max:5120',
@@ -129,11 +132,12 @@ class MemberController extends Controller
     public function update(Request $request, $id)
     {
         $member = Member::query()->findOrFail($id);
+        $tenantId = function_exists('tenant_id') ? tenant_id() : null;
 
         $request->validate([
             'name'   => 'required|string|max:190',
-            'mobile' => 'nullable|string|max:20|unique:users,mobile,' . $member->id,
-            'email'  => 'nullable|email|max:190|unique:users,email,' . $member->id,
+            'mobile' => ['nullable','string','max:20', Rule::unique('members', 'mobile')->where('tenant_id', (int) $tenantId)->ignore($member->id)],
+            'email'  => ['nullable','email','max:190', Rule::unique('members', 'email')->where('tenant_id', (int) $tenantId)->ignore($member->id)],
             'images'   => 'nullable|image|max:2048',
             'document' => 'nullable|mimes:pdf,jpg,jpeg,png|max:4096',
             'uploadfile'=> 'nullable|file|max:5120',

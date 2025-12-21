@@ -90,9 +90,19 @@ class UiTemplateServiceProvider extends ServiceProvider
         // Middleware alias
         $router = $this->app['router'];
         $router->aliasMiddleware('uitpl.can', \Dapunabi\UiTemplate\Http\Middleware\EnsureUiPermission::class);
+
+        // Admin navigation (optional, when CoreAuth is present)
+        try {
+            if (class_exists(\Dapunjabi\CoreAuth\Support\AdminNavRegistry::class)) {
+                $nav = $this->app->make(\Dapunjabi\CoreAuth\Support\AdminNavRegistry::class);
+                $nav->section('builder', 'Builder', 40)
+                    ->add('builder', ['label' => 'UI Pages', 'icon' => 'layout', 'route' => 'uitpl.admin.pages', 'permission' => 'ui.manage', 'order' => 20])
+                    ->add('builder', ['label' => 'Templates', 'icon' => 'copy', 'route' => 'uitpl.admin.templates', 'permission' => 'ui.manage', 'order' => 30])
+                    ->add('builder', ['label' => 'Theme Editor', 'icon' => 'sliders', 'route' => 'uitpl.admin.theme', 'permission' => 'ui.manage', 'order' => 40]);
+            }
+        } catch (\Throwable $e) {}
     }
 }
-
 
 
 

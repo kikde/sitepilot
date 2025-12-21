@@ -1,4 +1,28 @@
- 
+@php
+  $user = \Illuminate\Support\Facades\Auth::user();
+  $role = $user?->role;
+  $showAdminMenu = in_array((int)($role ?? -1), [0,1,3], true);
+  $showMemberMenu = ((int)($role ?? -1) === 2) || ((int)($role ?? -1) === 0);
+
+  // In the new CoreAuth multi-tenant system, users may not have the legacy `users.role` column.
+  // Map CoreAuth tenant permissions to legacy role checks so the full sidebar still appears.
+  try {
+    if ($user && $role === null && class_exists(\Dapunjabi\CoreAuth\Support\TenantManager::class)) {
+      $tm = app(\Dapunjabi\CoreAuth\Support\TenantManager::class);
+      $tenantId = $tm->current()?->id ?? (function_exists('tenant_id') ? tenant_id() : null);
+      $uid = (int) $user->id;
+      $canManageContent = $tenantId ? $tm->userHasPermission($uid, 'content.manage', (int) $tenantId) : false;
+      $canManageRoles = $tenantId ? $tm->userHasPermission($uid, 'manage-roles', (int) $tenantId) : false;
+      $canManagePermissions = $tenantId ? $tm->userHasPermission($uid, 'manage-permissions', (int) $tenantId) : false;
+      $showAdminMenu = $canManageContent || $canManageRoles || $canManagePermissions || $showAdminMenu;
+      $showMemberMenu = !$showAdminMenu;
+
+      // Show full legacy admin sidebar for tenant admins/editors.
+      $role = ($canManageContent || $canManageRoles || $canManagePermissions) ? 0 : 2;
+    }
+  } catch (\Throwable $e) {}
+@endphp
+
   <!-- BEGIN: Main Menu-->
   <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
@@ -20,7 +44,7 @@
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
              
-            @if (Auth::user()->role==2 or Auth::user()->role==0) 
+            @if ($showMemberMenu) 
             <li class=" nav-item {{Request::is('home') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home')}}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span></a>           
             </li>
             
@@ -42,7 +66,7 @@
 
             <!-- MANAGER Permission-->
 
-              @if (Auth::user()->role==3 or Auth::user()->role==0) 
+              @if ($showAdminMenu) 
                <li class="nav-item {{Request::is('edit-profile') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{('/user-edit/'.Auth::user()->id)}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Users">Edit Profile</span></a>
                
                </li>
@@ -52,11 +76,11 @@
                 </li>
                     @if (Module::has('User'))
                     <li class="nav-item {{Request::is('users') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{route('users.index')}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Users">Admin</span></a> </li>      
-                    <li class="{{Request::is('/home/banner-list') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home/banner-list')}}"><i data-feather="monitor"></i><span class="menu-item text-truncate" data-i18n="List">Banners</span></a>
+                    <li class="{{Request::is('home/banner-list') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home/banner-list')}}"><i data-feather="monitor"></i><span class="menu-item text-truncate" data-i18n="List">Banners</span></a>
                     </li>
-                    <li class="{{Request::is('/home/what-to-do-list') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home/what-to-do-list')}}"><i data-feather="check-square"></i><span class="menu-item text-truncate" data-i18n="List">What to do</span></a>
+                    <li class="{{Request::is('home/what-to-do-list') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home/what-to-do-list')}}"><i data-feather="check-square"></i><span class="menu-item text-truncate" data-i18n="List">What to do</span></a>
                     </li>
-                    <li class="{{Request::is('/home/static-section') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home/static-section')}}"><i data-feather="box"></i><span class="menu-item text-truncate" data-i18n="List">Award Static</span></a>
+                    <li class="{{Request::is('home/static-section') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home/static-section')}}"><i data-feather="box"></i><span class="menu-item text-truncate" data-i18n="List">Award Static</span></a>
                     </li>
                     <li class="{{Request::is('/home/award-section') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home/award-section')}}"><i data-feather="award"></i><span class="menu-item text-truncate" data-i18n="List">Award Section</span></a>
                     </li>
@@ -119,4 +143,3 @@
     </div>
 </div>
 <!-- END: Main Menu-->
-

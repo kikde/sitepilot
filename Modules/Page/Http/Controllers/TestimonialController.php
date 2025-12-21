@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Setting\Entities\Setting;
 use Modules\Page\Entities\Testimonial;
-use Image;
 use Auth;
 use View;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class TestimonialController extends Controller
 {
@@ -58,8 +59,13 @@ class TestimonialController extends Controller
     
         if ($request->hasFile('images')) {
             $postimage = $request->file('images');
-            $filename = '_prd_'. time() . '.' . $postimage->getClientOriginalExtension();
-            Image::make($postimage)->save(public_path('/backend/testimonial/'. $filename));
+            $base = $request->name ? Str::slug($request->name) : 'testimonial';
+            $filename = $base . '_prd_' . time() . '.' . $postimage->getClientOriginalExtension();
+            $dest = public_path('backend/testimonial');
+            if (!File::exists($dest)) {
+                File::makeDirectory($dest, 0755, true);
+            }
+            $postimage->move($dest, $filename);
             
             $testing->images = $filename;
             // return $filename;
@@ -113,10 +119,13 @@ class TestimonialController extends Controller
         $testing = Testimonial::where('id',$request->id)->first();
         if ($request->hasFile('images')) {
             $postimage = $request->file('images');
-            $filename = $request->name . '_prd_'. time() . '.' . $postimage->getClientOriginalExtension();
-            Image::make($postimage)->resize(670, 500, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save(public_path('/backend/testimonial/'. $filename));
+            $base = $request->name ? Str::slug($request->name) : 'testimonial';
+            $filename = $base . '_prd_' . time() . '.' . $postimage->getClientOriginalExtension();
+            $dest = public_path('backend/testimonial');
+            if (!File::exists($dest)) {
+                File::makeDirectory($dest, 0755, true);
+            }
+            $postimage->move($dest, $filename);
             
             $testing->images = $filename;
             //return $filename;
