@@ -11,6 +11,7 @@
    @include ("frontend.partials.banner.style-1") 
    
   @include ("frontend.partials.message.presidentmessage")
+  
   @include ("frontend.partials.ticker.style-1")
    @include ("frontend.partials.ticker.style-4") <!--Frams Ticker-->
    {{--@include ("frontend.partials.about.style-4") 
