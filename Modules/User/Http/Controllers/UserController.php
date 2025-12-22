@@ -172,6 +172,38 @@ public function Adminupdate(Request $request, $id)
     return back()->with('message', 'Admin Updated!');
 }
 
+ /**
+       * Bulk delete users by IDs (admin only)
+       */
+      public function bulkDelete(Request $request)
+      {
+          $me = Auth::user();
+          if (!$me || (int)$me->role !== 1) {
+              abort(403);
+          }
+
+          $ids = (array)$request->input('ids', []);
+          $ids = array_values(array_filter(array_map('intval', $ids)));
+          if (empty($ids)) {
+              return back()->with('message', 'No users selected.');
+          }
+
+          // Prevent accidental self-delete
+          $ids = array_diff($ids, [$me->id]);
+          if (empty($ids)) {
+              return back()->with('message', 'Cannot delete the current admin account.');
+          }
+
+          try {
+              DB::table('users')->whereIn('id', $ids)->delete();
+              return back()->with('message', 'Selected users deleted.');
+          } catch (\Throwable $e) {
+              \Log::error('USERS.BULK_DELETE_FAIL', ['ids'=>$ids, 'msg'=>$e->getMessage()]);
+              return back()->with('message', 'Failed to delete selected users.');
+          }
+      }
+
+
     /* =========================================================================
      | MEMBER/USER CREATION (role 2/0)
      |========================================================================= */
@@ -335,13 +367,21 @@ if ($request->hasFile('idproof_doc')) {
         'ip'      => $request->ip(),
     ]);
 
+    // Load target user early so we can fallback to existing values when fields are omitted from the request
+    $user = User::where('id', $id)->firstOrFail();
+
+    // If mobile not provided (e.g., front-end left it blank), keep existing value to avoid unnecessary validation failure
+    if (!$request->filled('mobile')) {
+        $request->merge(['mobile' => $user->mobile]);
+    }
+
     $request->validate([
         'name'   => 'required',
         'email'  => 'required',
         'mobile' => 'required',
     ]);
 
-    $user = User::where('id', $request->id)->firstOrFail();
+    // $user already loaded above
 
      $actor   = auth()->user();
 

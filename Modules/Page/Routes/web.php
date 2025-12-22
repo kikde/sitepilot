@@ -64,6 +64,10 @@ Route::middleware(['web', 'auth', 'tenant', 'license', 'seat', 'permission:conte
     Route::put('/bank-details/{bank}', [DonarsController::class, 'updateBank'])->name('donations.bank.update');
     Route::delete('/bank-details/{bank}', [DonarsController::class, 'destroyBank'])->name('donations.bank.destroy');
 
+     // Home About section (editable content for frontend About tabs)
+    Route::get('/home-about', [\Modules\Page\Http\Controllers\HomeAboutController::class, 'edit'])->name('home.about.edit');
+    Route::post('/home-about', [\Modules\Page\Http\Controllers\HomeAboutController::class, 'update'])->name('home.about.update');
+
     /*
     |--------------------------------------------------------------------------
     | Home page sections (legacy admin links)

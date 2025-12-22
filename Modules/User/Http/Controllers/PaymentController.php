@@ -332,7 +332,7 @@ class PaymentController extends Controller
 
         $payment->save();
 
-        return back()->with('success', 'Manual payment added for this member.');
+        return back()->with('message', 'Manual payment added for this member.');
     }
 //--------------------------------------------Autopay Payment--------------------------------------------------//
 

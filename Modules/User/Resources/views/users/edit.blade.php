@@ -37,7 +37,7 @@
 
                             <!-- general tab -->
                             <div class="row">
-                                {{-- NEW: Affidavit toggle + file links --}}
+                                {{-- NEW: Affidavit toggle + file links 
                                 <div class="col-6 mb-2">
                                     @php $isActive = !empty($users->before_affidavit); @endphp
 
@@ -62,9 +62,9 @@
                                                 View Original Affidavit (before signing)
                                             </a>
                                         </div>
-                                    @endif
+                                    @endif--}}
 
-                                    {{-- View link --}}
+                                    {{-- View link 
                                     @if(!empty($users->after_verifiy_affidavit))
                                       <div class="mt-1">
                                         <a class="text-primary" href="{{ route('doc.view', ['user' => $users->id, 'type' => 'aff_after']) }}" target="_blank">
@@ -72,7 +72,7 @@
                                         </a>
                                       </div>
                                     @endif
-                                </div>
+                                </div>--}}
                                 <!-- Referral Link Card (everyone) -->
                                 <div class="col-md-6 mb-2 mb-md-0">
                                 

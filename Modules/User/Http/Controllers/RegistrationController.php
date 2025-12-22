@@ -37,6 +37,24 @@ class RegistrationController extends Controller
         try {
         $res_query  = Sector::query();
         $setting    = Setting::first();
+        if (! $setting) {
+            $setting = (object) [
+                'title' => config('app.name', 'NGO Site'),
+                'meta_author' => '',
+                'meta_description' => '',
+                'meta_keywords' => '',
+                'favicon_icon' => '',
+                'site_logo' => '',
+                'facebook_url' => '',
+                'insta_url' => '',
+                'linkdin_url' => '',
+                'twitter' => '',
+                'youtube' => '',
+                'address' => '',
+                'phone' => '',
+                'site_email' => '',
+            ];
+        }
         $secmenu    = $res_query->get(['sector_name','id','slug','pagestatus','breadcrumb','description','pagekeyword']);
         $footer     = Sector::query();
         $testi      = Testimonial::latest()->limit(6)->get();
@@ -56,7 +74,22 @@ class RegistrationController extends Controller
         ]);
         } catch (\Throwable $e) {
             View::share([
-                'setting' => null,
+                'setting' => (object) [
+                    'title' => config('app.name', 'NGO Site'),
+                    'meta_author' => '',
+                    'meta_description' => '',
+                    'meta_keywords' => '',
+                    'favicon_icon' => '',
+                    'site_logo' => '',
+                    'facebook_url' => '',
+                    'insta_url' => '',
+                    'linkdin_url' => '',
+                    'twitter' => '',
+                    'youtube' => '',
+                    'address' => '',
+                    'phone' => '',
+                    'site_email' => '',
+                ],
                 'secmenu' => collect(),
                 'testi' => collect(),
                 'footermenu' => collect(),

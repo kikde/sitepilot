@@ -17,6 +17,7 @@
 
 Route::middleware(['web','auth','tenant','license','seat','permission:content.manage'])->group(function () {
 Route::resource('/settings', 'SettingController');
+    Route::post('/settings/location', 'SettingController@update_location')->name('settings.location.update');
 
 /*----------------------------------------------------
   |      SITEMAP SETTINGS
@@ -29,9 +30,9 @@ Route::resource('/settings', 'SettingController');
     Route::post('/smtp-test', 'SettingController@test_smtp_settings');
     Route::get('send', 'SettingController@test');
 
-    // Email Templates
-    Route::resource('/email-templates', 'EmailTemplateController');
-    Route::get('/email-templates/create', 'EmailTemplateController@create');
+    // Email Templates (explicit routes to avoid name collisions with resource update)
+    Route::get('/email-templates', 'EmailTemplateController@index')->name('email-templates.index');
+    Route::get('/email-templates/create', 'EmailTemplateController@create')->name('email-templates.create');
     Route::post('/email-templates/store', 'EmailTemplateController@store')->name('email-templates.store');
     Route::post('/email-templates/update', 'EmailTemplateController@update')->name('email-templates.update');
 
@@ -43,3 +44,6 @@ Route::resource('/settings', 'SettingController');
 
      Route::post('/payment-gateways', 'SettingController@updatePayment');
 });
+
+
+

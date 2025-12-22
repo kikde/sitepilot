@@ -41,6 +41,14 @@ if (! function_exists('set_static_option')) {
     }
 }
 
+if (! function_exists('update_static_option')) {
+    function update_static_option(string $key, mixed $value): void
+    {
+        // Backwards-compat alias used by legacy code
+        set_static_option($key, $value);
+    }
+}
+
 // Lightweight Image facade compatibility:
 // Old code expects `Image::make(...)->resize(...)->save(...)`.
 // If Intervention/Image is not installed, provide a minimal fallback so uploads don't 500.

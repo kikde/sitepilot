@@ -60,7 +60,7 @@
                         <h6>Drop Us Line</h6>
                         <h2>Send Your Message</h2>
                     </div>
-                    <form action="{{url('/contactus')}}" method="post" class="default-form">
+                    <form action="{{url('/send-mail')}}" method="post" class="default-form">
                         @csrf
                         <div class="row clearfix">
                             <div class="col-lg-6 col-md-6 col-sm-12 form-group">
@@ -91,18 +91,22 @@
 <!-- contact-section end -->
 
 @php
-    $mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7310.971940464816!2d72.93813414488372!3d23.62276119485529!'
-        .'2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395db974f9b87997%3A0xb9755180e2423c17!'
-        .'2sHimatnagar%20sabarkantha!5e0!3m2!1sen!2sin!4v1763709685119!5m2!1sen!2sin';
+    // Prefer map embed set from backend settings; accept either a full <iframe> or an embed URL.
+    $mapEmbed = $setting->map_embed ?? null;
+    $defaultMap = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7310.971940464816!2d72.93813414488372!3d23.62276119485529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395db974f9b87997%3A0xb9755180e2423c17!2sHimatnagar%20sabarkantha!5e0!3m2!1sen!2sin!4v1763709685119!5m2!1sen!2sin';
 @endphp
 
 <!-- google-map-section -->
 <section class="google-map-section">
     <div class="map-inner">
         <div class="google-map">
-            <iframe src="{{ $mapSrc }}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            @php $hasIframe = is_string($mapEmbed) && stripos($mapEmbed, '<iframe') !== false; @endphp
+            @if($hasIframe)
+                {!! $mapEmbed !!}
+            @else
+                <iframe src="{{ $mapEmbed ?: $defaultMap }}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            @endif
         </div>
     </div>
 </section>
 <!-- google-map-section end -->
-

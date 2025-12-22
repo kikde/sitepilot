@@ -109,7 +109,7 @@
 
                                         <div class="col-sm-9 offset-sm-3">
                                             <button type="submit" id="btn-submit" class="btn btn-primary mr-0">{{translate('Save Changes')}}</button>
-                                            <a  hrefclass="btn btn-outline-secondary">Go Back</button>
+                                            <a href="{{ route('email-templates.index') }}" class="btn btn-outline-secondary">Go Back</a>
                                         </div>
                                     </div>
                                 </form>

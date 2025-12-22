@@ -45,6 +45,14 @@
                                 <span class="font-weight-bold">SMTP Settings</span>
                             </a>
                         </li>
+                        <!-- location (map) -->
+                        <li class="nav-item">
+                            <a class="nav-link" id="account-pill-location" data-toggle="pill"
+                                href="#account-vertical-location" aria-expanded="false">
+                                <i data-feather="map-pin" class="font-medium-3 mr-1"></i>
+                                <span class="font-weight-bold">Location</span>
+                            </a>
+                        </li>
                         <!-- analytics -->
                         {{-- <li class="nav-item">
                             <a class="nav-link" id="account-pill-password" data-toggle="pill"
@@ -321,6 +329,24 @@
                                         </div>
                                     </form>
                                     <!--/ form -->
+                                </div>
+
+                                <!-- location tab -->
+                                <div role="tabpanel" class="tab-pane" id="account-vertical-location"
+                                     aria-labelledby="account-pill-location" aria-expanded="false">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-7">
+                                            <form class="form" method="post" action="{{ url('/settings/location') }}">
+                                                @csrf
+                                                <div class="form-group">
+                                                    <label for="map-embed">Google Map Iframe or URL</label>
+                                                    <textarea id="map-embed" name="map_embed" class="form-control" rows="6" placeholder="Paste Google Maps embed iframe or the embed URL here">{{ old('map_embed', $settings->map_embed ?? '') }}</textarea>
+                                                    <small class="text-muted">You can paste the full &lt;iframe&gt; code from Google Maps, or just the embed URL. This shows on the Contact page map.</small>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Save Location</button>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!--/ general tab -->
 

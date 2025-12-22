@@ -77,6 +77,16 @@
   }
 
   .btn-outline-danger{ border-color:#ef4444; }
+
+  /* ---- Remove horizontal scrollbar on this page ---- */
+  .content-wrapper, .table-responsive, .user-cards{ overflow-x: hidden !important; }
+  .table-responsive{ -ms-overflow-style: none; scrollbar-width: none; }
+  .table-responsive::-webkit-scrollbar{ display:none; height:0; }
+  /* Avoid clipping buttons/controls – allow wrapping inside cells */
+  .table{ table-layout: auto; }
+  .table th, .table td{ white-space: normal; word-break: break-word; overflow: visible; text-overflow: clip; }
+  /* Keep ID column on one line so numbers don't split */
+  .table th.col-id, .table td.col-id{ white-space: nowrap; word-break: keep-all; width: 80px; max-width: 80px; }
 </style>
 
 <div class="content-wrapper">
@@ -86,11 +96,11 @@
       <div class="row breadcrumbs-top">
         <div class="col-12 d-flex align-items-center justify-content-between">
           <div>
-            <h2 class="content-header-title float-left mb-0">Users List</h2>
+            <h2 class="content-header-title float-left mb-0">Members List</h2>
             <div class="breadcrumb-wrapper">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                <li class="breadcrumb-item active">User List</li>
+                <li class="breadcrumb-item active">Members List</li>
               </ol>
             </div>
           </div>
@@ -103,6 +113,9 @@
             <a href="{{ url('/users-add') }}" class="btn btn-primary btn-round btn-sm">
               <i data-feather="plus"></i><span class="ms-1">Add New</span>
             </a>
+            <button id="bulkDeleteBtn" type="button" class="btn btn-outline-danger btn-round btn-sm">
+              <i data-feather="trash-2"></i><span class="ms-1">Delete Selected</span>
+            </button>
           </div>
         </div>
       </div>
@@ -134,17 +147,20 @@
 
           {{-- ======================= DESKTOP TABLE ======================= --}}
           <div class="table-responsive d-none d-md-block">
+            <form id="bulkDeleteForm" method="post" action="{{ route('admin.users.bulk.delete') }}">
+              @csrf
             <table class="table">
               <thead>
                 <tr>
-                  <th>ID</th>
+                  <th><input type="checkbox" id="checkAll"></th>
+                  <th class="col-id">ID</th>
                   <th>Profile</th>
                   <th>Referred by</th>
                   <th>Name</th>
                   <th>Mobile</th>
                   <th>Top-Ten</th>
                   <th>Top Performer</th>
-                  <th>Verified</th>
+                  <th>Verify Payment</th>
                   <!-- <th>Payments</th> -->
                   <th>Pdf Maker</th>
                   <th>Account Status</th>
@@ -157,7 +173,8 @@
                 @foreach($user as $users)
                   <tbody>
                     <tr>
-                      <td>{{ $users->id }}</td>
+                      <td><input type="checkbox" class="row-check" name="ids[]" value="{{ $users->id }}"></td>
+                      <td class="col-id">{{ $users->id }}</td>
                       <td>
                         @if($users->profile_image)
                           <img src="{{ asset('backend/uploads/members/'.$users->profile_image) }}" class="avatar mr-50" height="80" width="80" alt="{{ $users->name }}" />
@@ -220,11 +237,13 @@
                         @php
                           $receiptPath = optional($users->latestPayment)->payment_rec;
                           $hasReceipt  = filled($receiptPath);
+                          $isVerified  = (bool) optional($users->latestPayment)->is_verified;
+                          $isRendering = $isVerified && !$hasReceipt;
                         @endphp
                         <form action="{{ $hasReceipt ? url('/deactive-aff/'.$users->id) : url('/active-aff/'.$users->id) }}" method="post">
                           @csrf
                           <div class="custom-control custom-control-primary custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="verified{{$users->id}}" onchange="this.form.submit()" {{ $hasReceipt ? 'checked' : '' }}>
+                            <input type="checkbox" class="custom-control-input" id="verified{{$users->id}}" onchange="this.form.submit()" {{ $hasReceipt ? 'checked' : '' }} @if($isRendering) disabled @endif>
                             <label class="custom-control-label" for="verified{{$users->id}}"></label>
                           </div>
                         </form>
@@ -232,9 +251,15 @@
                           <a href="{{ route('admin.members.payments', $users->id) }}" title="View payments" class="btn btn-outline-primary btn-eye">
                             <i data-feather="eye"></i>
                           </a>
-                          @unless($hasReceipt)
+                          @if($hasReceipt)
+                            <a href="{{ asset('storage/'.$receiptPath) }}" title="Download receipt" class="btn btn-outline-success btn-eye" download>
+                              <i data-feather="download"></i>
+                            </a>
+                          @elseif($isRendering)
+                            <small class="text-warning">Rendering…</small>
+                          @else
                             <small class="text-muted">No Payment yet</small>
-                          @endunless
+                          @endif
                         </div>
                       </td>
 
@@ -330,11 +355,10 @@
                   </tbody>
                 @endforeach
               @else
-                <tbody><tr><td colspan="12" class="text-center text-muted">No Data found</td></tr></tbody>
+                <tbody><tr><td colspan="13" class="text-center text-muted">No Data found</td></tr></tbody>
               @endif
             </table>
-            
-          
+            </form>
           </div>
            
 
@@ -346,6 +370,8 @@
                   @php
                     $receiptPath = optional($users->latestPayment)->payment_rec;
                     $hasReceipt  = filled($receiptPath);
+                    $isVerified  = (bool) optional($users->latestPayment)->is_verified;
+                    $isRendering = $isVerified && !$hasReceipt;
                   @endphp
 
                   <div class="card user-card">
@@ -428,12 +454,19 @@
                           <form action="{{ $hasReceipt ? url('/deactive-aff/'.$users->id) : url('/active-aff/'.$users->id) }}" method="post">@csrf
                             <div class="verified-controls">
                               <div class="custom-control custom-control-primary custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="verifiedM{{$users->id}}" onchange="this.form.submit()" {{ $hasReceipt ? 'checked' : '' }}>
+                                <input type="checkbox" class="custom-control-input" id="verifiedM{{$users->id}}" onchange="this.form.submit()" {{ $hasReceipt ? 'checked' : '' }} @if($isRendering) disabled @endif>
                                 <label class="custom-control-label" for="verifiedM{{$users->id}}"></label>
                               </div>
                               <a href="{{ route('admin.members.payments', $users->id) }}" title="View payments" class="btn btn-sm btn-outline-primary btn-eye">
                                 <i data-feather="eye"></i>
                               </a>
+                              @if($hasReceipt)
+                                <a href="{{ asset('storage/'.$receiptPath) }}" title="Download receipt" class="btn btn-sm btn-outline-success btn-eye" download>
+                                  <i data-feather="download"></i>
+                                </a>
+                              @elseif($isRendering)
+                                <small class="text-warning" style="line-height:32px;">Rendering…</small>
+                              @endif
                             </div>
                           </form>
                         </div>
@@ -514,6 +547,24 @@
 
   document.addEventListener('DOMContentLoaded', function(){
     if (window.feather) feather.replace();
+    // Bulk delete helpers
+    const checkAll = document.getElementById('checkAll');
+    const checks = Array.from(document.querySelectorAll('.row-check'));
+    if (checkAll) {
+      checkAll.addEventListener('change', function(){
+        checks.forEach(c => { c.checked = checkAll.checked; });
+      });
+    }
+    const bulkBtn = document.getElementById('bulkDeleteBtn');
+    if (bulkBtn) {
+      bulkBtn.addEventListener('click', function(){
+        const any = Array.from(document.querySelectorAll('.row-check')).some(c => c.checked);
+        if (!any) { alert('Select at least one user.'); return; }
+        if (confirm('Delete selected users? This cannot be undone.')) {
+          document.getElementById('bulkDeleteForm').submit();
+        }
+      });
+    }
     const btn = document.getElementById('exportBtn');
     if (btn){
       btn.addEventListener('click', function(){
@@ -609,4 +660,8 @@ document.addEventListener('click', function (e) {
   });
 </script>
 
+
 @endsection
+
+
+

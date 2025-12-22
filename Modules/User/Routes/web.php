@@ -9,6 +9,7 @@ use Modules\User\Http\Controllers\RegistrationController;
 use Modules\User\Http\Controllers\PaymentController;
 use Modules\User\Http\Controllers\DocumentController;
 use Modules\User\Http\Controllers\MemberController;
+use Jcf\NgoSite\Http\Middleware\ShareNgoViewData;
 
 
 
@@ -21,7 +22,8 @@ use Modules\User\Http\Controllers\MemberController;
 |--------------------------------------------------------------------------
 */
 
-Route::middleware('web')->group(function () {
+// Public member registration uses the same frontend view data as the NGO site
+Route::middleware(['web', 'tenant', ShareNgoViewData::class])->group(function () {
     Route::get('member-registration',  [RegistrationController::class,'showMemberRegistrationForm'])
         ->name('member.register.show');
 
@@ -56,6 +58,10 @@ Route::middleware(['web','auth','tenant','license','seat','permission:content.ma
     // verify one payment + activate member
     Route::post('payments/{payment}/verify', [PaymentController::class, 'verify'])
         ->name('admin.payments.verify');
+
+         // delete a payment row
+    Route::delete('payments/{payment}', [PaymentController::class, 'destroy'])
+        ->name('admin.payments.destroy');
 
     Route::post('members/{user}/payments/manual', [PaymentController::class, 'storeManual'])
         ->name('admin.members.payments.manual');
@@ -94,6 +100,7 @@ Route::middleware('signed:relative')->group(function () {
 // Tenant admin/user management (protected)
 Route::middleware(['web','auth','tenant','license','seat','permission:manage-roles'])->group(function () {
 Route::resource('/users', UserController::class)->only(['index', 'create']);
+Route::post('/users/bulk-delete', [UserController::class, 'bulkDelete'])->name('admin.users.bulk.delete');
 Route::post('/admins',            [UserController::class, 'Adminstore'])->name('admins.store');
 Route::put('/admins-update/{id}', [UserController::class, 'Adminupdate'])->name('admins.update');
 

@@ -72,17 +72,18 @@
                </li>
                 <li class="nav-item {{Request::is('home') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home')}}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span></a>           
                 </li>
-                <li class="nav-item {{Request::is('userslist') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/userslist')}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Users">Users</span></a>
+                <li class="nav-item {{Request::is('userslist') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/userslist')}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Users">Members</span></a>
                 </li>
                     @if (Module::has('User'))
                     <li class="nav-item {{Request::is('users') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{route('users.index')}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Users">Admin</span></a> </li>      
+                    
+            @endif
+            @if (Module::has('Page'))
                     <li class="{{Request::is('home/banner-list') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home/banner-list')}}"><i data-feather="monitor"></i><span class="menu-item text-truncate" data-i18n="List">Banners</span></a>
                     </li>
-                    <li class="{{Request::is('home/what-to-do-list') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home/what-to-do-list')}}"><i data-feather="check-square"></i><span class="menu-item text-truncate" data-i18n="List">What to do</span></a>
-                    </li>
-                    <li class="{{Request::is('home/static-section') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home/static-section')}}"><i data-feather="box"></i><span class="menu-item text-truncate" data-i18n="List">Award Static</span></a>
-                    </li>
-                    <li class="{{Request::is('/home/award-section') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home/award-section')}}"><i data-feather="award"></i><span class="menu-item text-truncate" data-i18n="List">Award Section</span></a>
+                    <li class="{{Request::is('newsList') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{ url('/newsList') }}"><i data-feather="layout"></i><span class="menu-item text-truncate" data-i18n="List">News Post</span></a>
+                     </li>   
+                    <li class="{{Request::is('pages') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{ url('/pages') }}"><i data-feather="target"></i><span class="menu-item text-truncate" data-i18n="List">Objective</span></a>
                     </li>
                     <li class="{{Request::is('management-team') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{route('management-team.index')}}"><i data-feather="layers"></i><span class="menu-item text-truncate" data-i18n="List">Management Team</span></a>
                     </li>
@@ -90,10 +91,9 @@
                     </li>
                     <li class="{{Request::is('faqs') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{route('faqs.index')}}"><i data-feather="twitch"></i><span class="menu-item text-truncate" data-i18n="List">Faq</span></a>
                     </li>
-
                     <li><a class="d-flex align-items-center" href="{{url('/pageList')}}"><i data-feather="columns"></i><span class="menu-item text-truncate" data-i18n="List">Create Page</span></a>
                     </li>
-            @endif
+                @endif
                 @if (Module::has('Gallery'))
                     <li class="{{ Request::is('photogallery') && request('share_site') == 'gallery' ? 'active' : '' }}">
                             <a class="d-flex align-items-center" href="{{ url('/photogallery?share_site=gallery') }}">
@@ -132,13 +132,80 @@
                 </ul>
             </li>
 
+               <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="film"></i><span class="menu-title text-truncate" data-i18n="Users">Media Coverage</span></a>
+                <ul class="menu-content"> 
+                <li class="{{Request::is('successstory') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{ route('successstory.index')}}"><i data-feather="droplet"></i><span class="menu-item  text-truncate" data-i18n="User">All Success Story</span></a>
+        
+                </li>
+                <li class="{{Request::is('succes-story-category') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{route('succes-story-category.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Category</span></a>
+                </li>
+                <li class="{{Request::is('addbreadcrum') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/addbreadcrum')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Breadcrumb Image</span></a>
+                </li>
+            
+             </ul>
+            </li> 
+
             @if (Module::has('Setting'))
-            <li class=" nav-item {{Request::is('setting') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{route('settings.index')}}"><i data-feather="settings"></i><span class="menu-title text-truncate" data-i18n="Settings">Settings</span></a>
+             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="settings"></i><span class="menu-title text-truncate" data-i18n="User">General Settings</span></a>
+            <ul class="menu-content"> 
+            <li class=" nav-item {{ Request::is('settings') || Request::is('settings/*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{route('settings.index')}}"><i data-feather="settings"></i><span class="menu-title text-truncate" data-i18n="Settings">Settings</span></a>
+            </li>
+            <li class="{{Request::is('email-templates') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/email-templates')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Email Template</span></a>
+                </li>
+
+                 <li class="{{Request::is('payment-gateways') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{ url('/payment-gateways') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Payment Gateways</span></a>
+                </li>
+
+                <li class="{{Request::is('seo-settings') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/seo-settings')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">SEO Settings</span></a>
+                </li>  
+                </ul>
             </li>
             @endif
 
+            <li class="nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="User">Home Page Manage</span></a>
+                <ul class="menu-content"> 
+                    
+            
+                    <li class="{{Request::is('home/what-to-do-list') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home/what-to-do-list')}}"><i data-feather="circle"></i><span class="menu-item  text-truncate" data-i18n="User">What we Do Section</span></a></li>
+
+                    <li class="{{Request::is('home-about') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{ url('/home-about') }}"><i data-feather="circle"></i><span class="menu-item  text-truncate" data-i18n="User">About Us Section</span></a></li>
+
+                    <li class="nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="award"></i><span class="menu-item  text-truncate" data-i18n="User">Award Section</span></a>
+                        
+                        <ul class="menu-content"> 
+                            <li class="{{Request::is('/home/static-section') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home/static-section')}}"><i data-feather="circle"></i><span class="menu-item  text-truncate" data-i18n="User">Static Section</span></a></li>
+
+
+                            <li class="{{Request::is('/home/award-section') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home/award-section')}}"><i data-feather="circle"></i><span class="menu-item  text-truncate" data-i18n="User">Award Section</span></a></li>
+                    
+                        </ul>
+                    
+                    
+                    </li>
+               </ul>
+            </li>
+
             @endif
 
+           @php
+             $hasEventsAll = \Illuminate\Support\Facades\Route::has('admin.events.all');
+             $hasEventsCat = \Illuminate\Support\Facades\Route::has('admin.events.category.all');
+             $showEvents   = $hasEventsAll || $hasEventsCat;
+           @endphp
+           @if ($showEvents)
+           <li class="nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="clock"></i><span class="menu-title text-truncate" data-i18n="User">Event Manage</span></a>
+                <ul class="menu-content">
+                    @if ($hasEventsAll)
+                    <li class="{{ Request::is('admin-home/events') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{ route('admin.events.all') }}"><i data-feather="circle"></i><span class="menu-item  text-truncate" data-i18n="User">All Events</span></a>
+                    </li>
+                    @endif
+                    @if ($hasEventsCat)
+                    <li class="{{ Request::is('admin-home/events/category') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{ route('admin.events.category.all') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Category</span></a>
+                    </li>
+                    @endif
+               </ul>
+            </li>
+            @endif
         </ul>
     </div>
 </div>

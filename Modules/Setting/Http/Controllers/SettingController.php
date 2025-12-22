@@ -115,6 +115,10 @@ class SettingController extends Controller
         $set->linkdin_url = $request->linkdin_url; 
         $set->twitter = $request->twitter; 
          $set->youtube = $request->youtube; 
+        // Optional: map/location embed or URL (if provided in the general form)
+        if ($request->has('map_embed')) {
+            $set->map_embed = $request->input('map_embed');
+        }
         $set->save();
         return redirect()->back()->with('message','Updated Setting Successfully!');
     }
@@ -254,7 +258,9 @@ public function update_smtp_settings(Request $request)
     $env_val['MAIL_PASSWORD'] = !empty($request->site_smtp_mail_password) ? $request->site_smtp_mail_password : 'YOUR_SMTP_MAIL_USERNAME_PASSWORD';
     $env_val['MAIL_ENCRYPTION'] = !empty($request->site_smtp_mail_encryption) ? $request->site_smtp_mail_encryption : 'YOUR_SMTP_MAIL_ENCRYPTION';
 
-    setEnvValue($env_val);
+    foreach ($env_val as $k => $v) {
+        try { $this->setEnv($k, $v); } catch (\Throwable $e) {}
+    }
 
     return redirect()->back()->with('message','Updated Smtp Setting Successfully!');
 }
@@ -315,8 +321,8 @@ public function seo_settings()
     return view('setting::settings.seo_settings.seo');
 }
 
-public function update_seo_settings(Request $request)
-{
+    public function update_seo_settings(Request $request)
+    {
 
     $request->validate([
             'site_meta_tags' => 'required|string',
@@ -331,8 +337,22 @@ public function update_seo_settings(Request $request)
 
 
     return redirect()->back()->with('message','Updated SEO Setting Successfully!');
-}
+    }
 
+    /**
+     * Update only the location/map embed setting.
+     */
+    public function update_location(Request $request)
+    {
+        $request->validate([
+            'map_embed' => ['nullable','string'],
+        ]);
 
+        $set = Setting::first() ?? new Setting();
+        $set->map_embed = $request->input('map_embed');
+        $set->save();
+
+        return redirect()->back()->with('message', 'Location settings updated successfully!');
+    }
 
  }

@@ -121,8 +121,19 @@
 }
   </style>
 
+@php
+  $__about = ['title'=>'About Us','mission'=>null,'vision'=>null,'values'=>null];
+  try {
+    $p = storage_path('app/home_about.json');
+    if (is_file($p)) {
+      $j = json_decode(file_get_contents($p), true);
+      if (is_array($j)) { $__about = array_merge($__about, $j); }
+    }
+  } catch (Throwable $e) {}
+@endphp
+
 <main class="about2-wrap">
-  <div class="about2-heading">About Us</div>
+  <div class="about2-heading">{{ $__about['title'] ?: 'About Us' }}</div>
 
   <div class="about2-tabs" role="tablist" aria-label="About tabs dark">
     <button class="about2-tab" role="tab" id="about2-t-mission"
@@ -141,33 +152,41 @@
 
   {{-- MISSION --}}
   <section id="about2-p-mission" class="about2-card about2-justify"
-           role="tabpanel" aria-labelledby="about2-t-mission">
+            role="tabpanel" aria-labelledby="about2-t-mission">
     <h3>Our Mission</h3>
-    <p>
-      {{$setting->title}} is a non-profit organisation dedicated to the
-      holistic development of underprivileged children, women and vulnerable
-      communities. Our mission is to provide access to <b>education, healthcare,
-      nutrition, livelihood support and social security</b> so that every person
-      can live with dignity, confidence and self-reliance.
-    </p>
+    @if(!empty($__about['mission']))
+      {!! $__about['mission'] !!}
+    @else
+      <p>
+        {{$setting->title}} is a non-profit organisation dedicated to the
+        holistic development of underprivileged children, women and vulnerable
+        communities. Our mission is to provide access to <b>education, healthcare,
+        nutrition, livelihood support and social security</b> so that every person
+        can live with dignity, confidence and self-reliance.
+      </p>
+    @endif
    
     <a href="{{ url('/user-donate') }}" class="about2-btn">Donate Now 🧡</a>
   </section>
 
   {{-- VISION --}}
   <section id="about2-p-vision" class="about2-card about2-hidden about2-justify"
-           role="tabpanel" aria-labelledby="about2-t-vision">
+            role="tabpanel" aria-labelledby="about2-t-vision">
     <h3>Our Vision</h3>
-    <p>
-      We envision a <b>strong, inclusive and compassionate India</b> where every
-      child learns, every woman is empowered, and every vulnerable family has a
-      fair chance to build a better future.
-    </p>
-    <p>
-      {{$setting->title}} strives for communities where there is
-      <b>no hunger, no discrimination and no denial of basic rights</b> – only
-      opportunities, dignity and hope for all.
-    </p>
+    @if(!empty($__about['vision']))
+      {!! $__about['vision'] !!}
+    @else
+      <p>
+        We envision a <b>strong, inclusive and compassionate India</b> where every
+        child learns, every woman is empowered, and every vulnerable family has a
+        fair chance to build a better future.
+      </p>
+      <p>
+        {{$setting->title}} strives for communities where there is
+        <b>no hunger, no discrimination and no denial of basic rights</b> - only
+        opportunities, dignity and hope for all.
+      </p>
+    @endif
     <a href="{{ url('/user-donate') }}" class="about2-btn">Donate Now 🧡</a>
   </section>
 
@@ -177,15 +196,19 @@
          role="tabpanel"
          aria-labelledby="about2-t-values">
   <h3>Our Values</h3>
-  <p>
-    Every initiative of {{ $setting->title }} is guided by our core values:
-  </p>
-  <ul>
-    <li><b>Compassion:</b> Serving with empathy, respect and sensitivity.</li>
-    <li><b>Integrity & Transparency:</b>Using every donation responsibly and honestly.</li>
-    <li><b>Equity & Inclusion:</b>Reaching the most marginalised without any bias of caste, religion, gender or region.</li>
-    <li><b>Seva (Service):</b>Believing that service to people in need is the highest form of duty.</li>
-  </ul>
+  @if(!empty($__about['values']))
+    {!! $__about['values'] !!}
+  @else
+    <p>
+      Every initiative of {{ $setting->title }} is guided by our core values:
+    </p>
+    <ul>
+      <li><b>Compassion:</b> Serving with empathy, respect and sensitivity.</li>
+      <li><b>Integrity & Transparency:</b>Using every donation responsibly and honestly.</li>
+      <li><b>Equity & Inclusion:</b>Reaching the most marginalised without any bias of caste, religion, gender or region.</li>
+      <li><b>Seva (Service):</b>Believing that service to people in need is the highest form of duty.</li>
+    </ul>
+  @endif
   <a href="{{ url('/user-donate') }}" class="about2-btn">Donate Now 🧡</a>
 </section>
 </main>
