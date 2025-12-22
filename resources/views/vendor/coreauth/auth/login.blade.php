@@ -49,7 +49,7 @@
           <div class="form-group">
             <div class="d-flex justify-content-between">
               <label class="form-label" for="login-password">Password</label>
-              <a href="{{ route('password.request') }}"><small>Forgot Password?</small></a>
+              <a href="{{ route('password.request') }}"><small>xxxForgot Password?</small></a>
             </div>
             <div class="input-group input-group-merge form-password-toggle">
               <input id="login-password" class="form-control form-control-merge" type="password" name="password" required placeholder="********" />
