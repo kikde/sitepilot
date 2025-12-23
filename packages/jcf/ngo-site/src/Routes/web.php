@@ -34,6 +34,7 @@ Route::middleware(['web', 'tenant', ShareNgoViewData::class])->group(function ()
 
         Route::get('/our-management-body', [FrontendController::class, 'managementTeam']);
         Route::get('/our-donors', [FrontendController::class, 'donors']);
+        Route::get('/donors', [FrontendController::class, 'donors']);
         Route::get('/our-members', [FrontendController::class, 'members']);
 
         Route::get('/user-donate', [FrontendController::class, 'donateNow']);
@@ -41,7 +42,11 @@ Route::middleware(['web', 'tenant', ShareNgoViewData::class])->group(function ()
         Route::get('/crowdfunding/{id}/{slug?}', [FrontendController::class, 'crowdfundingDetails']);
 
         Route::get('/news-post', [FrontendController::class, 'newsIndex']);
-        Route::get('/news-details/{id}/{slug?}', [FrontendController::class, 'newsDetails']);
+        Route::get('/donations', [FrontendController::class, 'donations']);
+        
+
+        // Legacy thank-you fallback
+        Route::view('/thank-you', 'frontend.pages.thank-you');
 
         Route::get('/complain-form', [FrontendController::class, 'complainForm']);
 
@@ -81,6 +86,7 @@ Route::middleware(['web', 'tenant', ShareNgoViewData::class])->group(function ()
 
         Route::get('/our-management-body', [FrontendController::class, 'managementTeam']);
         Route::get('/our-donors', [FrontendController::class, 'donors']);
+        Route::get('/donors', [FrontendController::class, 'donors']);
         Route::get('/our-members', [FrontendController::class, 'members']);
 
         Route::get('/user-donate', [FrontendController::class, 'donateNow']);
@@ -88,7 +94,11 @@ Route::middleware(['web', 'tenant', ShareNgoViewData::class])->group(function ()
         Route::get('/crowdfunding/{id}/{slug?}', [FrontendController::class, 'crowdfundingDetails']);
 
         Route::get('/news-post', [FrontendController::class, 'newsIndex']);
-        Route::get('/news-details/{id}/{slug?}', [FrontendController::class, 'newsDetails']);
+        Route::get('/donations', [FrontendController::class, 'donations']);
+        
+
+        // Legacy thank-you fallback
+        Route::view('/thank-you', 'frontend.pages.thank-you');
 
         Route::get('/complain-form', [FrontendController::class, 'complainForm']);
 

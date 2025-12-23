@@ -291,4 +291,23 @@ class FrontendController extends Controller
             'description' => null,
         ];
     }
+
+    public function donations()
+    {
+        $rows = collect();
+        try {
+            if (class_exists(\Modules\Page\Entities\Donation::class)) {
+                $rows = \Modules\Page\Entities\Donation::query()
+                    ->with('donor')
+                    ->where('status', 'paid')
+                    ->latest()
+                    ->paginate(12)
+                    ->withQueryString();
+            }
+        } catch (\Throwable $e) {
+            $rows = collect();
+        }
+
+        return view('frontend.pages.donations', compact('rows'));
+    }
 }
