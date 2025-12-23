@@ -1000,9 +1000,9 @@ public function search(Request $request)
     // accept either ?q= or legacy ?inputsearch=
     $term = trim($request->input('q', $request->input('inputsearch', '')));
 
-    $user = \App\Models\User::query()
+    $user = \\Modules\\User\\Entities\\User::query()
         ->with(['referrer'])
-        ->whereIn('role', [2, 0])                         // ← role filter
+        ->where('role', 2)                         // ← role filter
         ->when($term !== '', function ($q) use ($term) {   // group the OR search
             $q->where(function ($qq) use ($term) {
                 $qq->where('name',   'LIKE', "%{$term}%")
@@ -1063,7 +1063,7 @@ public function export(Request $request)
         ]);
 
         // Base query: ONLY role = 2, eager-load referrer + latestPayment
-        $q = \App\Models\User::query()
+        $q = \\Modules\\User\\Entities\\User::query()
             ->select(['id','name','email','mobile','referrer_id','useractive','valid_upto','role'])
             ->with([
                 'referrer:id,name',
