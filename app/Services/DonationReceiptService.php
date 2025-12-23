@@ -20,7 +20,7 @@ class DonationReceiptService
             $donation->receipt_no = $this->makeReceiptNo($donation->id);
         }
 
-        $html = ViewFacade::make('page::donations.receipt-pdf', compact('donation'))->render();
+        $html = ->loadMissing('donor');\n        try {\\ = \\Modules\\Setting\\Entities\\Setting::query()->first(); } catch (\\Throwable \\) { \\ = null; }\n        \\  = \\->donor;\n        \\ = is_numeric(\\->amount_paise ?? null) ? ((float) \\->amount_paise)\/100 : ((float)(\\->amount ?? 0));\n        \\   = optional(\\->created_at)->format('d-m-Y') ?? date('d-m-Y');\n        \\ = ViewFacade::make('page::donations.receipt-pdf', compact('donation','setting','donor','amount','date'))->render();
 
         // Render PDF via Dompdf
         $dompdf = new Dompdf();
