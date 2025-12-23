@@ -33,8 +33,7 @@ class DonationReceiptMail extends Mailable
             ? ((float) $donation->amount_paise) / 100
             : ((float) ($donation->amount ?? 0));
 
-        $mail = $this->subject('Donation Receipt '.$donation->receipt_no)
-                     ->view('page::donations.receipt-email', compact('donation','setting','donor','amount'));
+        $mail = $this->from(config('mail.from.address'), config('mail.from.name'))\n                     ->subject('Donation Receipt '.\->receipt_no)\n                     ->view('page::donations.receipt-email', compact('donation','setting','donor','amount'));
 
         if ($donation->receipt_pdf_path && Storage::disk('public')->exists($donation->receipt_pdf_path)) {
             $mail->attachFromStorageDisk('public', $donation->receipt_pdf_path, 'receipt-'.$donation->receipt_no.'.pdf');
