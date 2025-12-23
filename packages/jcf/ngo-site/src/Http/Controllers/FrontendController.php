@@ -242,7 +242,11 @@ class FrontendController extends Controller
 
     public function terms()
     {
-        $term = $this->findStaticPage(['terms-and-conditions', 'terms'], ['Terms', 'Terms & Conditions']);
+        // Prefer type-based lookup used in legacy admin: types = 'TC'
+        $term = Page::query()->where('types', 'TC')->first();
+        if (!$term) {
+            $term = $this->findStaticPage(['terms-and-conditions', 'terms'], ['Terms', 'Terms & Conditions']);
+        }
         $review = Testimonial::query()->latest()->limit(12)->get();
 
         return view('frontend.pages.terms', compact('term', 'review'));
@@ -250,7 +254,11 @@ class FrontendController extends Controller
 
     public function privacy()
     {
-        $privacy = $this->findStaticPage(['privacy-policy', 'privacy'], ['Privacy Policy']);
+        // Prefer type-based lookup: types = 'PP'
+        $privacy = Page::query()->where('types', 'PP')->first();
+        if (!$privacy) {
+            $privacy = $this->findStaticPage(['privacy-policy', 'privacy'], ['Privacy Policy']);
+        }
         $review = Testimonial::query()->latest()->limit(12)->get();
 
         return view('frontend.pages.policy', compact('privacy', 'review'));
@@ -258,10 +266,14 @@ class FrontendController extends Controller
 
     public function cancellationsAndRefunds()
     {
-        $term = $this->findStaticPage(
-            ['cancellation-and-refund-policy', 'cancellations-and-refunds'],
-            ['Cancellations & Refunds Policy', 'Cancellation And Refund Policy']
-        );
+        // Prefer type-based lookup: types = 'CRP' (Cancellation & Refund Policy)
+        $term = Page::query()->where('types', 'CRP')->first();
+        if (!$term) {
+            $term = $this->findStaticPage(
+                ['cancellation-and-refund-policy', 'cancellations-and-refunds'],
+                ['Cancellations & Refunds Policy', 'Cancellation And Refund Policy']
+            );
+        }
         $review = Testimonial::query()->latest()->limit(12)->get();
 
         return view('frontend.pages.terms', compact('term', 'review'));
