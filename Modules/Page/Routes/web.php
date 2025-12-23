@@ -100,7 +100,77 @@ Route::post('/donation/autopay/start', [DonarsController::class, 'startDonationA
 Route::post('/donation/autopay/callback', [DonarsController::class, 'autopayCallback'])
     ->name('donate.autopay.callback');
 
-//==================================Donations Ends========================================//
+    // Receipt actions
+    Route::post('/donations/{donation}/receipt', [DonarsController::class, 'adminGenerateReceipt'])
+        ->name('donations.receipt.generate');
+    Route::get('/donations/{donation}/receipt', [DonarsController::class, 'adminDownloadReceipt'])
+        ->name('donations.receipt.download');
+    Route::post('/donations/{donation}/email', [DonarsController::class, 'adminEmailReceipt'])
+        ->name('donations.receipt.email');
+
+    // ====== Events (admin UI only; views copied from jcf backend) ======
+    // Keep these simple closures for now; replace with controller later.
+    $eventMw = ['web', 'auth', 'tenant', 'license', 'seat', 'permission:content.manage'];
+
+    Route::middleware($eventMw)->group(function () {
+        // List pages with safe defaults so blades render without DB layer
+        Route::get('/admin-home/events', [\Modules\Page\Http\Controllers\EventController::class, 'index'])->name('admin.events.all');
+
+        Route::get('/admin-home/events/category', function () {
+            try {
+                $cats = \Modules\Page\Entities\EventCategory::orderByDesc('id')->get();
+            } catch (\Throwable $e) {
+                $cats = collect();
+            }
+            return view('backend.events.all-events-category', [
+                'all_category' => $cats,
+            ]);
+        })
+            ->name('admin.events.category.all');
+
+        Route::get('/admin-home/events/new', [\Modules\Page\Http\Controllers\EventController::class, 'create'])->name('admin.events.new');
+        Route::post('/admin-home/events/new', [\Modules\Page\Http\Controllers\EventController::class, 'store'])->name('admin.events.store');
+
+        Route::get('/admin-home/events/{id}/edit', [\Modules\Page\Http\Controllers\EventController::class, 'edit'])
+            ->name('admin.events.edit');
+        Route::post('/admin-home/events/{id}/edit', [\Modules\Page\Http\Controllers\EventController::class, 'update'])
+            ->name('admin.events.update');
+
+        // Actions (no-op placeholders so views don't 500 on route() helpers)
+        Route::post('/admin-home/events/category/new', [\Modules\Page\Http\Controllers\EventCategoryController::class, 'store'])
+            ->name('admin.events.category.new');
+        Route::post('/admin-home/events/category/update', [\Modules\Page\Http\Controllers\EventCategoryController::class, 'update'])
+            ->name('admin.events.category.update');
+        Route::post('/admin-home/events/category/delete/{id}', [\Modules\Page\Http\Controllers\EventCategoryController::class, 'delete'])
+            ->name('admin.events.category.delete');
+        Route::post('/admin-home/events/category/bulk-action', [\Modules\Page\Http\Controllers\EventCategoryController::class, 'bulkAction'])
+            ->name('admin.events.category.bulk.action');
+
+        Route::post('/admin-home/events/clone', [\Modules\Page\Http\Controllers\EventController::class, 'clone'])->name('admin.events.clone');
+        Route::post('/admin-home/events/delete/{id}', [\Modules\Page\Http\Controllers\EventController::class, 'delete'])
+            ->name('admin.events.delete');
+
+        // Optional supporting pages present in the jcf views directory
+        Route::get('/admin-home/events/attendance', fn () => view('backend.events.event-attendance-all'))
+            ->name('admin.events.attendance.all');
+        Route::get('/admin-home/events/attendance/{id}', fn ($id) => view('backend.events.attendance-view', compact('id')))
+            ->name('admin.events.attendance.view');
+        Route::get('/admin-home/events/attendance-report', fn () => view('backend.events.attendance-report'))
+            ->name('admin.events.attendance.report');
+
+        Route::get('/admin-home/events/payments', fn () => view('backend.events.event-payment-logs-all'))
+            ->name('admin.events.payment.logs');
+        Route::get('/admin-home/events/payments/{id}', fn ($id) => view('backend.events.payment-log-view', compact('id')))
+            ->name('admin.events.payment.view');
+
+        Route::get('/admin-home/events/page-manage', fn () => view('backend.events.page-manage'))
+            ->name('admin.events.page.manage');
+        Route::get('/admin-home/events/page-settings', fn () => view('backend.events.event-page-settings'))
+            ->name('admin.events.page.settings');
+        Route::get('/admin-home/events/single-page-settings', fn () => view('backend.events.event-single-page-settings'))
+            ->name('admin.events.single.settings');
+    });
+
 
 
 //--------------------------------Success Story------------------------------//
@@ -112,3 +182,7 @@ Route::post('/donation/autopay/callback', [DonarsController::class, 'autopayCall
         Route::resource('/succes-story-category', 'SuccessStoryCategoryController');
     });
 // });
+
+
+
+

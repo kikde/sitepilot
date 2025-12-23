@@ -61,6 +61,12 @@
 
   /* Table wrapper if you keep the table below */
   .table-wrap{ overflow:auto; }
+
+  /* Prevent any horizontal scroll on this page */
+  .content-wrapper{ overflow-x: hidden; }
+  .don-grid{ overflow-x: hidden; }
+  .don-card{ max-width: 100%; }
+  .don-card img{ max-width: 100%; height: auto; }
 </style>
 
 <div class="content-wrapper">
@@ -144,9 +150,25 @@
               </div>
             </div>
 
-            {{-- Footer --}}
-            <div class="foot">
-              {{ optional($r->created_at)->format('d M Y, h:i A') }}
+            {{-- Footer: actions + date --}}
+            <div class="foot d-flex align-items-center justify-content-between flex-wrap gap-2">
+              <div class="d-flex align-items-center gap-1">
+                @if($r->status === 'paid')
+                  @if(empty($r->receipt_pdf_path))
+                    <form method="post" action="{{ route('donations.receipt.generate', $r) }}">@csrf
+                      <button class="btn btn-sm btn-outline-primary" type="submit">Generate Receipt</button>
+                    </form>
+                  @else
+                    <a class="btn btn-sm btn-outline-secondary" href="{{ route('donations.receipt.download', $r) }}">Download</a>
+                    @if(optional($r->donor)->email)
+                      <form method="post" action="{{ route('donations.receipt.email', $r) }}" class="d-inline">@csrf
+                        <button class="btn btn-sm btn-outline-success" type="submit">Email</button>
+                      </form>
+                    @endif
+                  @endif
+                @endif
+              </div>
+              <span>{{ optional($r->created_at)->format('d M Y, h:i A') }}</span>
             </div>
           </div>
         </div>
@@ -187,3 +209,4 @@
   });
 </script>
 @endsection
+

@@ -38,6 +38,15 @@ return [
             'report' => false,
         ],
 
+        // Alias for private storage used by uploads in member registration
+        'private' => [
+            'driver' => 'local',
+            'root' => storage_path('app/private'),
+            'serve' => true,
+            'throw' => false,
+            'report' => false,
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

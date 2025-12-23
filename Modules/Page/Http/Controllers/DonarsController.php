@@ -463,4 +463,42 @@ class DonarsController extends Controller
 
         return redirect()->to('/thank-you')->with('message', 'UPI Autopay setup successful! Thank you for starting recurring donations.');
     }
+
+    public function adminGenerateReceipt(Donation $donation)
+    {
+        try {
+            app(\App\Services\DonationReceiptService::class)->createAndStorePdf($donation);
+            return back()->with('message', 'Receipt generated successfully.');
+        } catch (\Throwable $e) {
+            return back()->with('error', 'Failed to generate receipt: '.$e->getMessage());
+        }
+    }
+
+    public function adminDownloadReceipt(Donation $donation)
+    {
+        $path = $donation->receipt_pdf_path;
+        if ($path && \Illuminate\Support\Facades\Storage::disk('public')->exists($path)) {
+            return \Illuminate\Support\Facades\Storage::disk('public')->download($path, 'receipt-'.$donation->receipt_no.'.pdf');
+        }
+        return back()->with('error', 'Receipt PDF not found. Please generate it first.');
+    }
+
+    public function adminEmailReceipt(Donation $donation)
+    {
+        try {
+            if (empty($donation->receipt_pdf_path)) {
+                app(\App\Services\DonationReceiptService::class)->createAndStorePdf($donation);
+            }
+            if (!$donation->relationLoaded('donor')) $donation->load('donor');
+            if (!($donation->donor?->email)) {
+                return back()->with('error', 'Donor does not have an email address.');
+            }
+            \Illuminate\Support\Facades\Mail::to($donation->donor->email)->send(new \App\Mail\DonationReceiptMail($donation));
+            $donation->update(['emailed_at' => now()]);
+            return back()->with('message', 'Receipt emailed successfully.');
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\Log::warning('Admin email receipt failed', ['donation_id' => $donation->id, 'error' => $e->getMessage()]);
+            return back()->with('error', 'Failed to send email: '.$e->getMessage());
+        }
+    }
 }

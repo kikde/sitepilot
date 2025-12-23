@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Jcf\NgoSite\Http\Controllers\FrontendController;
 use Jcf\NgoSite\Http\Middleware\ShareNgoViewData;
+use Illuminate\Support\Facades\Mail;
 
 Route::get('/', function () {
     $platformHost = parse_url((string) config('app.url', ''), PHP_URL_HOST);
@@ -40,6 +41,27 @@ Route::middleware(['web','auth','platform'])->prefix('admin')->group(function ()
         return view('admin.demo');
     });
 });
+
+// Simple test mail endpoint to verify SMTP configuration quickly.
+// Usage: /send-mail?to=user@example.com
+Route::get('/send-mail', function (Request $request) {
+    $to = (string) $request->query('to', (string) config('mail.from.address'));
+    if (!$to) {
+        return response('No recipient resolved. Provide ?to=address or set mail.from.address', 400);
+    }
+    try {
+        $subject = 'Test Mail - '.(string) config('app.name');
+        $body    = 'This is a test email from '.request()->getHost().' at '.now()->toDateTimeString().'.';
+
+        Mail::raw($body, function ($m) use ($to, $subject) {
+            $m->to($to)->subject($subject);
+        });
+
+        return response('Mail sent to '.$to, 200);
+    } catch (\Throwable $e) {
+        return response('Mail error: '.$e->getMessage(), 500);
+    }
+})->name('util.send-mail');
 
 // Public tenant resolver debug (safe): helps verify domain->tenant mapping locally.
 Route::middleware(['web'])->get('/_tenant/resolve', function (Request $request) {
