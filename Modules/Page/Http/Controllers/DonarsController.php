@@ -282,7 +282,7 @@ class DonarsController extends Controller
             'amountPaise'    => $amtPaise,
             'donor'          => $donor,
             'donation'       => $donation,
-            'callbackRoute'  => route('donate.callback'), // POST target from Checkout
+            'callbackRoute'  => (\\Illuminate\\Support\\Facades\\Route::has('donate.callback') ? route('donate.callback') : (\\Illuminate\\Support\\Facades\\Route::has('ngo.donate.callback') ? route('ngo.donate.callback') : url('/donate/callback'))), // POST target from Checkout
         ]);
     }
 
