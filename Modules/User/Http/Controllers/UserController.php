@@ -1063,7 +1063,7 @@ public function export(Request $request)
         ]);
 
         // Base query: ONLY role = 2, eager-load referrer + latestPayment
-        $q = \\Modules\\User\\Entities\\User::query()
+        $q = \Modules\User\Entities\User::query()
             ->select(['id','name','email','mobile','referrer_id','useractive','valid_upto','role'])
             ->with([
                 'referrer:id,name',
