@@ -4,7 +4,6 @@ namespace App\Services;
 
 use Dompdf\Dompdf;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\View as ViewFacade;
 use Modules\Page\Entities\Donation;
 
@@ -20,7 +19,21 @@ class DonationReceiptService
             $donation->receipt_no = $this->makeReceiptNo($donation->id);
         }
 
-        $html = ->loadMissing('donor');\n        try {\\ = \\Modules\\Setting\\Entities\\Setting::query()->first(); } catch (\\Throwable \\) { \\ = null; }\n        \\  = \\->donor;\n        \\ = is_numeric(\\->amount_paise ?? null) ? ((float) \\->amount_paise)\/100 : ((float)(\\->amount ?? 0));\n        \\   = optional(\\->created_at)->format('d-m-Y') ?? date('d-m-Y');\n        \\ = ViewFacade::make('page::donations.receipt-pdf', compact('donation','setting','donor','amount','date'))->render();
+        // Build view data
+        $donation->loadMissing('donor');
+        try {
+            $setting = \Modules\Setting\Entities\Setting::query()->first();
+        } catch (\Throwable $e) {
+            $setting = null;
+        }
+        $donor  = $donation->donor;
+        $amount = is_numeric($donation->amount_paise ?? null)
+            ? ((float) $donation->amount_paise) / 100
+            : ((float) ($donation->amount ?? 0));
+        $date   = optional($donation->created_at)->format('d-m-Y') ?? date('d-m-Y');
+
+        $html = ViewFacade::make('page::donations.receipt-pdf', compact('donation','setting','donor','amount','date'))
+            ->render();
 
         // Render PDF via Dompdf
         $dompdf = new Dompdf();
@@ -29,9 +42,9 @@ class DonationReceiptService
         $dompdf->render();
         $output = $dompdf->output();
 
-        $folder = 'receipts/'.date('Y/m');
-        $filename = 'receipt-'.$donation->receipt_no.'.pdf';
-        $path = trim($folder.'/'.$filename, '/');
+        $folder = 'receipts/' . date('Y/m');
+        $filename = 'receipt-' . $donation->receipt_no . '.pdf';
+        $path = trim($folder . '/' . $filename, '/');
 
         Storage::disk('public')->put($path, $output);
 
@@ -41,6 +54,6 @@ class DonationReceiptService
 
     protected function makeReceiptNo(int $id): string
     {
-        return 'DN'.date('Ymd').'-'.str_pad((string)$id, 6, '0', STR_PAD_LEFT);
+        return 'DN' . date('Ymd') . '-' . str_pad((string) $id, 6, '0', STR_PAD_LEFT);
     }
 }
