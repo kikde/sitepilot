@@ -38,7 +38,15 @@
 
                             <form class="auth-register-form mt-2" action="{{ $donateAction }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <div class="row clearfix">
+@if($errors->any())
+  <div class="alert alert-danger" role="alert">
+    <ul class="mb-0" style="margin:0;padding-left:18px;">
+      @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+@endif                                <div class="row clearfix">
                                     <div class="col-lg-12 col-md-6 col-sm-12 column">
                                         <div class="field-input">
                                             <input type="text" name="name" placeholder="Name" required>
