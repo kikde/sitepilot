@@ -19,15 +19,25 @@ class DonationReceiptMail extends Mailable
         $this->donation = $donation;
     }
 
-    public function build()
+        public function build()
     {
-        $mail = $this->subject('Donation Receipt '.$this->donation->receipt_no)
-                     ->view('page::donations.receipt-email', [
-                         'donation' => $this->donation,
-                     ]);
+        $this->donation->loadMissing('donor');
+        try {
+            $setting = \Modules\Setting\Entities\Setting::query()->first();
+        } catch (\Throwable $e) {
+            $setting = null;
+        }
+        $donation = $this->donation;
+        $donor    = $donation->donor;
+        $amount   = is_numeric($donation->amount_paise ?? null)
+            ? ((float) $donation->amount_paise) / 100
+            : ((float) ($donation->amount ?? 0));
 
-        if ($this->donation->receipt_pdf_path && Storage::disk('public')->exists($this->donation->receipt_pdf_path)) {
-            $mail->attachFromStorageDisk('public', $this->donation->receipt_pdf_path, 'receipt-'.$this->donation->receipt_no.'.pdf');
+        $mail = $this->subject('Donation Receipt '.$donation->receipt_no)
+                     ->view('page::donations.receipt-email', compact('donation','setting','donor','amount'));
+
+        if ($donation->receipt_pdf_path && Storage::disk('public')->exists($donation->receipt_pdf_path)) {
+            $mail->attachFromStorageDisk('public', $donation->receipt_pdf_path, 'receipt-'.$donation->receipt_no.'.pdf');
         }
 
         return $mail;
