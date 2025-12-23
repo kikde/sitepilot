@@ -91,6 +91,29 @@ return [
 
 ],
 
+'desg' => [
+    "Member"=>"Member",
+    "Incharge(Distt.)"=>"Incharge(Distt.)",
+    "Add.Incharge(Distt.)"=>"Add.Incharge(Distt)",
+    "Secretary(Distt)"=>"Secretary(Distt)",
+    "Spoke Person(Distt)" => "Spoke Person(Distt)",
+    "Executive Member(Distt.)" => "Executive Member(Distt)",
+    "Head (State)" => "Head (State)",
+    "Add.Incharge(State)"=>"Add.Incharge(State)",
+    "Secretary(State)"=>"Secretary(State)",
+    "Spoke Person(State)" => "Spoke Person(State)",
+    "Exe. Member(State)" => "Exe. Member(State)",
+    "Dist. Coordinator" => "Dist. Coordinator",
+],
+
+'bpscell' => [
+
+    "Media Cell" => "Media Cell",
+    "social Cell" => "social Cell",
+    "RTI & Leagel Cell" => "RTI & LeagelRTI & Leagel Cell",
+    "Women Cell" => "Women Cell",
+],
+
 
 'state' =>[
 
