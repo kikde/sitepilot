@@ -44,8 +44,11 @@ Route::post('/fetch-cities', [RegistrationController::class, 'fetchCitiesByState
     ->name('fetch.cities');
 
 
-Route::get('/member/payment', [PaymentController::class, 'showPaymentPage'])
-    ->name('payment');
+// Public member payment needs frontend shared view data for header/menu
+Route::middleware(['web', 'tenant', ShareNgoViewData::class])->group(function () {
+    Route::get('/member/payment', [PaymentController::class, 'showPaymentPage'])
+        ->name('payment');
+});
 
 Route::post('/member/payment/callback', [PaymentController::class, 'handleCallback'])
     ->name('payment.callback');
