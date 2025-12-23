@@ -146,16 +146,20 @@
                         <h4>Quick Donation - Just Scan</h4>
                         <div class="inner-box">
                             @php
-    $donateAction = null;
-    if (\Illuminate\Support\Facades\Route::has('donate.start')) {
-        $donateAction = route('donate.start');
-    } elseif (\Illuminate\Support\Facades\Route::has('ngo.donate.start')) {
-        $donateAction = route('ngo.donate.start');
-    } elseif (\Illuminate\Support\Facades\Route::has('donate.autopay.start')) {
-        $donateAction = route('donate.autopay.start');
-    } else {
-        $donateAction = url('/donate/start');
+  // Build QR image/file URL from bank records if available
+  $qrSrc = null;
+  if (isset($banks)) {
+    foreach ($banks as $b) {
+      $m = json_decode($b->message ?? '', true);
+      if (is_array($m) && !empty($m['qr'])) { $qrSrc = asset('storage/'.$m['qr']); break; }
     }
+  }
+  $isImage = false;
+  if ($qrSrc) {
+    $pathPart = parse_url($qrSrc, PHP_URL_PATH);
+    $ext = strtolower(pathinfo($pathPart, PATHINFO_EXTENSION));
+    $isImage = in_array($ext, ['jpg','jpeg','png','webp','gif','svg']);
+  }
 @endphp
                             @if($qrSrc && $isImage)
                               <figure class="image-box"><img src="{{ $qrSrc }}" alt="Donation QR"></figure>
