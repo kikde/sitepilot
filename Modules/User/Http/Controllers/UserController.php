@@ -549,9 +549,8 @@ public function usersIndex()
 
     $query = User::query()
         ->whereNull('deleted_at')
-        ->where(function ($q) {
-            $q->where('role', 2)->orWhere('role', 0);
-        })
+        // Only members (role=2)
+        ->where('role', 2)
         ->with([
             'latestPayment' => function ($q) {
                 $q->select(
