@@ -35,4 +35,13 @@ return [
         ],
     ],
 
+    'razorpay' => [
+        'key'                => env('RAZORPAY_KEY_ID'),
+        'secret'             => env('RAZORPAY_KEY_SECRET'),
+        // Optional plan IDs for Autopay flows
+        'donation_plan_id'   => env('RAZORPAY_DONATION_PLAN_ID'),
+        'membership_plan_id' => env('RAZORPAY_MEMBERSHIP_PLAN_ID'),
+        // Webhook secret, if you configure webhooks in Razorpay dashboard
+        'webhook_secret'     => env('RAZORPAY_WEBHOOK_SECRET'),
+    ],
 ];
