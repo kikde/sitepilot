@@ -1,5 +1,5 @@
 <!-- Page Title -->
- <section class="page-title style-two centred" style="background-image: url({{ asset('frontend/assets/images/background/donation.png') }});">
+<section class="page-title style-two centred" style="background-image: url({{ asset('frontend/assets/images/background/donation.png') }});">
     <div class="auto-container">
         <div class="content-box">
             <div class="title">
@@ -14,7 +14,6 @@
     </div>
 </section>
 
-<!-- checkout-page-section -->
 <section class="checkout-page-section">
     <div class="auto-container">
         <div class="order-information">
@@ -23,7 +22,8 @@
                     <div class="information-inner">
                         <div class="shopping-address">
                             <h3 style="color: #0a267a !important">Donate Directly to the Foundation Online</h3>
-                                @php
+
+@php
     $donateAction = null;
     if (\Illuminate\Support\Facades\Route::has('donate.start')) {
         $donateAction = route('donate.start');
@@ -35,121 +35,102 @@
         $donateAction = url('/donate/start');
     }
 @endphp
-<form class="auth-register-form mt-2" action="{{ $donateAction }}"
-                                method="POST" enctype="multipart/form-data">
+
+                            <form class="auth-register-form mt-2" action="{{ $donateAction }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                            <div class="row clearfix">
-                                <div class="col-lg-12 col-md-6 col-sm-12 column">
-                                <div class="field-input">
-                                    <input type="text" name="name" placeholder="Name" required="">
-                                </div>
-                                </div>
-                                <div class="col-lg-12 col-md-6 col-sm-12 column">
-                                <div class="field-input">
-                                    <input type="email" name="email" placeholder="Email" required="">
-                                </div>
-                               </div>
-                                <div class="col-lg-12 col-md-6 col-sm-12 column">
-                                <div class="field-input">
-                                    <input type="text" name="mobile" inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit mobile" required>
-                                </div>
-                                </div>
-
-                                
-
-                                <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                    
-                                        <!-- Real select kept for submission (hidden visually) -->
-                                        <select name="state" id="don-state" style="display:none;">
-                                            <option value="">Select State</option>
-                                            @foreach($getlist as $key=>$value)
-                                              <option value="{{$key}}" @selected(old('state')===$key)>{{$key}}</option>
-                                            @endforeach
-                                        </select>
-
-                                        <!-- Custom searchable select widget (single search input inside dropdown) -->
-                                        <div id="don-state-custom" class="mr-select-search">
-                                            <div class="mr-select-display">Select State</div>
-                                            <div class="mr-select-dropdown">
-                                                <input type="text" class="mr-select-input" placeholder="Search state...">
-                                                <div class="mr-select-options"></div>
-                                            </div>
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 col-md-6 col-sm-12 column">
+                                        <div class="field-input">
+                                            <input type="text" name="name" placeholder="Name" required>
                                         </div>
-
+                                    </div>
+                                    <div class="col-lg-12 col-md-6 col-sm-12 column">
+                                        <div class="field-input">
+                                            <input type="email" name="email" placeholder="Email" required>
                                         </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-6 col-sm-12 column">
+                                        <div class="field-input">
+                                            <input type="text" name="mobile" inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit mobile" required>
+                                        </div>
+                                    </div>
 
-                                        <!-- Custom searchable select widget (single search input inside dropdown) -->
-                                        <div id="don-state-custom" class="mr-select-search">
-                                            <div class="mr-select-display">Select State</div>
-                                            <div class="mr-select-dropdown">
-                                                <input type="text" class="mr-select-input" placeholder="Search state...">
-                                                <div class="mr-select-options"></div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 column">
+                                        <div class="field-input" id="don-state-field">
+                                            <select name="state" id="don-state" style="display:none;">
+                                                <option value="">Select State</option>
+                                                @foreach($getlist as $key=>$value)
+                                                    <option value="{{$key}}" @selected(old('state')===$key)>{{$key}}</option>
+                                                @endforeach
+                                            </select>
+
+                                            <div id="don-state-custom" class="mr-select-search">
+                                                <div class="mr-select-display">Select State</div>
+                                                <div class="mr-select-dropdown">
+                                                    <input type="text" class="mr-select-input" placeholder="Search state...">
+                                                    <div class="mr-select-options"></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                    <div class="field-input">
-                                        <input type="text" name="city" placeholder="City" required="">
-                                        {{-- <select class="wide" id="city">
-                                            <option data-display="Select City">Select City</option>
-                                        </select> --}}
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 column">
+                                        <div class="field-input">
+                                            <input type="text" name="city" placeholder="City" required>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-12 col-md-6 col-sm-12 column">
-                                    <div class="field-input">
-                                        <input type="text" name="address" placeholder="Address" required="">
-                                        
+
+                                    <div class="col-lg-12 col-md-6 col-sm-12 column">
+                                        <div class="field-input">
+                                            <input type="text" name="address" placeholder="Address" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 column">
+                                        <div class="field-input">
+                                            <input type="text" name="pincode" placeholder="Pin Code" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 column">
+                                        <div class="field-input">
+                                            <input type="text" name="pan_no" placeholder="Pan No.*" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-6 col-sm-12 column">
+                                        <div class="field-input">
+                                            <input type="text" name="amount" inputmode="decimal" pattern="^[0-9]+(\.[0-9]{1,2})?$" placeholder="Amount" required>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                    <div class="field-input">
-                                        <input type="text" name="pincode" placeholder="Pin Code" required="">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                    <div class="field-input">
-                                        <input type="text" name="pan_no" placeholder="Pan No.*" required="">
-                                    </div>
-                                </div>
-
-
-                                <div class="col-lg-12 col-md-6 col-sm-12 column">
                                 <div class="field-input">
-                                    <input type="text" name="amount" inputmode="decimal" pattern="^[0-9]+(\.[0-9]{1,2})?$" placeholder="Amount" required>
+                                    <div class="custom-controls-stacked">
+                                        <label class="custom-control material-checkbox">
+                                            <input type="checkbox" class="material-control-input">
+                                            <span class="material-control-indicator"></span>
+                                            <span class="description">You agree that {{$setting->title}} can reach out to you through Whatsapp/email/SMS/Phone to provide information of your donation etc.</span>
+                                        </label>
+                                    </div>
                                 </div>
+
+                                <div class="btn-box text-center">
+                                    <button type="submit" class="theme-btn-four thm-btn" tabindex="5">Pay Now</button>
                                 </div>
-                            </div>
-                            <div class="field-input">
-                                <div class="custom-controls-stacked">
-                                    <label class="custom-control material-checkbox">
-                                        <input type="checkbox" class="material-control-input">
-                                        <span class="material-control-indicator"></span>
-                                        <span class="description">You agree that {{$setting->title}} can reach out to you through Whatsapp/email/SMS/Phone to provide information of your donation etc.</span>
-                                    </label>
-                                </div>
-                            </div>
-                          
+                            </form>
                         </div>
-                        
                     </div>
-                    <div class="btn-box text-center">
-                            <button type="submit" class="theme-btn-four thm-btn" tabindex="5">Pay Now</button>
-                            
-                        </div>
-                        <br>
                 </div>
+
                 <div class="col-lg-4 col-md-12 col-sm-12 right-column">
                     <div class="order-summary">
                         <h4>Quick Donation - Just Scan</h4>
                         <div class="inner-box">
-                            @php
-  // Build QR image/file URL from bank records if available
+@php
   $qrSrc = null;
-  if (isset($banks)) {
-    foreach ($banks as $b) {
+  if(isset($banks)){
+    foreach($banks as $b){
       $m = json_decode($b->message ?? '', true);
       if (is_array($m) && !empty($m['qr'])) { $qrSrc = asset('storage/'.$m['qr']); break; }
     }
@@ -176,22 +157,21 @@
                 </div>
             </div>
         </div>
-    </form>
-        
-         @include ("frontend.partials.donate.style-22")
-     
-       @include ("frontend.partials.donor.style-1")
+
+        @include ("frontend.partials.donate.style-22")
+        @include ("frontend.partials.donor.style-1")
     </div>
 </section>
-<!-- checkout-page-section end -->
-
-
-
-
-
 
 <style>
-/* ==== Donate form: custom searchable State dropdown (same as member registration) ==== */
+/***** Donate page tidy ups *****/
+.checkout-page-section .order-information{ margin-top:24px; }
+.order-summary{ background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:16px; }
+.order-summary h4{ margin:0 0 10px; color:#0a267a; }
+.order-summary .inner-box{ text-align:center; }
+.order-summary .inner-box .image-box img{ max-width:100%; height:auto; border-radius:10px; }
+
+/* custom searchable State dropdown */
 #don-state-custom{ position:relative; font-size:15px; width:100%; }
 .mr-select-display{ border-radius:12px; border:1.5px solid #e5e7eb; background:#ffffff; cursor:pointer; height:40px; padding:0 12px; display:flex; align-items:center; }
 .mr-select-dropdown{ position:absolute; left:0; right:0; top:0; background:#ffffff; border-radius:12px; border:1.5px solid #e5e7eb; box-shadow:0 10px 24px rgba(15,23,42,.18); z-index:999; display:none; }
@@ -202,7 +182,7 @@
 .mr-select-option{ padding:7px 10px; cursor:pointer; font-size:14px; }
 .mr-select-option:hover, .mr-select-option.is-active{ background:#6366f1; color:#ffffff; }
 
-/* Hide any third‑party enhanced select UI generated for #don-state (e.g., Nice Select / Select2) */
+/* Hide any third-party enhanced select UI generated for #don-state */
 #don-state + .nice-select,
 #don-state + .select2,
 #don-state + .select2-container,
@@ -214,11 +194,7 @@
 #don-state-field .select2-container,
 #don-state-field .custom-select,
 #don-state-field .choices,
-#don-state-field .selectpicker{
-  display:none !important;
-}
-/* Ensure tel matches other inputs */
-.field-input input[type=tel]{ background:#f3f5f9; border:1px solid #e5e7eb; border-radius:12px; height:42px; }
+#don-state-field .selectpicker{ display:none !important; }
 </style>
 
 <script>
@@ -233,12 +209,9 @@
     const listBox  = wrapper.querySelector('.mr-select-options');
 
     const items = [];
-
-    // Build list from hidden <select> options
     for (let i = 0; i < select.options.length; i++) {
         const opt = select.options[i];
         if (!opt.value) continue;
-
         const div = document.createElement('div');
         div.className = 'mr-select-option';
         div.textContent = opt.text;
@@ -253,60 +226,30 @@
         filterOptions('');
         input.focus();
     }
-
-    function closeDropdown() {
-        wrapper.classList.remove('is-open');
-    }
+    function closeDropdown() { wrapper.classList.remove('is-open'); }
 
     function filterOptions(term) {
         const t = term.toLowerCase();
-        items.forEach(el => {
-            const match = el.textContent.toLowerCase().includes(t);
-            el.style.display = match ? 'block' : 'none';
-        });
+        items.forEach(el => { el.style.display = el.textContent.toLowerCase().includes(t) ? 'block' : 'none'; });
     }
 
-    // Click on display to open/close
     display.addEventListener('click', function (e) {
         e.stopPropagation();
-        if (wrapper.classList.contains('is-open')) {
-            closeDropdown();
-        } else {
-            openDropdown();
-        }
+        wrapper.classList.contains('is-open') ? closeDropdown() : openDropdown();
     });
-
-    // Filter as user types
-    input.addEventListener('input', function () {
-        filterOptions(this.value);
-    });
-
-    // Select option
+    input.addEventListener('input', function () { filterOptions(this.value); });
     listBox.addEventListener('click', function (e) {
         const item = e.target.closest('.mr-select-option');
         if (!item) return;
-
-        select.value = item.dataset.value;      // update real select
-        display.textContent = item.textContent; // show selected text
-
+        select.value = item.dataset.value;
+        display.textContent = item.textContent;
         closeDropdown();
     });
+    document.addEventListener('click', function (e) { if (!wrapper.contains(e.target)) closeDropdown(); });
 
-    // Close when clicking outside
-    document.addEventListener('click', function (e) {
-        if (!wrapper.contains(e.target)) {
-            closeDropdown();
-        }
-    });
-
-    // On load, if a state already selected (old() value), reflect it
     if (select.value) {
         const selectedOpt = select.options[select.selectedIndex];
-        if (selectedOpt) {
-            display.textContent = selectedOpt.text;
-        }
+        if (selectedOpt) display.textContent = selectedOpt.text;
     }
 })();
 </script>
-
-
