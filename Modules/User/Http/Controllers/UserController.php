@@ -1000,7 +1000,7 @@ public function search(Request $request)
     // accept either ?q= or legacy ?inputsearch=
     $term = trim($request->input('q', $request->input('inputsearch', '')));
 
-    $user = \\Modules\\User\\Entities\\User::query()
+    $user = \Modules\User\Entities\User::query()
         ->with(['referrer'])
         ->where('role', 2)                         // ← role filter
         ->when($term !== '', function ($q) use ($term) {   // group the OR search
