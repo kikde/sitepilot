@@ -309,12 +309,16 @@ class ShareNgoViewData
             $crowdfundStats = [];
         }
         // Bank details used by donation partials
-        \ = collect();
+        $banks = collect();
         try {
             if (Schema::hasTable('banks')) {
-                \ = DB::table('banks')->orderByDesc('id')->get();
+                $banks = DB::table('banks')->orderByDesc('id')->get();
             }
-        } catch (\\Throwable \) { \ = collect(); }
+        } catch (\Throwable $e) {
+            $banks = collect();
+        }
+
+        View::share([
             'setting' => $setting,
             'dmessage' => $dmessage,
             'secmenu' => $secmenu,
@@ -336,6 +340,7 @@ class ShareNgoViewData
             'story' => $story,
             'crowdfund' => $crowdfund,
             'crowdfundStats' => $crowdfundStats,
+            'banks' => $banks,
         ]);
 
         return $next($request);
