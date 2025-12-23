@@ -11,6 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Count unique visitors (once per IP per day)
+        if (class_exists(\App\Http\Middleware\CountVisitor::class)) {
+            $middleware->appendToGroup('web', \App\Http\Middleware\CountVisitor::class);
+        }
         // Ensure tenant is resolved from domain/path/header early for all web requests.
         // This binds `currentTenant()` / `tenant_id()` (TenancyAdapter) and enables per-tenant data isolation.
         if (class_exists(\Dapunjabi\TenancyAdapter\Http\Middleware\TenantResolveMiddleware::class)) {

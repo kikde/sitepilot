@@ -265,10 +265,8 @@
 
 
     <div class="bottom">
-      <small>© Content Owned by {{ $setting->title }}, NGO of India. Site Maintained Kikde Group</small>
-      <div class="badge">Visitors Count 25043399</div>
-    </div>
-  </div>
-</footer>
+      <small>&copy; Content Owned by {{ $setting->title }}, NGO of India. Site Maintained Kikde Group</small>
+<div class="badge">Visitors Count {{ number_format(App\Services\VisitorCounter::total()) }}</div>
+    </div></footer>
 
 

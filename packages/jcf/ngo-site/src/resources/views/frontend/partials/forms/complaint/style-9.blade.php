@@ -146,7 +146,11 @@ textarea{ min-height:90px; resize:vertical; }
           <input type="number" name="mobile" inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit mobile" required>
         </div>
       </div>
-
+        <div class="form-group">
+        <label>Email*</label>
+        <input type="email" name="email" placeholder="Email" required>
+      </div>
+       
       <div class="form-group">
         <label>Address*</label>
         <input type="text" name="address" placeholder="Complete Address" required>
