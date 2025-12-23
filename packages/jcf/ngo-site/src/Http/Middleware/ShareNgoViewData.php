@@ -308,8 +308,13 @@ class ShareNgoViewData
             $crowdfund = collect();
             $crowdfundStats = [];
         }
-
-        View::share([
+        // Bank details used by donation partials
+        \ = collect();
+        try {
+            if (Schema::hasTable('banks')) {
+                \ = DB::table('banks')->orderByDesc('id')->get();
+            }
+        } catch (\\Throwable \) { \ = collect(); }
             'setting' => $setting,
             'dmessage' => $dmessage,
             'secmenu' => $secmenu,
