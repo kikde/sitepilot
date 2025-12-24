@@ -16,8 +16,8 @@ class EventController extends Controller
     {
         $events = Event::with('category')->orderByDesc('id')->paginate(12);
         return View::first([
-            'backend.events.all-events',
             'ngo::backend.events.all-events',
+            'backend.events.all-events',
         ], [
             'all_events' => $events,
         ]);
@@ -26,8 +26,8 @@ class EventController extends Controller
     public function create()
     {
         return View::first([
-            'backend.events.new-event',
             'ngo::backend.events.new-event',
+            'backend.events.new-event',
         ], [
             'all_categories' => EventCategory::orderBy('title')->get(),
             'event' => null,
@@ -107,8 +107,8 @@ class EventController extends Controller
     {
         $event = Event::findOrFail((int)$id);
         return View::first([
-            'backend.events.edit-event',
             'ngo::backend.events.edit-event',
+            'backend.events.edit-event',
         ], [
             'id' => $event->id,
             'event' => $event,
