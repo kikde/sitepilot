@@ -120,21 +120,18 @@
                                             <label>Description</label><p class="my-50">
                                                         <a href="javascript:void(0);" id="blog-image-text">Required image resolution 700x442, image size 10mb.</a>
                                                     </p>
-                                            <div id="blog-editor-wrapper">
-                                               
-                                                    
-                                                    <input type="hidden"  class="form-control" name="description" id="description" />
-
-                                                    <div id="blog-editor-container">
-                    
-                                                        <div class="editor" > 
- 
-                                                            {!! $event->description !!}
-                                                       </div>
-                                                      
-                                                      </div>
-
-                                                </div>
+                <div id="blog-editor-wrapper">
+                  @php
+                    $__desc = old('description');
+                    if ($__desc === null || $__desc === '') {
+                      $__desc = $event->description ?? $event->content ?? '';
+                    }
+                  @endphp
+                  <input type="hidden" class="form-control" name="description" id="description" value="{!! $__desc !!}" />
+                  <div id="blog-editor-container">
+                    <div class="editor" contenteditable="true">{!! $__desc !!}</div>
+                  </div>
+                </div>
                                             </div>
                                         </div>
 
