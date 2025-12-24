@@ -95,7 +95,7 @@
               </div>
 
               {{-- Detailed Description (Quill-compatible; also works without Quill) --}}
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label>{{ __('Detailed Description') }}</label>
                 <p class="my-50">
                   <a href="javascript:void(0);" id="blog-image-text">Recommended inline image 700×442, max ~10 MB.</a>
@@ -114,7 +114,30 @@
                     <div class="editor" contenteditable="true">{!! $__desc !!}</div>
                   </div>
                 </div>
-              </div>
+              </div> -->
+              <div class="col-12">
+                                        <div class="form-group mb-2">
+                                            <label>Description</label><p class="my-50">
+                                                        <a href="javascript:void(0);" id="blog-image-text">Required image resolution 700x442, image size 10mb.</a>
+                                                    </p>
+                                            <div id="blog-editor-wrapper">
+                                               
+                                                    
+                                                    <input type="hidden"  class="form-control" name="description" id="description" />
+
+                                                    <div id="blog-editor-container">
+                    
+                                                        <div class="editor" > 
+ 
+                                                            {!! $event->description !!}
+                                                       </div>
+                                                      
+                                                      </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
 
               <div class="section-title-small mt-4">{{ __('Date & Time') }}</div>
               <div class="divider-soft"></div>
@@ -443,6 +466,15 @@
       var q = new Quill('#blog-editor-container .editor', { theme: 'snow' });
       const hidden = document.getElementById('description');
       if (hidden && hidden.value) { try { q.clipboard.dangerouslyPasteHTML(hidden.value); } catch(e){} }
+      // Safety: reseed after all vendor scripts finish if editor stays empty
+      window.addEventListener('load', function(){
+        try{
+          var inst = Quill.find(document.querySelector('#blog-editor-container .editor'));
+          if (inst && hidden && hidden.value && inst.root && !inst.root.innerHTML.trim()) {
+            inst.clipboard.dangerouslyPasteHTML(hidden.value);
+          }
+        }catch(e){}
+      });
     }
   });
 
@@ -481,6 +513,26 @@
     form?.addEventListener('submit', function(){ const desc = document.getElementById('description'); if(desc) desc.value = quill.root.innerHTML; });
     // Also keep hidden synced on Quill text changes
     quill.on('text-change', function(){ const desc = document.getElementById('description'); if(desc) desc.value = quill.root.innerHTML; });
+  });
+</script>
+<script>
+  // Grab the actual form
+  const form = document.querySelector('form.mt-2');
+
+  form.addEventListener('submit', function () {
+    // If you're using a simple contenteditable div with class "editor"
+    const editor = document.querySelector('#blog-editor-container .editor');
+    let html = '';
+
+    // If using Quill, prefer the .ql-editor
+    const quillBody = document.querySelector('.ql-editor');
+    if (quillBody) {
+      html = quillBody.innerHTML;
+    } else if (editor) {
+      html = editor.innerHTML;
+    }
+
+    document.getElementById('description').value = html;
   });
 </script>
 @endsection

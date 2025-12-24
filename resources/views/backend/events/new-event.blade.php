@@ -584,6 +584,14 @@
       var q = new Quill('#blog-editor-container .editor', { theme: 'snow' });
       const hidden = document.getElementById('description');
       if (hidden && hidden.value) { try { q.clipboard.dangerouslyPasteHTML(hidden.value); } catch(e){} }
+      window.addEventListener('load', function(){
+        try{
+          var inst = Quill.find(document.querySelector('#blog-editor-container .editor'));
+          if (inst && hidden && hidden.value && inst.root && !inst.root.innerHTML.trim()) {
+            inst.clipboard.dangerouslyPasteHTML(hidden.value);
+          }
+        }catch(e){}
+      });
     }
   });
 
