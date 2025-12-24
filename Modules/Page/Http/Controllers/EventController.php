@@ -15,23 +15,36 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::with('category')->orderByDesc('id')->paginate(12);
-        return View::first([
+        $candidates = [
             'ngo::backend.events.all-events',
             'backend.events.all-events',
-        ], [
-            'all_events' => $events,
-        ]);
+        ];
+        foreach ($candidates as $tpl) {
+            if (View::exists($tpl)) {
+                return view($tpl, ['all_events' => $events]);
+            }
+        }
+        $paths = implode("\n - ", (array) View::getFinder()->getPaths());
+        abort(500, "Events view not found. Tried: " . implode(', ', $candidates) . "\nView paths:\n - " . $paths);
     }
 
     public function create()
     {
-        return View::first([
+        $candidates = [
             'ngo::backend.events.new-event',
             'backend.events.new-event',
-        ], [
+        ];
+        $data = [
             'all_categories' => EventCategory::orderBy('title')->get(),
             'event' => null,
-        ]);
+        ];
+        foreach ($candidates as $tpl) {
+            if (View::exists($tpl)) {
+                return view($tpl, $data);
+            }
+        }
+        $paths = implode("\n - ", (array) View::getFinder()->getPaths());
+        abort(500, "New-event view not found. Tried: " . implode(', ', $candidates) . "\nView paths:\n - " . $paths);
     }
 
     public function store(Request $request)
@@ -106,14 +119,22 @@ class EventController extends Controller
     public function edit($id)
     {
         $event = Event::findOrFail((int)$id);
-        return View::first([
+        $candidates = [
             'ngo::backend.events.edit-event',
             'backend.events.edit-event',
-        ], [
+        ];
+        $data = [
             'id' => $event->id,
             'event' => $event,
             'all_categories' => EventCategory::orderBy('title')->get(),
-        ]);
+        ];
+        foreach ($candidates as $tpl) {
+            if (View::exists($tpl)) {
+                return view($tpl, $data);
+            }
+        }
+        $paths = implode("\n - ", (array) View::getFinder()->getPaths());
+        abort(500, "Edit-event view not found. Tried: " . implode(', ', $candidates) . "\nView paths:\n - " . $paths);
     }
 
     public function update(Request $request, $id)
