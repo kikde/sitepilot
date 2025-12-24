@@ -412,7 +412,7 @@
 
     function syncEditorToHidden() {
       // Match working implementation from page editor
-      const quillBody = document.querySelector('.ql-editor');
+      const quillBody = document.querySelector('#blog-editor-container .ql-editor') || document.querySelector('.ql-editor');
       const fallback  = document.querySelector('#blog-editor-container .editor');
       const html = quillBody ? quillBody.innerHTML : (fallback ? fallback.innerHTML : '');
       const hidden = document.getElementById('description');
@@ -423,6 +423,14 @@
     form.addEventListener('submit', syncEditorToHidden);
     const submitBtn = form.querySelector('button[type="submit"], .btn[type="submit"], #btn-submit');
     if (submitBtn) submitBtn.addEventListener('click', syncEditorToHidden);
+
+    // Keep hidden synced as user types when Quill is not present
+    const fallback = document.querySelector('#blog-editor-container .editor');
+    if (fallback) {
+      ['input','keyup','blur','change','paste'].forEach(ev => fallback.addEventListener(ev, syncEditorToHidden));
+      // initial sync
+      syncEditorToHidden();
+    }
 
     // Optional: auto-init Quill if available and not already initialized
     if (window.Quill && !document.querySelector('#blog-editor-container .ql-editor')) {
@@ -463,6 +471,8 @@
 
     const form = document.getElementById('event-edit-form');
     form?.addEventListener('submit', function(){ const desc = document.getElementById('description'); if(desc) desc.value = quill.root.innerHTML; });
+    // Also keep hidden synced on Quill text changes
+    quill.on('text-change', function(){ const desc = document.getElementById('description'); if(desc) desc.value = quill.root.innerHTML; });
   });
 </script>
 @endsection
