@@ -292,7 +292,7 @@ class FrontendController extends Controller
                 ->where('slug', $slug)
                 ->when(\Schema::hasColumn('pages', 'pagestatus'), function ($q) { $q->where('pagestatus', 'Published'); })
                 ->whereNotNull('description')
-                ->whereRaw('TRIM(description) <> \''\'')
+                ->whereRaw("TRIM(description) <> ''")
                 ->first();
             if ($page) return $page;
         }
@@ -303,7 +303,7 @@ class FrontendController extends Controller
                 ->where('name', $name)
                 ->when(\Schema::hasColumn('pages', 'pagestatus'), function ($q) { $q->where('pagestatus', 'Published'); })
                 ->whereNotNull('description')
-                ->whereRaw('TRIM(description) <> \''\'')
+                ->whereRaw("TRIM(description) <> ''")
                 ->first();
             if ($page) return $page;
         }
@@ -313,7 +313,7 @@ class FrontendController extends Controller
             $page = (clone $base)
                 ->when(\Schema::hasColumn('pages', 'pagestatus'), function ($q) { $q->where('pagestatus', 'Published'); })
                 ->whereNotNull('description')
-                ->whereRaw('TRIM(description) <> \''\'')
+                ->whereRaw("TRIM(description) <> ''")
                 ->where(function ($q) use ($names) {
                     foreach ($names as $n) {
                         $q->orWhere('name', 'LIKE', '%'.trim($n).'%');

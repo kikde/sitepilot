@@ -17,7 +17,7 @@ class EnsureLegalPages extends Command
             return self::FAILURE;
         }
 
-        $this->info('Ensuring legal pages exist (Terms/Privacy/Refund)…');
+        $this->info('Ensuring legal pages exist (Terms/Privacy/Refund)...');
 
         $rows = [
             [
@@ -60,10 +60,10 @@ class EnsureLegalPages extends Command
 
             $page->save();
             $changed++;
-            $this->line("✓ {$data['name']} ensured (id: {$page->id})");
+            $this->line('- ' . $data['name'] . ' ensured (id: ' . $page->id . ')');
         }
 
-        $this->info("Done. {$changed} rows ensured in pages table.");
+        $this->info('Done. ' . $changed . ' rows ensured in pages table.');
         return self::SUCCESS;
     }
 }
