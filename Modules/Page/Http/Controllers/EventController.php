@@ -24,8 +24,13 @@ class EventController extends Controller
                 return view($tpl, ['all_events' => $events]);
             }
         }
+        // Fallback: render directly from package file path if resolver missed it
+        $pkg = base_path('packages/jcf/ngo-site/src/resources/views/backend/events/all-events.blade.php');
+        if (is_file($pkg)) {
+            return View::file($pkg, ['all_events' => $events]);
+        }
         $paths = implode("\n - ", (array) View::getFinder()->getPaths());
-        abort(500, "Events view not found. Tried: " . implode(', ', $candidates) . "\nView paths:\n - " . $paths);
+        abort(500, "Events view not found. Tried: " . implode(', ', $candidates) . "\nView paths:\n - " . $paths . "\nPkg file missing: " . $pkg);
     }
 
     public function create()
@@ -43,8 +48,12 @@ class EventController extends Controller
                 return view($tpl, $data);
             }
         }
+        $pkg = base_path('packages/jcf/ngo-site/src/resources/views/backend/events/new-event.blade.php');
+        if (is_file($pkg)) {
+            return View::file($pkg, $data);
+        }
         $paths = implode("\n - ", (array) View::getFinder()->getPaths());
-        abort(500, "New-event view not found. Tried: " . implode(', ', $candidates) . "\nView paths:\n - " . $paths);
+        abort(500, "New-event view not found. Tried: " . implode(', ', $candidates) . "\nView paths:\n - " . $paths . "\nPkg file missing: " . $pkg);
     }
 
     public function store(Request $request)
@@ -133,8 +142,12 @@ class EventController extends Controller
                 return view($tpl, $data);
             }
         }
+        $pkg = base_path('packages/jcf/ngo-site/src/resources/views/backend/events/edit-event.blade.php');
+        if (is_file($pkg)) {
+            return View::file($pkg, $data);
+        }
         $paths = implode("\n - ", (array) View::getFinder()->getPaths());
-        abort(500, "Edit-event view not found. Tried: " . implode(', ', $candidates) . "\nView paths:\n - " . $paths);
+        abort(500, "Edit-event view not found. Tried: " . implode(', ', $candidates) . "\nView paths:\n - " . $paths . "\nPkg file missing: " . $pkg);
     }
 
     public function update(Request $request, $id)
