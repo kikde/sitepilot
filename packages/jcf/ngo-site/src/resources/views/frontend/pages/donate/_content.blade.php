@@ -59,7 +59,7 @@
                                     </div>
                                     <div class="col-lg-12 col-md-6 col-sm-12 column">
                                         <div class="field-input">
-                                            <input type="text" name="mobile" inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit mobile" required>
+                                            <input type="text" name="mobile" inputmode="numeric" pattern="[6-9][0-9]{9}" minlength="10" maxlength="10" placeholder="10-digit mobile" required>
                                         </div>
                                     </div>
 
@@ -96,19 +96,19 @@
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 column">
                                         <div class="field-input">
-                                            <input type="text" name="pincode" placeholder="Pin Code" required>
+                                            <input type="text" name="pincode" inputmode="numeric" pattern="[1-9][0-9]{5}" minlength="6" maxlength="6" placeholder="6-digit Pincode" required>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 column">
                                         <div class="field-input">
-                                            <input type="text" name="pan_no" placeholder="Pan No.*" required>
+                                            <input type="text" name="pan_no" placeholder="PAN (e.g., ABCDE1234F)" minlength="10" maxlength="10" pattern="[A-Z]{5}[0-9]{4}[A-Z]" style="text-transform:uppercase" required>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12 col-md-6 col-sm-12 column">
                                         <div class="field-input">
-                                            <input type="text" name="amount" inputmode="decimal" pattern="^[0-9]+(\.[0-9]{1,2})?$" placeholder="Amount" required>
+                                            <input type="text" name="amount" inputmode="decimal" pattern="^[0-9]+(\.[0-9]{1,2})?$" placeholder="Amount" aria-label="Amount (numbers only)" required>
                                         </div>
                                     </div>
                                 </div>
@@ -259,5 +259,46 @@
         const selectedOpt = select.options[select.selectedIndex];
         if (selectedOpt) display.textContent = selectedOpt.text;
     }
+})();
+</script>
+
+
+<script>
+// Lightweight input sanitizers for donate form
+(function(){
+  const byName = (n) => document.querySelector('input[name="'+n+'"]');
+  const mobile  = byName('mobile');
+  const pincode = byName('pincode');
+  const pan     = byName('pan_no');
+  const amount  = byName('amount');
+
+  if (mobile) {
+    mobile.addEventListener('input', function(){
+      this.value = this.value.replace(/\D/g,'').slice(0,10);
+    });
+  }
+  if (pincode) {
+    pincode.addEventListener('input', function(){
+      this.value = this.value.replace(/\D/g,'').slice(0,6);
+    });
+  }
+  if (pan) {
+    pan.addEventListener('input', function(){
+      this.value = this.value.replace(/[^a-zA-Z0-9]/g,'').toUpperCase().slice(0,10);
+    });
+  }
+  if (amount) {
+    amount.addEventListener('input', function(){
+      let v = this.value.replace(/[^0-9.]/g,'');
+      const i = v.indexOf('.');
+      if (i !== -1) {
+        v = v.slice(0, i+1) + v.slice(i+1).replace(/\./g,'');
+        const parts = v.split('.');
+        parts[1] = (parts[1]||'').slice(0,2);
+        v = parts[0] + (parts[1] ? '.'+parts[1] : '');
+      }
+      this.value = v;
+    });
+  }
 })();
 </script>
