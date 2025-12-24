@@ -94,8 +94,8 @@
 
 <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static" data-open="click" data-menu="vertical-menu-modern" data-col="">
     
-    @include('backend.partials.header')
-    @include('backend.partials.sidebar')
+    @includeFirst(['backend.partials.header','ngo::backend.partials.header'])
+    @includeFirst(['backend.partials.sidebar','ngo::backend.partials.sidebar'])
 
 
     <!-- BEGIN: Content-->
@@ -130,7 +130,7 @@
         @yield('content')
     </div>
     
-    @include('backend.partials.footer')
+    @includeFirst(['backend.partials.footer','ngo::backend.partials.footer'])
 
     <script src="{{asset('backend/app-assets/vendors/js/vendors.min.js')}}"></script>
     <script src="{{asset('backend/app-assets/js/core/app-menu.js')}}"></script>
