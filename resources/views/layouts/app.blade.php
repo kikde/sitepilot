@@ -94,16 +94,16 @@
 
 <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static" data-open="click" data-menu="vertical-menu-modern" data-col="">
     
-    @if(view()->exists('backend.partials.header'))
-      @include('backend.partials.header')
-    @elseif(view()->exists('ngo::backend.partials.header'))
+    @if(view()->exists('ngo::backend.partials.header'))
       @include('ngo::backend.partials.header')
+    @elseif(view()->exists('backend.partials.header'))
+      @include('backend.partials.header')
     @endif
 
-    @if(view()->exists('backend.partials.sidebar'))
-      @include('backend.partials.sidebar')
-    @elseif(view()->exists('ngo::backend.partials.sidebar'))
+    @if(view()->exists('ngo::backend.partials.sidebar'))
       @include('ngo::backend.partials.sidebar')
+    @elseif(view()->exists('backend.partials.sidebar'))
+      @include('backend.partials.sidebar')
     @endif
 
 
@@ -139,10 +139,10 @@
         @yield('content')
     </div>
     
-    @if(view()->exists('backend.partials.footer'))
-      @include('backend.partials.footer')
-    @elseif(view()->exists('ngo::backend.partials.footer'))
+    @if(view()->exists('ngo::backend.partials.footer'))
       @include('ngo::backend.partials.footer')
+    @elseif(view()->exists('backend.partials.footer'))
+      @include('backend.partials.footer')
     @endif
 
     <script src="{{asset('backend/app-assets/vendors/js/vendors.min.js')}}"></script>
