@@ -141,7 +141,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-build-classic@44.3.0/build/ckeditor.min.js"></script>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     @stack('top_style')
 
    
@@ -256,3 +256,4 @@ document.addEventListener('DOMContentLoaded', function(){
 </body>
 
 </html>
+

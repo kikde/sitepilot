@@ -142,7 +142,7 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="start_date">{{ __('Start Date') }}</label>
-                  <input type="date" class="form-control" id="start_date" name="start_date" value="{{ old('start_date',$event->start_date) }}">
+                  <input type="date" class="form-control" id="start_date" name="start_date" value="{{ old('start_date', \Illuminate\\Support\\Carbon::parse($event->start_date)->format('Y-m-d')) }}">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="start_time">{{ __('Start Time') }}</label>
@@ -153,7 +153,7 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="end_date">{{ __('End Date') }}</label>
-                  <input type="date" class="form-control" id="end_date" name="end_date" value="{{ old('end_date',$event->end_date) }}">
+                  <input type="date" class="form-control" id="end_date" name="end_date" value="{{ old('end_date', \Illuminate\\Support\\Carbon::parse($event->end_date)->format('Y-m-d')) }}">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="end_time">{{ __('End Time') }}</label>
@@ -533,3 +533,4 @@
   });
 </script>
 @endsection
+
