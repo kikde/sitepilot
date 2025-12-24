@@ -94,8 +94,17 @@
 
 <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static" data-open="click" data-menu="vertical-menu-modern" data-col="">
     
-    @includeFirst(['backend.partials.header','ngo::backend.partials.header'])
-    @includeFirst(['backend.partials.sidebar','ngo::backend.partials.sidebar'])
+    @if(view()->exists('backend.partials.header'))
+      @include('backend.partials.header')
+    @elseif(view()->exists('ngo::backend.partials.header'))
+      @include('ngo::backend.partials.header')
+    @endif
+
+    @if(view()->exists('backend.partials.sidebar'))
+      @include('backend.partials.sidebar')
+    @elseif(view()->exists('ngo::backend.partials.sidebar'))
+      @include('ngo::backend.partials.sidebar')
+    @endif
 
 
     <!-- BEGIN: Content-->
@@ -130,7 +139,11 @@
         @yield('content')
     </div>
     
-    @includeFirst(['backend.partials.footer','ngo::backend.partials.footer'])
+    @if(view()->exists('backend.partials.footer'))
+      @include('backend.partials.footer')
+    @elseif(view()->exists('ngo::backend.partials.footer'))
+      @include('ngo::backend.partials.footer')
+    @endif
 
     <script src="{{asset('backend/app-assets/vendors/js/vendors.min.js')}}"></script>
     <script src="{{asset('backend/app-assets/js/core/app-menu.js')}}"></script>
