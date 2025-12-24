@@ -244,8 +244,11 @@ class FrontendController extends Controller
     {
         // Prefer type-based lookup used in legacy admin: types = 'TC'
         $term = Page::query()->where('types', 'TC')->first();
-        if (!$term) {
-            $term = $this->findStaticPage(['terms-and-conditions', 'terms'], ['Terms', 'Terms & Conditions']);
+        if (!$term || empty($term->description)) {
+            $fallback = $this->findStaticPage(['terms-and-conditions', 'terms'], ['Terms', 'Terms & Conditions']);
+            if ($fallback && !empty($fallback->description)) {
+                $term = $fallback;
+            }
         }
         $review = Testimonial::query()->latest()->limit(12)->get();
 
@@ -256,8 +259,11 @@ class FrontendController extends Controller
     {
         // Prefer type-based lookup: types = 'PP'
         $privacy = Page::query()->where('types', 'PP')->first();
-        if (!$privacy) {
-            $privacy = $this->findStaticPage(['privacy-policy', 'privacy'], ['Privacy Policy']);
+        if (!$privacy || empty($privacy->description)) {
+            $fallback = $this->findStaticPage(['privacy-policy', 'privacy'], ['Privacy Policy']);
+            if ($fallback && !empty($fallback->description)) {
+                $privacy = $fallback;
+            }
         }
         $review = Testimonial::query()->latest()->limit(12)->get();
 
@@ -268,11 +274,14 @@ class FrontendController extends Controller
     {
         // Prefer type-based lookup: types = 'CRP' (Cancellation & Refund Policy)
         $term = Page::query()->where('types', 'CRP')->first();
-        if (!$term) {
-            $term = $this->findStaticPage(
+        if (!$term || empty($term->description)) {
+            $fallback = $this->findStaticPage(
                 ['cancellation-and-refund-policy', 'cancellations-and-refunds'],
                 ['Cancellations & Refunds Policy', 'Cancellation And Refund Policy']
             );
+            if ($fallback && !empty($fallback->description)) {
+                $term = $fallback;
+            }
         }
         $review = Testimonial::query()->latest()->limit(12)->get();
 
