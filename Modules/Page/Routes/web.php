@@ -151,23 +151,23 @@ Route::post('/donation/autopay/callback', [DonarsController::class, 'autopayCall
             ->name('admin.events.delete');
 
         // Optional supporting pages present in the jcf views directory
-        Route::get('/admin-home/events/attendance', fn () => view('ngo::backend.events.event-attendance-all'))
+        Route::get('/admin-home/events/attendance', function () { return \View::first(['backend.events.event-attendance-all','ngo::backend.events.event-attendance-all']); })
             ->name('admin.events.attendance.all');
-        Route::get('/admin-home/events/attendance/{id}', fn ($id) => view('ngo::backend.events.attendance-view', compact('id')))
+        Route::get('/admin-home/events/attendance/{id}', function ($id) { return \View::first(['backend.events.attendance-view','ngo::backend.events.attendance-view'], compact('id')); })
             ->name('admin.events.attendance.view');
-        Route::get('/admin-home/events/attendance-report', fn () => view('ngo::backend.events.attendance-report'))
+        Route::get('/admin-home/events/attendance-report', function () { return \View::first(['backend.events.attendance-report','ngo::backend.events.attendance-report']); })
             ->name('admin.events.attendance.report');
 
-        Route::get('/admin-home/events/payments', fn () => view('ngo::backend.events.event-payment-logs-all'))
+        Route::get('/admin-home/events/payments', function () { return \View::first(['backend.events.event-payment-logs-all','ngo::backend.events.event-payment-logs-all']); })
             ->name('admin.events.payment.logs');
-        Route::get('/admin-home/events/payments/{id}', fn ($id) => view('ngo::backend.events.payment-log-view', compact('id')))
+        Route::get('/admin-home/events/payments/{id}', function ($id) { return \View::first(['backend.events.payment-log-view','ngo::backend.events.payment-log-view'], compact('id')); })
             ->name('admin.events.payment.view');
 
-        Route::get('/admin-home/events/page-manage', fn () => view('ngo::backend.events.page-manage'))
+        Route::get('/admin-home/events/page-manage', function () { return \View::first(['backend.events.page-manage','ngo::backend.events.page-manage']); })
             ->name('admin.events.page.manage');
-        Route::get('/admin-home/events/page-settings', fn () => view('ngo::backend.events.event-page-settings'))
+        Route::get('/admin-home/events/page-settings', function () { return \View::first(['backend.events.event-page-settings','ngo::backend.events.event-page-settings']); })
             ->name('admin.events.page.settings');
-        Route::get('/admin-home/events/single-page-settings', fn () => view('ngo::backend.events.event-single-page-settings'))
+        Route::get('/admin-home/events/single-page-settings', function () { return \View::first(['backend.events.event-single-page-settings','ngo::backend.events.event-single-page-settings']); })
             ->name('admin.events.single.settings');
     });
 

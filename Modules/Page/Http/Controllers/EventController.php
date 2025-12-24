@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\View;
 use Modules\Page\Entities\Event;
 use Modules\Page\Entities\EventCategory;
 
@@ -14,14 +15,20 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::with('category')->orderByDesc('id')->paginate(12);
-        return view('ngo::backend.events.all-events', [
+        return View::first([
+            'backend.events.all-events',
+            'ngo::backend.events.all-events',
+        ], [
             'all_events' => $events,
         ]);
     }
 
     public function create()
     {
-        return view('ngo::backend.events.new-event', [
+        return View::first([
+            'backend.events.new-event',
+            'ngo::backend.events.new-event',
+        ], [
             'all_categories' => EventCategory::orderBy('title')->get(),
             'event' => null,
         ]);
@@ -99,7 +106,10 @@ class EventController extends Controller
     public function edit($id)
     {
         $event = Event::findOrFail((int)$id);
-        return view('ngo::backend.events.edit-event', [
+        return View::first([
+            'backend.events.edit-event',
+            'ngo::backend.events.edit-event',
+        ], [
             'id' => $event->id,
             'event' => $event,
             'all_categories' => EventCategory::orderBy('title')->get(),
