@@ -284,22 +284,47 @@ class FrontendController extends Controller
 
     private function findStaticPage(array $slugs, array $names)
     {
-        $query = Page::query();
+        $base = Page::query();
 
+        // 1) Exact slug with non-empty description (prefer Published)
         foreach ($slugs as $slug) {
-            $page = (clone $query)->where('slug', $slug)->first();
-            if ($page) {
-                return $page;
-            }
+            $page = (clone $base)
+                ->where('slug', $slug)
+                ->when(\Schema::hasColumn('pages', 'pagestatus'), function ($q) { $q->where('pagestatus', 'Published'); })
+                ->whereNotNull('description')
+                ->whereRaw('TRIM(description) <> \''\'')
+                ->first();
+            if ($page) return $page;
         }
 
+        // 2) Exact name with non-empty description
         foreach ($names as $name) {
-            $page = (clone $query)->where('name', $name)->first();
-            if ($page) {
-                return $page;
-            }
+            $page = (clone $base)
+                ->where('name', $name)
+                ->when(\Schema::hasColumn('pages', 'pagestatus'), function ($q) { $q->where('pagestatus', 'Published'); })
+                ->whereNotNull('description')
+                ->whereRaw('TRIM(description) <> \''\'')
+                ->first();
+            if ($page) return $page;
         }
 
+        // 3) Fuzzy name match LIKE
+        if (!empty($names)) {
+            $page = (clone $base)
+                ->when(\Schema::hasColumn('pages', 'pagestatus'), function ($q) { $q->where('pagestatus', 'Published'); })
+                ->whereNotNull('description')
+                ->whereRaw('TRIM(description) <> \''\'')
+                ->where(function ($q) use ($names) {
+                    foreach ($names as $n) {
+                        $q->orWhere('name', 'LIKE', '%'.trim($n).'%');
+                    }
+                })
+                ->latest('id')
+                ->first();
+            if ($page) return $page;
+        }
+
+        // 4) Last-resort placeholder; blades provide defaults
         return (object) [
             'name' => $names[0] ?? 'Page',
             'breadcrumb' => null,
