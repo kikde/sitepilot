@@ -62,6 +62,9 @@ class PageServiceProvider extends ServiceProvider
      */
     public function registerViews()
     {
+        \Illuminate\Support\Facades\View::addNamespace('backend', base_path('packages/jcf/ngo-site/src/resources/views/backend'));
+        \Illuminate\Support\Facades\View::addLocation(base_path('packages/jcf/ngo-site/src/resources/views'));
+
         $viewPath = resource_path('views/modules/' . $this->moduleNameLower);
 
         $sourcePath = module_path($this->moduleName, 'Resources/views');
