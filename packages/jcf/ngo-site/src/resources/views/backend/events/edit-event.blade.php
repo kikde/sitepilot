@@ -15,6 +15,12 @@
   .account-upload-overlay{position:absolute;left:0;right:0;bottom:0;padding:6px 10px;background:linear-gradient(to top,rgba(0,0,0,.65),transparent);color:#fff;font-size:13px;text-align:center;pointer-events:none}
   @media (max-width:575.98px){#account-upload-img{width:100%;height:auto}}
   @media (max-width:575.98px){.header-bar{flex-direction:column;align-items:flex-start}}
+
+  /* right-side icon input wrapper (for Flatpickr) */
+  .input-icon-right{ position:relative; }
+  .input-icon-right .input-button{ position:absolute; right:8px; top:50%; transform:translateY(-50%); color:#6b7280; display:inline-flex; align-items:center; }
+  .input-icon-right i[data-feather]{ width:16px; height:16px; }
+  .input-icon-right input{ padding-right:36px; }
 </style>
 @endsection
 
@@ -127,7 +133,7 @@
                       $__desc = $event->description ?? $event->content ?? '';
                     }
                   @endphp
-                  <input type="hidden" class="form-control" name="description" id="description" value="{!! $__desc !!}" />
+                  <textarea name="description" id="description" class="d-none" style="display:none">{!! $__desc !!}</textarea>
                   <div id="blog-editor-container">
                     <div class="editor" contenteditable="true">{!! $__desc !!}</div>
                   </div>
@@ -142,7 +148,7 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="start_date">{{ __('Start Date') }}</label>
-                  <input type="date" class="form-control" id="start_date" name="start_date" value="{{ old('start_date', \Illuminate\\Support\\Carbon::parse($event->start_date)->format('Y-m-d')) }}">
+                  <input type="date" class="form-control" id="start_date" name="start_date" value="{{ old('start_date', $event->start_date ? \Carbon\Carbon::parse($event->start_date)->format('Y-m-d') : '') }}">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="start_time">{{ __('Start Time') }}</label>
@@ -153,7 +159,7 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="end_date">{{ __('End Date') }}</label>
-                  <input type="date" class="form-control" id="end_date" name="end_date" value="{{ old('end_date', \Illuminate\\Support\\Carbon::parse($event->end_date)->format('Y-m-d')) }}">
+                  <input type="date" class="form-control" id="end_date" name="end_date" value="{{ old('end_date', $event->end_date ? \Carbon\Carbon::parse($event->end_date)->format('Y-m-d') : '') }}">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="end_time">{{ __('End Time') }}</label>
@@ -217,7 +223,10 @@
                 </div>
                 <div class="form-group col-md-4">
                   <label for="registration_deadline">{{ __('Registration Deadline') }}</label>
-                  <input type="datetime-local" class="form-control" id="registration_deadline" name="registration_deadline" value="{{ old('registration_deadline',$event->registration_deadline) }}">
+                  <div class="input-icon-right" id="registration_deadline_wrap">
+                    <input type="text" class="form-control" id="registration_deadline" name="registration_deadline" value="{{ old('registration_deadline', $event->registration_deadline ? ($event->registration_deadline instanceof \Carbon\Carbon ? $event->registration_deadline->format('Y-m-d H:i') : (string)$event->registration_deadline) : '') }}" data-input>
+                    <a class="input-button" title="toggle" data-toggle><i data-feather="clock"></i></a>
+                  </div>
                 </div>
                 <div class="form-group col-md-4">
                   <label for="registration_url">{{ __('Registration / Ticket URL') }}</label>
@@ -340,11 +349,17 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="display_from">{{ __('Display From') }}</label>
-                  <input type="datetime-local" class="form-control" id="display_from" name="display_from" value="{{ old('display_from',$event->display_from) }}">
+                  <div class="input-icon-right" id="display_from_wrap">
+                    <input type="text" class="form-control" id="display_from" name="display_from" value="{{ old('display_from', $event->display_from ? ($event->display_from instanceof \Carbon\Carbon ? $event->display_from->format('Y-m-d H:i') : (string)$event->display_from) : '') }}" data-input>
+                    <a class="input-button" title="toggle" data-toggle><i data-feather="clock"></i></a>
+                  </div>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="display_to">{{ __('Display To') }}</label>
-                  <input type="datetime-local" class="form-control" id="display_to" name="display_to" value="{{ old('display_to',$event->display_to) }}">
+                  <div class="input-icon-right" id="display_to_wrap">
+                    <input type="text" class="form-control" id="display_to" name="display_to" value="{{ old('display_to', $event->display_to ? ($event->display_to instanceof \Carbon\Carbon ? $event->display_to->format('Y-m-d H:i') : (string)$event->display_to) : '') }}" data-input>
+                    <a class="input-button" title="toggle" data-toggle><i data-feather="clock"></i></a>
+                  </div>
                 </div>
               </div>
 
@@ -532,5 +547,27 @@
     document.getElementById('description').value = html;
   });
 </script>
+<script>
+  // Lightweight date/time pickers using Flatpickr (already loaded by layout)
+  document.addEventListener('DOMContentLoaded', function(){
+    if (!window.flatpickr) return;
+    try {
+      // Dates: yyyy-mm-dd (wrap mode with right icon)
+      window.flatpickr('#end_date_wrap',   { dateFormat: 'Y-m-d', allowInput: true, wrap: true, altInput: true, altFormat: 'D, M j, Y' });
+
+      // Times: HH:ii (24h)
+      window.flatpickr('#end_time_wrap', { enableTime: true, noCalendar: true, dateFormat: 'H:i', time_24hr: false, allowInput: true, wrap: true });
+
+      // Combined date + time (wrap mode)
+      const dtOpts = { enableTime: true, dateFormat: 'Y-m-d H:i', time_24hr: false, allowInput: true, wrap: true, altInput: true, altFormat: 'D, M j, Y h:i K' };
+      window.flatpickr('#display_from_wrap', dtOpts);
+      window.flatpickr('#display_to_wrap', dtOpts);
+      window.flatpickr('#registration_deadline_wrap', dtOpts);
+    } catch (e) { /* ignore */ }
+  });
+</script>
 @endsection
+
+
+
 

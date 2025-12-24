@@ -76,14 +76,15 @@ class EventController extends Controller
             return back()->withErrors($v)->withInput();
         }
 
+        $desc = $request->input('description', $request->input('content'));
         $payload = [
             'title' => $data['title'],
             'slug' => ($data['slug'] ?? '') ? $data['slug'] : Str::slug($data['title']).'-'.Str::random(4),
             'category_id' => $data['category_id'] ?? null,
             'status' => $data['status'] ?? 'draft',
             'short_description' => $data['short_description'] ?? null,
-            'description' => $data['description'] ?? null,
-            'content' => $data['description'] ?? null,
+            'description' => $desc,
+            'content' => $desc,
             'start_date' => $data['start_date'] ?? null,
             'start_time' => $data['start_time'] ?? null,
             'end_date' => $data['end_date'] ?? null,

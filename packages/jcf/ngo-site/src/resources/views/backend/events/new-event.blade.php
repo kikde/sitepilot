@@ -51,6 +51,10 @@
     width:16px; height:16px; color:#6b7280;
   }
   .input-icon input{ padding-left:34px; }
+  .input-icon-right{ position:relative; }
+  .input-icon-right .input-button{ position:absolute; right:8px; top:50%; transform:translateY(-50%); color:#6b7280; display:inline-flex; align-items:center; }
+  .input-icon-right i[data-feather]{ width:16px; height:16px; }
+  .input-icon-right input{ padding-right:36px; }
   .form-text-sm{ font-size:12px; color:#6b7280; }
   i[data-feather]{ width:16px; height:16px; }
 
@@ -278,10 +282,10 @@
                   </div>
                   <div class="form-group col-md-4">
                     <label for="registration_deadline">{{ __('Registration Deadline') }}</label>
-                    <div class="input-icon">
-                      <i data-feather="clock"></i>
-                      <input type="datetime-local" class="form-control" id="registration_deadline"
-                             name="registration_deadline" value="{{ old('registration_deadline') }}">
+                    <div class="input-icon-right" id="registration_deadline_wrap">
+                      <input type="text" class="form-control" id="registration_deadline"
+                             name="registration_deadline" value="{{ old('registration_deadline') }}" data-input>
+                      <a class="input-button" title="toggle" data-toggle><i data-feather="clock"></i></a>
                     </div>
                   </div>
                   <div class="form-group col-md-4">
@@ -440,18 +444,18 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="display_from">{{ __('Display From') }}</label>
-                    <div class="input-icon">
-                      <i data-feather="clock"></i>
-                      <input type="datetime-local" class="form-control" id="display_from" name="display_from"
-                             value="{{ old('display_from') }}">
+                    <div class="input-icon-right" id="display_from_wrap">
+                      <input type="text" class="form-control" id="display_from" name="display_from"
+                             value="{{ old('display_from') }}" data-input>
+                      <a class="input-button" title="toggle" data-toggle><i data-feather="clock"></i></a>
                     </div>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="display_to">{{ __('Display To') }}</label>
-                    <div class="input-icon">
-                      <i data-feather="clock"></i>
-                      <input type="datetime-local" class="form-control" id="display_to" name="display_to"
-                             value="{{ old('display_to') }}">
+                    <div class="input-icon-right" id="display_to_wrap">
+                      <input type="text" class="form-control" id="display_to" name="display_to"
+                             value="{{ old('display_to') }}" data-input>
+                      <a class="input-button" title="toggle" data-toggle><i data-feather="clock"></i></a>
                     </div>
                   </div>
                 </div>
@@ -626,5 +630,29 @@
   });
   
 </script>
+<script>
+  // Flatpickr for combined date+time on new event form
+  document.addEventListener('DOMContentLoaded', function(){
+    if (!window.flatpickr) return;
+    try {
+      const dtOpts = { enableTime: true, dateFormat: 'Y-m-d H:i', time_24hr: true, allowInput: true };
+      window.flatpickr('#registration_deadline', dtOpts);
+      window.flatpickr('#display_from', dtOpts);
+      window.flatpickr('#display_to', dtOpts);
+    } catch (e) { /* ignore */ }
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    if (!window.flatpickr) return;
+    try {
+      const dtOpts = { enableTime: true, dateFormat: "Y-m-d H:i", time_24hr: true, allowInput: true, wrap: true };
+      window.flatpickr("#registration_deadline_wrap", dtOpts);
+      window.flatpickr("#display_from_wrap", dtOpts);
+      window.flatpickr("#display_to_wrap", dtOpts);
+    } catch (e) {}
+  });
+</script>
 @endsection
+
 
