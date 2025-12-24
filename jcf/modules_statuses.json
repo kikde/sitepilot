@@ -1,0 +1,17 @@
+{
+    "ApiShotWebhook": false,
+    "Setting": true,
+    "User": true,
+    "Member": true,
+    "Page": true,
+    "Partner": true,
+    "Gallery": true,
+    "Collage": true,
+    "BreakingNews": true,
+    "Branding": true,
+    "Watermark": true,
+    "DailyPoster": true,
+    "Birthdays": true,
+    "CSR": true,
+    "Volunteer": true
+}

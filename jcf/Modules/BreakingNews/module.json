@@ -1,0 +1,14 @@
+{
+    "name": "BreakingNews",
+    "alias": "breakingnews",
+    "description": "Breaking News Maker (client-side canvas tool)",
+    "keywords": ["breaking","news","poster","maker","tools"],
+    "priority": 0,
+    "providers": [
+        "Modules\\BreakingNews\\Providers\\BreakingNewsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
+

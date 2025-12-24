@@ -1,0 +1,219 @@
+﻿<?php
+
+use Illuminate\Support\Facades\Route;
+use Modules\User\Http\Controllers\UserController;
+use Modules\User\Http\Controllers\SupportTicketController;
+use Modules\User\Http\Controllers\TicketDepartmentController;
+use Modules\User\Http\Controllers\SecureDocController;
+use Modules\User\Http\Controllers\RegistrationController;
+use Modules\User\Http\Controllers\PaymentController;
+use Modules\User\Http\Controllers\DocumentController;
+use Modules\User\Http\Controllers\MemberController;
+
+
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Frontend / Member Registration (public)
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware('web')->group(function () {
+    Route::get('member-registration',  [RegistrationController::class,'showMemberRegistrationForm'])
+        ->name('member.register.show');
+
+    Route::post('member-registration', [RegistrationController::class,'storeMemberRegistration'])
+        ->name('member.register.store');
+
+    Route::get('member-registration/thanks/{id}', [RegistrationController::class,'showThankYou'])
+        ->name('member.register.thanks');
+
+    Route::post('member-registration/cities', [RegistrationController::class,'fetchCitiesByState'])
+        ->name('member.register.cities');
+
+    Route::get('/idcard-download', [RegistrationController::class, 'getCardDownload']); 
+    Route::post('/download', [RegistrationController::class, 'printIdcard'])->name('member.register.printcard');
+});
+
+Route::post('/fetch-cities', [RegistrationController::class, 'fetchCitiesByState'])
+    ->name('fetch.cities');
+
+
+Route::get('/member/payment', [PaymentController::class, 'showPaymentPage'])
+    ->name('payment');
+
+Route::post('/member/payment/callback', [PaymentController::class, 'handleCallback'])
+    ->name('payment.callback');
+    
+  Route::get('members/{user}/payments', [PaymentController::class, 'userPayments'])
+        ->name('admin.members.payments');
+
+    // verify one payment + activate member
+  Route::post('payments/{payment}/verify', [PaymentController::class, 'verify'])
+        ->name('admin.payments.verify');  
+    // delete a payment row
+    Route::delete('payments/{payment}', [PaymentController::class, 'destroy'])
+        ->name('admin.payments.destroy');
+    
+    Route::post('members/{user}/payments/manual', [PaymentController::class, 'storeManual'])
+    ->name('admin.members.payments.manual');
+    
+    //UPI AutoPay 
+    Route::get('/member/autopay', [PaymentController::class, 'showMembershipAutopay'])
+    ->name('member.autopay.show');
+
+Route::post('/member/autopay/callback', [PaymentController::class, 'membershipAutopayCallback'])
+    ->name('member.autopay.callback');
+
+/*
+|--------------------------------------------------------------------------
+| Public render routes for APIshot (NO signature)
+| - Make render pages publicly accessible to the headless renderer.
+|   Security trade-off: do not expose personal data on these pages.
+|--------------------------------------------------------------------------
+*/
+Route::get('/idcard/{id}',          [UserController::class, 'letterCard'])->name('render.idcard');
+Route::get('/joining-letter/{id}',  [UserController::class, 'joinLetter'])->name('render.joining');
+Route::get('/honor-letter/{id}',    [UserController::class, 'honarLetter'])->name('render.honor');
+Route::get('/off1-letter/{id}',     [UserController::class, 'offLetter'])->name('render.off1');
+Route::get('/off2-letter/{id}',     [UserController::class, 'offtwoetter'])->name('render.off2');
+Route::get('/affi-letter/{id}',     [UserController::class, 'affiLatter'])->name('render.affidavit');
+Route::get('/payment-receipt/{id}', [UserController::class, 'recPayment'])->name('render.receipt');
+
+/*
+|--------------------------------------------------------------------------
+| Admin Management
+| - Sidebar expects route('users.index') and /users/create for admins (role=1)
+|--------------------------------------------------------------------------
+*/
+Route::middleware(['web','auth'])->group(function () {
+Route::resource('/users', UserController::class)->only(['index', 'create']);
+Route::post('/users/bulk-delete', [UserController::class, 'bulkDelete'])->name('admin.users.bulk.delete');
+Route::post('/admins',            [UserController::class, 'Adminstore'])->name('admins.store');
+Route::put('/admins-update/{id}', [UserController::class, 'Adminupdate'])->name('admins.update');
+
+/*
+|--------------------------------------------------------------------------
+| Members (role 2/0) â€“ list & CRUD screens
+|--------------------------------------------------------------------------
+*/
+Route::get('/userslist',          [UserController::class, 'usersIndex'])->name('members.index'); // clean name
+Route::get('/users-add',          [UserController::class, 'addUser'])->name('members.create');
+Route::post('/users-add',         [UserController::class, 'store'])->name('members.store');      // keep POST separate from /users
+Route::get('/user-edit/{id}',     [UserController::class, 'editUser'])->name('members.edit');
+Route::delete('/user-delete/{id}',[UserController::class, 'destroy'])->name('members.destroy');
+
+// Search
+Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
+Route::get('/users/export',     [UserController::class, 'export'])->name('users.export');
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Profile (single user profile edit/update by id)
+|--------------------------------------------------------------------------
+*/
+Route::get('/profile/{id}',       [UserController::class, 'edit'])->name('profile.edit');
+Route::put('/profile/{id}',       [UserController::class, 'update'])->name('profile.update');
+
+/*
+|--------------------------------------------------------------------------
+| Flags (Top-Ten / Featured)
+|--------------------------------------------------------------------------
+*/
+Route::post('/select/{id}',       [UserController::class, 'topUserDeactive'])->name('flags.topten.on');   // set topten=1
+Route::post('/deselect/{id}',     [UserController::class, 'topUser'])->name('flags.topten.off');          // set topten=0
+Route::post('/featured/{id}',     [UserController::class, 'featureUser'])->name('flags.featured.on');     // pow=1
+Route::post('/unfeatured/{id}',   [UserController::class, 'unFeatured'])->name('flags.featured.off');     // pow=0
+
+/*
+|--------------------------------------------------------------------------
+| Receipt (Verified) + Affidavit
+| - Uses new clear names, with back-compat URLs preserved
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/documents/affidavit/{user}', [DocumentController::class, 'showAffidavit'])
+    ->name('docs.affidavit.show');
+Route::post('/active-aff/{id}',   [UserController::class, 'receiptActivate'])->name('receipt.activate');   // queue receipt render
+Route::post('/deactive-aff/{id}', [UserController::class, 'receiptDeactivate'])->name('receipt.deactivate');
+
+Route::post('/affidavit-active/{id}', [UserController::class, 'affidavitQueue'])->name('affidavit.activate');
+Route::post('/aff-deactive/{id}',     [UserController::class, 'affidavitDeactivate'])->name('affidavit.deactivate');
+
+Route::get('/after-verify/{id}',  [UserController::class, 'afterVerify'])->name('affidavit.reset-after');
+
+/*
+|--------------------------------------------------------------------------
+| City dropdown (AJAX)
+|--------------------------------------------------------------------------
+*/
+Route::match(['get','post'], '/city-list', [UserController::class, 'getcity'])->name('city.list');
+
+/*
+|--------------------------------------------------------------------------
+| User Enable/Disable (account status)
+|--------------------------------------------------------------------------
+*/
+Route::get('/user/{id}/active',   [UserController::class, 'userActive'])->name('user.enable');
+Route::get('/user/{id}/deactive', [UserController::class, 'userDeactive'])->name('user.disable');
+
+ /*
+ |--------------------------------------------------------------------------
+ | Render targets (views used by APIshot)
+ | - Keep GET render endpoints public so the renderer can access
+ |--------------------------------------------------------------------------
+ */
+ Route::get('/pdf/{id}/active',    [UserController::class, 'Activate'])->name('docs.activate-batch');
+ Route::get('/pdf/{id}/deactive',  [UserController::class, 'Deactive'])->name('docs.deactivate-batch');
+ 
+ // moved out of auth group: public GET render routes
+
+
+
+Route::post('/upload-affi/{id}', [UserController::class, 'updateAffi'])->name('affidavit.upload-after');
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Notes
+|--------------------------------------------------------------------------
+*/
+Route::post('/add-notes',         [UserController::class, 'Notestore'])->name('notes.store');
+Route::put('/notes-edit/{id}',    [UserController::class, 'updateNote'])->name('notes.update');
+Route::delete('/notes-del/{id}',  [UserController::class, 'noteDestroy'])->name('notes.destroy');
+
+/*
+|--------------------------------------------------------------------------
+| Support Tickets
+|--------------------------------------------------------------------------
+*/
+Route::resource('/support-tickets', SupportTicketController::class);
+Route::post('/bulk-action',       [SupportTicketController::class,'bulk_action'])->name('admin.support.ticket.bulk.action');
+Route::post('/priority-change',   [SupportTicketController::class,'priority_change'])->name('admin.support.ticket.priority.change');
+Route::post('/status-change',     [SupportTicketController::class,'status_change'])->name('admin.support.ticket.status.change');
+Route::post('/send message',      [SupportTicketController::class,'send_message'])->name('admin.support.ticket.send.message');
+
+Route::resource('/department',    TicketDepartmentController::class);
+Route::get('/page-settings',      [SupportTicketController::class,'page_settings'])->name('admin.support.ticket.page.settings');
+Route::post('/page-settings',     [SupportTicketController::class,'update_page_settings'])->name('admin.support.ticket.page.settings.update');
+});
+
+
+
+Route::middleware(['web','auth','verified'])->group(function () {
+    Route::get('/home', [MemberController::class, 'index'])->name('home');
+
+    // Single source of truth for payments
+    Route::post('/make-payment', [PaymentController::class, 'store'])->name('payments.store');
+    Route::get('/doc/{user}/{type}', [SecureDocController::class, 'download'])->name('doc.download');
+    Route::get('/doc/{user}/{type}/view', [SecureDocController::class, 'view'])->name('doc.view');
+
+});
+
+

@@ -1,0 +1,5903 @@
+﻿[
+    {
+        "family":  "ABeeZee",
+        "src":  "fonts/ABeeZee-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ABeeZee",
+        "src":  "fonts/ABeeZee.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AbramoScript",
+        "src":  "fonts/AbramoScript.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AbrilFatface",
+        "src":  "fonts/AbrilFatface.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AcherusGrotesque",
+        "src":  "fonts/AcherusGrotesque.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AcherusGrotesque",
+        "src":  "fonts/AcherusGrotesque-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AcherusGrotesqueLight",
+        "src":  "fonts/AcherusGrotesqueLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AcherusMilitant1",
+        "src":  "fonts/AcherusMilitant1.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AcherusMilitant1",
+        "src":  "fonts/AcherusMilitant1-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AcherusMilitant1Light",
+        "src":  "fonts/AcherusMilitant1Light.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AdleryPro",
+        "src":  "fonts/AdleryPro.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AdUScriptBd",
+        "src":  "fonts/AdUScriptBd.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AdUScriptRg",
+        "src":  "fonts/AdUScriptRg.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Advetime",
+        "src":  "fonts/Advetime.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Agbalumo",
+        "src":  "fonts/Agbalumo.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Agrandir",
+        "src":  "fonts/Agrandir-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Agrandir",
+        "src":  "fonts/Agrandir-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Agrandir",
+        "src":  "fonts/Agrandir.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Agrandir",
+        "src":  "fonts/Agrandir-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirBlack",
+        "src":  "fonts/AgrandirBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirBlack",
+        "src":  "fonts/AgrandirBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirExtraWide",
+        "src":  "fonts/AgrandirExtraWide-Bold_1.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirExtraWide",
+        "src":  "fonts/AgrandirExtraWide-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirGrand",
+        "src":  "fonts/AgrandirGrand.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirGrandBlack",
+        "src":  "fonts/AgrandirGrandBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirGrandBlackItalic",
+        "src":  "fonts/AgrandirGrandBlackItalic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirGrandHeavy",
+        "src":  "fonts/AgrandirGrandHeavy.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirGrandHeavyItalic",
+        "src":  "fonts/AgrandirGrandHeavyItalic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirGrandItalic",
+        "src":  "fonts/AgrandirGrandItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirGrandMedium",
+        "src":  "fonts/AgrandirGrandMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirGrandMediumItalic",
+        "src":  "fonts/AgrandirGrandMediumItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirGrandThin",
+        "src":  "fonts/AgrandirGrandThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirGrandThinItalic",
+        "src":  "fonts/AgrandirGrandThinItalic.woff2",
+        "weight":  100,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirHeavy",
+        "src":  "fonts/AgrandirHeavy-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirHeavy",
+        "src":  "fonts/AgrandirHeavy.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirMedium",
+        "src":  "fonts/AgrandirMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirMedium",
+        "src":  "fonts/AgrandirMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirNarrow",
+        "src":  "fonts/AgrandirNarrow-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirNarrow",
+        "src":  "fonts/AgrandirNarrow-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirNarrow",
+        "src":  "fonts/AgrandirNarrow.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirNarrow",
+        "src":  "fonts/AgrandirNarrow-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirNarrowBlack",
+        "src":  "fonts/AgrandirNarrowBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirNarrowBlack",
+        "src":  "fonts/AgrandirNarrowBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirNarrowHeavy",
+        "src":  "fonts/AgrandirNarrowHeavy-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirNarrowHeavy",
+        "src":  "fonts/AgrandirNarrowHeavy.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirNarrowMedium",
+        "src":  "fonts/AgrandirNarrowMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirNarrowMedium",
+        "src":  "fonts/AgrandirNarrowMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirNarrowThin",
+        "src":  "fonts/AgrandirNarrowThin-Italic.woff2",
+        "weight":  100,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirNarrowThin",
+        "src":  "fonts/AgrandirNarrowThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirSemiNarrow",
+        "src":  "fonts/AgrandirSemiNarrow-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirSemiNarrow",
+        "src":  "fonts/AgrandirSemiNarrow-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirThin",
+        "src":  "fonts/AgrandirThin-Italic.woff2",
+        "weight":  100,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirThin",
+        "src":  "fonts/AgrandirThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirTight",
+        "src":  "fonts/AgrandirTight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirTight",
+        "src":  "fonts/AgrandirTight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirTightBlack",
+        "src":  "fonts/AgrandirTightBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirTightBlack",
+        "src":  "fonts/AgrandirTightBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirTightHeavy",
+        "src":  "fonts/AgrandirTightHeavy-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirTightHeavy",
+        "src":  "fonts/AgrandirTightHeavy.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirTightMedium",
+        "src":  "fonts/AgrandirTightMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirTightMedium",
+        "src":  "fonts/AgrandirTightMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirTightThin",
+        "src":  "fonts/AgrandirTightThin-Italic.woff2",
+        "weight":  100,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirTightThin",
+        "src":  "fonts/AgrandirTightThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirWide",
+        "src":  "fonts/AgrandirWide-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirWide",
+        "src":  "fonts/AgrandirWide-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirWide",
+        "src":  "fonts/AgrandirWide.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirWide",
+        "src":  "fonts/AgrandirWide-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirWideBlack",
+        "src":  "fonts/AgrandirWideBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirWideBlack",
+        "src":  "fonts/AgrandirWideBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirWideHeavy",
+        "src":  "fonts/AgrandirWideHeavy-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirWideHeavy",
+        "src":  "fonts/AgrandirWideHeavy.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirWideMedium",
+        "src":  "fonts/AgrandirWideMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirWideMedium",
+        "src":  "fonts/AgrandirWideMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirWideThin",
+        "src":  "fonts/AgrandirWideThin-Italic.woff2",
+        "weight":  100,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AgrandirWideThin",
+        "src":  "fonts/AgrandirWideThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AhkioBlack",
+        "src":  "fonts/AhkioBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AhkioBold",
+        "src":  "fonts/AhkioBold.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AhkioLight",
+        "src":  "fonts/AhkioLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AhkioRegular",
+        "src":  "fonts/AhkioRegular.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AhkioThin",
+        "src":  "fonts/AhkioThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Ahsing",
+        "src":  "fonts/Ahsing.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Aileron",
+        "src":  "fonts/Aileron-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Aileron",
+        "src":  "fonts/Aileron.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AileronBlack",
+        "src":  "fonts/AileronBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AileronBlack",
+        "src":  "fonts/AileronBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AileronBold",
+        "src":  "fonts/AileronBold-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AileronBold",
+        "src":  "fonts/AileronBold.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AileronHeavy",
+        "src":  "fonts/AileronHeavy-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AileronHeavy",
+        "src":  "fonts/AileronHeavy.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AileronLight",
+        "src":  "fonts/AileronLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AileronLight",
+        "src":  "fonts/AileronLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AileronThin",
+        "src":  "fonts/AileronThin-Italic.woff2",
+        "weight":  100,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AileronThin",
+        "src":  "fonts/AileronThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Akzidenz",
+        "src":  "fonts/Akzidenz-GroteskProBold-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Akzidenz",
+        "src":  "fonts/Akzidenz-GroteskProRegular-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Akzidenz",
+        "src":  "fonts/Akzidenz-GroteskProSuper-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Akzidenz",
+        "src":  "fonts/Akzidenz-GroteskProBold.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Akzidenz",
+        "src":  "fonts/Akzidenz-GroteskProLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Akzidenz",
+        "src":  "fonts/Akzidenz-GroteskProMed.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Akzidenz",
+        "src":  "fonts/Akzidenz-GroteskProRegular.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Akzidenz",
+        "src":  "fonts/Akzidenz-GroteskProSuper.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Alata",
+        "src":  "fonts/Alata.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Alatsi",
+        "src":  "fonts/Alatsi.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlbertusNova",
+        "src":  "fonts/AlbertusNova.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlbertusNova",
+        "src":  "fonts/AlbertusNova-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlbertusNovaBlack",
+        "src":  "fonts/AlbertusNovaBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlbertusNovaLight",
+        "src":  "fonts/AlbertusNovaLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlbertusNovaThin",
+        "src":  "fonts/AlbertusNovaThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Alef",
+        "src":  "fonts/Alef.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Alef",
+        "src":  "fonts/Alef-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Alegreya",
+        "src":  "fonts/Alegreya-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Alegreya",
+        "src":  "fonts/Alegreya-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Alegreya",
+        "src":  "fonts/Alegreya.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Alegreya",
+        "src":  "fonts/Alegreya-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaBlack",
+        "src":  "fonts/AlegreyaBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaBlack",
+        "src":  "fonts/AlegreyaBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaExtraBold",
+        "src":  "fonts/AlegreyaExtraBold-Italic.woff2",
+        "weight":  800,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaExtraBold",
+        "src":  "fonts/AlegreyaExtraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaMedium",
+        "src":  "fonts/AlegreyaMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaMedium",
+        "src":  "fonts/AlegreyaMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSans",
+        "src":  "fonts/AlegreyaSans-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSans",
+        "src":  "fonts/AlegreyaSans-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSans",
+        "src":  "fonts/AlegreyaSans.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSans",
+        "src":  "fonts/AlegreyaSans-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansBlack",
+        "src":  "fonts/AlegreyaSansBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansBlack",
+        "src":  "fonts/AlegreyaSansBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansExtraBold",
+        "src":  "fonts/AlegreyaSansExtraBold-Italic.woff2",
+        "weight":  800,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansExtraBold",
+        "src":  "fonts/AlegreyaSansExtraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansLight",
+        "src":  "fonts/AlegreyaSansLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansLight",
+        "src":  "fonts/AlegreyaSansLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansMedium",
+        "src":  "fonts/AlegreyaSansMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansMedium",
+        "src":  "fonts/AlegreyaSansMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansSC",
+        "src":  "fonts/AlegreyaSansSC-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansSC",
+        "src":  "fonts/AlegreyaSansSC-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansSC",
+        "src":  "fonts/AlegreyaSansSC.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansSC",
+        "src":  "fonts/AlegreyaSansSC-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansSCBlack",
+        "src":  "fonts/AlegreyaSansSCBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansSCBlack",
+        "src":  "fonts/AlegreyaSansSCBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansSCExtraBold",
+        "src":  "fonts/AlegreyaSansSCExtraBold-Italic.woff2",
+        "weight":  800,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansSCExtraBold",
+        "src":  "fonts/AlegreyaSansSCExtraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansSCLight",
+        "src":  "fonts/AlegreyaSansSCLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansSCLight",
+        "src":  "fonts/AlegreyaSansSCLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansSCMedium",
+        "src":  "fonts/AlegreyaSansSCMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansSCMedium",
+        "src":  "fonts/AlegreyaSansSCMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansSCThin",
+        "src":  "fonts/AlegreyaSansSCThin-Italic.woff2",
+        "weight":  100,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansSCThin",
+        "src":  "fonts/AlegreyaSansSCThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansThin",
+        "src":  "fonts/AlegreyaSansThin-Italic.woff2",
+        "weight":  100,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSansThin",
+        "src":  "fonts/AlegreyaSansThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSC",
+        "src":  "fonts/AlegreyaSC-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSC",
+        "src":  "fonts/AlegreyaSC-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSC",
+        "src":  "fonts/AlegreyaSC.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlegreyaSC",
+        "src":  "fonts/AlegreyaSC-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Aleo",
+        "src":  "fonts/Aleo-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Aleo",
+        "src":  "fonts/Aleo-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Aleo",
+        "src":  "fonts/Aleo.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Aleo",
+        "src":  "fonts/Aleo-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AleoLight",
+        "src":  "fonts/AleoLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AleoLight",
+        "src":  "fonts/AleoLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlexBrush",
+        "src":  "fonts/AlexBrush.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlfaSlabOne",
+        "src":  "fonts/AlfaSlabOne.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlibabaSans",
+        "src":  "fonts/AlibabaSans-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlibabaSans",
+        "src":  "fonts/AlibabaSans-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlibabaSans",
+        "src":  "fonts/AlibabaSans.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlibabaSans",
+        "src":  "fonts/AlibabaSans-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Alice",
+        "src":  "fonts/Alice-Regular.italic-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Alice",
+        "src":  "fonts/Alice.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Alike",
+        "src":  "fonts/Alike.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AllertaStencil",
+        "src":  "fonts/AllertaStencil.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AllrounderMonument",
+        "src":  "fonts/AllrounderMonument.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AllrounderMonumentBook",
+        "src":  "fonts/AllrounderMonumentBook.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AllrounderMonumentMedium",
+        "src":  "fonts/AllrounderMonumentMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Allura",
+        "src":  "fonts/Allura.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlojaExtended",
+        "src":  "fonts/AlojaExtended.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AltaLight",
+        "src":  "fonts/AltaLight-Light.woff2",
+        "weight":  300,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AltaRegular",
+        "src":  "fonts/AltaRegular.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlternateGothicProNo1",
+        "src":  "fonts/AlternateGothicProNo1.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlternateGothicProNo2",
+        "src":  "fonts/AlternateGothicProNo2.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AlternateGothicProNo3",
+        "src":  "fonts/AlternateGothicProNo3.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Amaranth",
+        "src":  "fonts/Amaranth-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Amaranth",
+        "src":  "fonts/Amaranth-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Amaranth",
+        "src":  "fonts/Amaranth.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Amaranth",
+        "src":  "fonts/Amaranth-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmaticSC",
+        "src":  "fonts/AmaticSC.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmaticSC",
+        "src":  "fonts/AmaticSC-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmaticSC.c4c985708dbf7b64111359a8abb2292d",
+        "src":  "fonts/AmaticSC.c4c985708dbf7b64111359a8abb2292d-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmbiguityNormate",
+        "src":  "fonts/AmbiguityNormate-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmbiguityNormate",
+        "src":  "fonts/AmbiguityNormate-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmbiguityNormate",
+        "src":  "fonts/AmbiguityNormate.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmbiguityNormate",
+        "src":  "fonts/AmbiguityNormate-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmbiguityNormateBlack",
+        "src":  "fonts/AmbiguityNormateBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmbiguityNormateBlack",
+        "src":  "fonts/AmbiguityNormateBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmbiguityNormateInline",
+        "src":  "fonts/AmbiguityNormateInline.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmbiguityNormateLight",
+        "src":  "fonts/AmbiguityNormateLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmbiguityNormateLight",
+        "src":  "fonts/AmbiguityNormateLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmbiguityNormateRounded",
+        "src":  "fonts/AmbiguityNormateRounded.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmericanUncialPro",
+        "src":  "fonts/AmericanUncialPro.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Amoresa",
+        "src":  "fonts/Amoresa.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmoresaAged",
+        "src":  "fonts/AmoresaAged.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmsterdamFour",
+        "src":  "fonts/AmsterdamFour.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmsterdamFourSlant",
+        "src":  "fonts/AmsterdamFourSlant.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmsterdamOne",
+        "src":  "fonts/AmsterdamOne.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmsterdamOneSlant",
+        "src":  "fonts/AmsterdamOneSlant.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmsterdamThree",
+        "src":  "fonts/AmsterdamThree.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AmsterdamThreeSlant",
+        "src":  "fonts/AmsterdamThreeSlant.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Andale®andWorldType®CollectionJ",
+        "src":  "fonts/Andale®andWorldType®CollectionJ.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Andasia",
+        "src":  "fonts/Andasia.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Angeletta",
+        "src":  "fonts/Angeletta.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Angelina",
+        "src":  "fonts/Angelina.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AngellaWhite",
+        "src":  "fonts/AngellaWhite.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Aniyah",
+        "src":  "fonts/Aniyah.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AniyahItalic",
+        "src":  "fonts/AniyahItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AnonymousPro",
+        "src":  "fonts/AnonymousPro-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AnonymousPro",
+        "src":  "fonts/AnonymousPro-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AnonymousPro",
+        "src":  "fonts/AnonymousPro.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AnonymousPro",
+        "src":  "fonts/AnonymousPro-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Antic",
+        "src":  "fonts/Antic.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AntiqueOlivePro",
+        "src":  "fonts/AntiqueOlivePro-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AntiqueOlivePro",
+        "src":  "fonts/AntiqueOlivePro.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AntiqueOlivePro",
+        "src":  "fonts/AntiqueOlivePro-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AntiqueOliveProBlack",
+        "src":  "fonts/AntiqueOliveProBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AntiqueOliveProLight",
+        "src":  "fonts/AntiqueOliveProLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Anton",
+        "src":  "fonts/Anton.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Aperture",
+        "src":  "fonts/Aperture.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Apricots",
+        "src":  "fonts/Apricots.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Aprila",
+        "src":  "fonts/Aprila.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Aprila",
+        "src":  "fonts/Aprila-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AprilaBlack",
+        "src":  "fonts/AprilaBlack-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AprilaSemiBold",
+        "src":  "fonts/AprilaSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Aptos",
+        "src":  "fonts/Aptos-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Aptos",
+        "src":  "fonts/Aptos-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Aptos",
+        "src":  "fonts/Aptos.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Aptos",
+        "src":  "fonts/Aptos-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arapey",
+        "src":  "fonts/Arapey-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arapey",
+        "src":  "fonts/Arapey.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arcadian",
+        "src":  "fonts/Arcadian-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arcadian",
+        "src":  "fonts/Arcadian.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitectsDaughter",
+        "src":  "fonts/ArchitectsDaughter.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Architype",
+        "src":  "fonts/Architype-Vierkant.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeAlbers",
+        "src":  "fonts/ArchitypeAlbers-Albers.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeAubette",
+        "src":  "fonts/ArchitypeAubette-Aubette.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeBallmer",
+        "src":  "fonts/ArchitypeBallmer-Ballmer.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeBayer",
+        "src":  "fonts/ArchitypeBayer-Bayer.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeBayerType",
+        "src":  "fonts/ArchitypeBayerType-BayerType.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeBill",
+        "src":  "fonts/ArchitypeBill-Bill.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeCatalogueSoftSolid",
+        "src":  "fonts/ArchitypeCatalogueSoftSolid-CatalogueSoftSolid.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeFodor",
+        "src":  "fonts/ArchitypeFodor-Fodor.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeIngenieurBold",
+        "src":  "fonts/ArchitypeIngenieurBold-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeIngenieurDot",
+        "src":  "fonts/ArchitypeIngenieurDot-Dot.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeIngenieurLight",
+        "src":  "fonts/ArchitypeIngenieurLight-Light.woff2",
+        "weight":  300,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeIngenieurRegular",
+        "src":  "fonts/ArchitypeIngenieurRegular.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeSchwitters",
+        "src":  "fonts/ArchitypeSchwitters-Schwitters.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeStedelijk",
+        "src":  "fonts/ArchitypeStedelijk-Stedelijk.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeTschichold",
+        "src":  "fonts/ArchitypeTschichold-Tschichold.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeVanDerLeck",
+        "src":  "fonts/ArchitypeVanDerLeck-VanDerLeck.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchitypeVanDoesburg",
+        "src":  "fonts/ArchitypeVanDoesburg-VanDoesburg.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Archive",
+        "src":  "fonts/Archive.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchivoBlack",
+        "src":  "fonts/ArchivoBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchivoNarrow",
+        "src":  "fonts/ArchivoNarrow-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchivoNarrow",
+        "src":  "fonts/ArchivoNarrow-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchivoNarrow",
+        "src":  "fonts/ArchivoNarrow.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArchivoNarrow",
+        "src":  "fonts/ArchivoNarrow-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arial",
+        "src":  "fonts/Arial-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arial",
+        "src":  "fonts/Arial-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arial",
+        "src":  "fonts/Arial.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arial",
+        "src":  "fonts/Arial-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArialMTPro",
+        "src":  "fonts/ArialMTPro-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArialMTPro",
+        "src":  "fonts/ArialMTPro-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArialMTPro",
+        "src":  "fonts/ArialMTPro.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArialMTPro",
+        "src":  "fonts/ArialMTPro-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArialNova",
+        "src":  "fonts/ArialNova-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArialNova",
+        "src":  "fonts/ArialNova-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArialNova",
+        "src":  "fonts/ArialNova.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArialNova",
+        "src":  "fonts/ArialNova-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArialNovaLight",
+        "src":  "fonts/ArialNovaLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArialNovaLight",
+        "src":  "fonts/ArialNovaLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArialUnicodeMS",
+        "src":  "fonts/ArialUnicodeMS.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArialUnicodeMS",
+        "src":  "fonts/ArialUnicodeMS-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arimo",
+        "src":  "fonts/Arimo-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arimo",
+        "src":  "fonts/Arimo-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arimo",
+        "src":  "fonts/Arimo.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arimo",
+        "src":  "fonts/Arimo-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Armiesdisplay",
+        "src":  "fonts/Armiesdisplay.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Art",
+        "src":  "fonts/Art-NuvoOblique.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Art",
+        "src":  "fonts/Art-Nuvo.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Art",
+        "src":  "fonts/Art-NuvoLetterpress.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Art",
+        "src":  "fonts/Art-NuvoOutline.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Art",
+        "src":  "fonts/Art-NuvoStamp.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Art",
+        "src":  "fonts/Art-NuvoUltra-Rough.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ArunaRegular",
+        "src":  "fonts/ArunaRegular.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arvo",
+        "src":  "fonts/Arvo-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arvo",
+        "src":  "fonts/Arvo-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arvo",
+        "src":  "fonts/Arvo.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Arvo",
+        "src":  "fonts/Arvo-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Asap",
+        "src":  "fonts/Asap-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Asap",
+        "src":  "fonts/Asap-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Asap",
+        "src":  "fonts/Asap.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Asap",
+        "src":  "fonts/Asap-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AsapCondensed",
+        "src":  "fonts/AsapCondensed-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AsapCondensed",
+        "src":  "fonts/AsapCondensed-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AsapCondensed",
+        "src":  "fonts/AsapCondensed.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AsapCondensed",
+        "src":  "fonts/AsapCondensed-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AsapMedium",
+        "src":  "fonts/AsapMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AsapMedium",
+        "src":  "fonts/AsapMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AsapSemiBold",
+        "src":  "fonts/AsapSemiBold-Italic.woff2",
+        "weight":  600,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AsapSemiBold",
+        "src":  "fonts/AsapSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AshleyCrawfordMTStdBold",
+        "src":  "fonts/AshleyCrawfordMTStdBold.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AshleyCrawfordMTStdLight",
+        "src":  "fonts/AshleyCrawfordMTStdLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AshleyCrawfordStd",
+        "src":  "fonts/AshleyCrawfordStd.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ATBScriptRg",
+        "src":  "fonts/ATBScriptRg.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AtkinsonHyperlegible",
+        "src":  "fonts/AtkinsonHyperlegible-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AtkinsonHyperlegible",
+        "src":  "fonts/AtkinsonHyperlegible-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AtkinsonHyperlegible",
+        "src":  "fonts/AtkinsonHyperlegible.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AtkinsonHyperlegible",
+        "src":  "fonts/AtkinsonHyperlegible-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Atteron",
+        "src":  "fonts/Atteron.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AugusteaOpenCom",
+        "src":  "fonts/AugusteaOpenCom.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AuriolLTStd",
+        "src":  "fonts/AuriolLTStd-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AuriolLTStd",
+        "src":  "fonts/AuriolLTStd-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AuriolLTStd",
+        "src":  "fonts/AuriolLTStd.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AuriolLTStd",
+        "src":  "fonts/AuriolLTStd-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AuriolLTStdBlack",
+        "src":  "fonts/AuriolLTStdBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AuriolLTStdBlack",
+        "src":  "fonts/AuriolLTStdBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AutheniaSolid",
+        "src":  "fonts/AutheniaSolid.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AutheniaTextured",
+        "src":  "fonts/AutheniaTextured.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AvallonAllCaps",
+        "src":  "fonts/AvallonAllCaps.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AvallonAlt",
+        "src":  "fonts/AvallonAlt.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Avatar",
+        "src":  "fonts/Avatar.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AvenirLTPro35Light",
+        "src":  "fonts/AvenirLTPro35Light-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AvenirLTPro35Light",
+        "src":  "fonts/AvenirLTPro35Light.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AvenirLTPro55Roman",
+        "src":  "fonts/AvenirLTPro55Roman-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AvenirLTPro55Roman",
+        "src":  "fonts/AvenirLTPro55Roman-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AvenirLTPro55Roman",
+        "src":  "fonts/AvenirLTPro55Roman.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AvenirLTPro55Roman",
+        "src":  "fonts/AvenirLTPro55Roman-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AvenirLTPro65Medium",
+        "src":  "fonts/AvenirLTPro65Medium-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AvenirLTPro65Medium",
+        "src":  "fonts/AvenirLTPro65Medium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AvenirLTPro65Medium",
+        "src":  "fonts/AvenirLTPro65Medium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AvenirLTPro65Medium",
+        "src":  "fonts/AvenirLTPro65Medium-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Awesome",
+        "src":  "fonts/Awesome.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AwesomeLathusca",
+        "src":  "fonts/AwesomeLathusca-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AwesomeLathusca",
+        "src":  "fonts/AwesomeLathusca.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AwesomeThin",
+        "src":  "fonts/AwesomeThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AyrSaturdayNightInterlock",
+        "src":  "fonts/AyrSaturdayNightInterlock.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AyrSaturdayNightInterlockExpand",
+        "src":  "fonts/AyrSaturdayNightInterlockExpand.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AyrSaturdayNightInterlockExtrude",
+        "src":  "fonts/AyrSaturdayNightInterlockExtrude.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AyrSaturdayNightInterlockHollow",
+        "src":  "fonts/AyrSaturdayNightInterlockHollow.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AyrSaturdayNightScript",
+        "src":  "fonts/AyrSaturdayNightScript.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AyrSaturdayNightScriptExpand",
+        "src":  "fonts/AyrSaturdayNightScriptExpand.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "AyrSaturdayNightScriptHollow",
+        "src":  "fonts/AyrSaturdayNightScriptHollow.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BaronNeue",
+        "src":  "fonts/BaronNeue-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BaronNeue",
+        "src":  "fonts/BaronNeue.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BaronNeueBlack",
+        "src":  "fonts/BaronNeueBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BaronNeueBlack",
+        "src":  "fonts/BaronNeueBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BaronNeueBold",
+        "src":  "fonts/BaronNeueBold-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BaronNeueBold",
+        "src":  "fonts/BaronNeueBold-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Barriecito",
+        "src":  "fonts/Barriecito.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BauhausProHeavy",
+        "src":  "fonts/BauhausProHeavy.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BauhausProLight",
+        "src":  "fonts/BauhausProLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BauhausProLight",
+        "src":  "fonts/BauhausProLight-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BauhausProMedium",
+        "src":  "fonts/BauhausProMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BauhausProMedium",
+        "src":  "fonts/BauhausProMedium-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BDSans",
+        "src":  "fonts/BDSans.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BDSansBlack",
+        "src":  "fonts/BDSansBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BDSansExtReg",
+        "src":  "fonts/BDSansExtReg-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BDSansThin",
+        "src":  "fonts/BDSansThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BebasNeueBold",
+        "src":  "fonts/BebasNeueBold.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BebasNeueRegular",
+        "src":  "fonts/BebasNeueRegular.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Belleza",
+        "src":  "fonts/Belleza.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Benedict",
+        "src":  "fonts/Benedict.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BenguiatProITCBook",
+        "src":  "fonts/BenguiatProITCBook-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BenguiatProITCBook",
+        "src":  "fonts/BenguiatProITCBook-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BenguiatProITCBook",
+        "src":  "fonts/BenguiatProITCBook.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BenguiatProITCBook",
+        "src":  "fonts/BenguiatProITCBook-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BenguiatProITCMedium",
+        "src":  "fonts/BenguiatProITCMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BenguiatProITCMedium",
+        "src":  "fonts/BenguiatProITCMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BinateDisplay",
+        "src":  "fonts/BinateDisplay-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BinateDisplay",
+        "src":  "fonts/BinateDisplay-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BinateDisplay",
+        "src":  "fonts/BinateDisplay.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BinateDisplay",
+        "src":  "fonts/BinateDisplay-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BinateDisplayBlack",
+        "src":  "fonts/BinateDisplayBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BinateDisplayBlack",
+        "src":  "fonts/BinateDisplayBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BinateDisplayLight",
+        "src":  "fonts/BinateDisplayLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BinateDisplayLight",
+        "src":  "fonts/BinateDisplayLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Biski",
+        "src":  "fonts/Biski-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Biski",
+        "src":  "fonts/Biski.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Biski",
+        "src":  "fonts/Biski-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BiskiBlack",
+        "src":  "fonts/BiskiBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BiskiBlack",
+        "src":  "fonts/BiskiBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BiskiBold",
+        "src":  "fonts/BiskiBold-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BiskiExtraBold",
+        "src":  "fonts/BiskiExtraBold-Italic.woff2",
+        "weight":  800,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BiskiExtraBold",
+        "src":  "fonts/BiskiExtraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BiskiLight",
+        "src":  "fonts/BiskiLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BiskiLight",
+        "src":  "fonts/BiskiLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BiskiMedium",
+        "src":  "fonts/BiskiMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BiskiMedium",
+        "src":  "fonts/BiskiMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BiskiSemiBold",
+        "src":  "fonts/BiskiSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BiskiSemiBold",
+        "src":  "fonts/BiskiSemiBold_2.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BiskiThin",
+        "src":  "fonts/BiskiThin-Italic.woff2",
+        "weight":  100,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BiskiThin",
+        "src":  "fonts/BiskiThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Blaka",
+        "src":  "fonts/Blaka.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BobbyJonesRegular",
+        "src":  "fonts/BobbyJonesRegular.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BodoniFLF",
+        "src":  "fonts/BodoniFLF-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BodoniFLF",
+        "src":  "fonts/BodoniFLF-MediumItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BodoniFLF",
+        "src":  "fonts/BodoniFLF.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BodoniFLF",
+        "src":  "fonts/BodoniFLF-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BraggadocioMTStd",
+        "src":  "fonts/BraggadocioMTStd.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Bright",
+        "src":  "fonts/Bright.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BrittanySignature",
+        "src":  "fonts/BrittanySignature.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Buffalo",
+        "src":  "fonts/Buffalo.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BukhariScript",
+        "src":  "fonts/BukhariScript.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "BuongiornoRastellinoCyrScript",
+        "src":  "fonts/BuongiornoRastellinoCyrScript.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Cabin",
+        "src":  "fonts/Cabin-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Cabin",
+        "src":  "fonts/Cabin-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Cabin",
+        "src":  "fonts/Cabin.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Cabin",
+        "src":  "fonts/Cabin-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CabinMedium",
+        "src":  "fonts/CabinMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CabinMedium",
+        "src":  "fonts/CabinMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CabinSemiBold",
+        "src":  "fonts/CabinSemiBold-Italic.woff2",
+        "weight":  600,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CabinSemiBold",
+        "src":  "fonts/CabinSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Calgary",
+        "src":  "fonts/Calgary.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "calibrate",
+        "src":  "fonts/calibrate.woff",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff"
+    },
+    {
+        "family":  "CanvaSans",
+        "src":  "fonts/CanvaSans-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CanvaSans",
+        "src":  "fonts/CanvaSans-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CanvaSans",
+        "src":  "fonts/CanvaSans.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CanvaSans",
+        "src":  "fonts/CanvaSans-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CanvaSansMedium",
+        "src":  "fonts/CanvaSansMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CanvaSansMedium",
+        "src":  "fonts/CanvaSansMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CanvaSansSans",
+        "src":  "fonts/CanvaSansSans.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CanvaSchoolFont",
+        "src":  "fonts/CanvaSchoolFont.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Cardo",
+        "src":  "fonts/Cardo-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Cardo",
+        "src":  "fonts/Cardo.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Cardo",
+        "src":  "fonts/Cardo-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Cheque",
+        "src":  "fonts/Cheque.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ChequeBlack",
+        "src":  "fonts/ChequeBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Chewy",
+        "src":  "fonts/Chewy.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Chloe",
+        "src":  "fonts/Chloe.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Cinzel",
+        "src":  "fonts/Cinzel.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Cinzel",
+        "src":  "fonts/Cinzel-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CinzelDecorative",
+        "src":  "fonts/CinzelDecorative.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CinzelDecorative",
+        "src":  "fonts/CinzelDecorative-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CitadelScriptPro",
+        "src":  "fonts/CitadelScriptPro.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ComicSansMS",
+        "src":  "fonts/ComicSansMS-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ComicSansMS",
+        "src":  "fonts/ComicSansMS-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ComicSansMS",
+        "src":  "fonts/ComicSansMS.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ComicSansMS",
+        "src":  "fonts/ComicSansMS-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CopperplateGothicLTPro29AB",
+        "src":  "fonts/CopperplateGothicLTPro29AB.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CopperplateGothicLTPro29BC",
+        "src":  "fonts/CopperplateGothicLTPro29BC.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CopperplateGothicLTPro30AB",
+        "src":  "fonts/CopperplateGothicLTPro30AB.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CopperplateGothicLTPro30BC",
+        "src":  "fonts/CopperplateGothicLTPro30BC.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CopperplateGothicLTPro31AB",
+        "src":  "fonts/CopperplateGothicLTPro31AB.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CopperplateGothicLTPro31BC",
+        "src":  "fonts/CopperplateGothicLTPro31BC.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CopperplateGothicLTPro32AB",
+        "src":  "fonts/CopperplateGothicLTPro32AB.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CopperplateGothicLTPro32BC",
+        "src":  "fonts/CopperplateGothicLTPro32BC.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CopperplateGothicLTPro33BC",
+        "src":  "fonts/CopperplateGothicLTPro33BC.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CormorantGaramond",
+        "src":  "fonts/CormorantGaramond-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CormorantGaramond",
+        "src":  "fonts/CormorantGaramond-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CormorantGaramond",
+        "src":  "fonts/CormorantGaramond.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CormorantGaramond",
+        "src":  "fonts/CormorantGaramond-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CormorantGaramondLight",
+        "src":  "fonts/CormorantGaramondLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CormorantGaramondLight",
+        "src":  "fonts/CormorantGaramondLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CormorantGaramondMedium",
+        "src":  "fonts/CormorantGaramondMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CormorantGaramondMedium",
+        "src":  "fonts/CormorantGaramondMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CormorantGaramondSemiBold",
+        "src":  "fonts/CormorantGaramondSemiBold-Italic.woff2",
+        "weight":  600,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "CormorantGaramondSemiBold",
+        "src":  "fonts/CormorantGaramondSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Devasia2",
+        "src":  "fonts/Devasia2.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "DMSans",
+        "src":  "fonts/DMSans-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "DMSans",
+        "src":  "fonts/DMSans-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "DMSans",
+        "src":  "fonts/DMSans.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "DMSans",
+        "src":  "fonts/DMSans-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "EmithaScript",
+        "src":  "fonts/EmithaScript.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Etna",
+        "src":  "fonts/Etna-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FabricaHeavy",
+        "src":  "fonts/FabricaHeavy.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FabricaHeavyItalic",
+        "src":  "fonts/FabricaHeavyItalic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FindelDisplay",
+        "src":  "fonts/FindelDisplay.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Fiona",
+        "src":  "fonts/Fiona.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FredokaOne",
+        "src":  "fonts/FredokaOne.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FuturaBlackBT",
+        "src":  "fonts/FuturaBlackBT.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FuturaLTProBook",
+        "src":  "fonts/FuturaLTProBook-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FuturaLTProBook",
+        "src":  "fonts/FuturaLTProBook-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FuturaLTProBook",
+        "src":  "fonts/FuturaLTProBook.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FuturaLTProBook",
+        "src":  "fonts/FuturaLTProBook-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FuturaLTProLight",
+        "src":  "fonts/FuturaLTProLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FuturaLTProLight",
+        "src":  "fonts/FuturaLTProLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FuturaLTProMedium",
+        "src":  "fonts/FuturaLTProMedium-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FuturaLTProMedium",
+        "src":  "fonts/FuturaLTProMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FuturaLTProMedium",
+        "src":  "fonts/FuturaLTProMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FuturaLTProMedium",
+        "src":  "fonts/FuturaLTProMedium-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FuturaLTProXBold",
+        "src":  "fonts/FuturaLTProXBold-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "FuturaLTProXBold",
+        "src":  "fonts/FuturaLTProXBold.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Gagalin",
+        "src":  "fonts/Gagalin.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Garamond",
+        "src":  "fonts/Garamond-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Garamond",
+        "src":  "fonts/Garamond-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Garamond",
+        "src":  "fonts/Garamond.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Garamond",
+        "src":  "fonts/Garamond-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Garet",
+        "src":  "fonts/Garet-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Garet",
+        "src":  "fonts/Garet-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Garet",
+        "src":  "fonts/Garet.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Garet",
+        "src":  "fonts/Garet-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GaretBlack",
+        "src":  "fonts/GaretBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GaretBlack",
+        "src":  "fonts/GaretBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GaretBook",
+        "src":  "fonts/GaretBook.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GaretExtraBold",
+        "src":  "fonts/GaretExtraBold-Italic.woff2",
+        "weight":  800,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GaretExtraBold",
+        "src":  "fonts/GaretExtraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GeorgiaPro",
+        "src":  "fonts/GeorgiaPro-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GeorgiaPro",
+        "src":  "fonts/GeorgiaPro-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GeorgiaPro",
+        "src":  "fonts/GeorgiaPro.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GeorgiaPro",
+        "src":  "fonts/GeorgiaPro-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GeorgiaProBlack",
+        "src":  "fonts/GeorgiaProBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GeorgiaProBlack",
+        "src":  "fonts/GeorgiaProBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GeorgiaProLight",
+        "src":  "fonts/GeorgiaProLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GeorgiaProLight",
+        "src":  "fonts/GeorgiaProLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GlacialIndifference",
+        "src":  "fonts/GlacialIndifference-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GlacialIndifference",
+        "src":  "fonts/GlacialIndifference-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GlacialIndifference",
+        "src":  "fonts/GlacialIndifference.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GothamBlack",
+        "src":  "fonts/GothamBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GothamBlack",
+        "src":  "fonts/GothamBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GothamBold",
+        "src":  "fonts/GothamBold-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GothamBold",
+        "src":  "fonts/GothamBold.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GothamBook",
+        "src":  "fonts/GothamBook-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GothamBook",
+        "src":  "fonts/GothamBook.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GothamLight",
+        "src":  "fonts/GothamLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GothamLight",
+        "src":  "fonts/GothamLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "GrandHotel",
+        "src":  "fonts/GrandHotel.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Hangyaboly",
+        "src":  "fonts/Hangyaboly.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "HelveticaNowText",
+        "src":  "fonts/HelveticaNowText-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "HelveticaNowText",
+        "src":  "fonts/HelveticaNowText-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "HelveticaNowText",
+        "src":  "fonts/HelveticaNowText.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "HelveticaNowText",
+        "src":  "fonts/HelveticaNowText-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "HelveticaNowTextBlack",
+        "src":  "fonts/HelveticaNowTextBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "HelveticaNowTextBlack",
+        "src":  "fonts/HelveticaNowTextBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "HelveticaNowTextLight",
+        "src":  "fonts/HelveticaNowTextLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "HelveticaNowTextLight",
+        "src":  "fonts/HelveticaNowTextLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "HelveticaWorld",
+        "src":  "fonts/HelveticaWorld-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "HelveticaWorld",
+        "src":  "fonts/HelveticaWorld-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "HelveticaWorld",
+        "src":  "fonts/HelveticaWorld.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "HelveticaWorld",
+        "src":  "fonts/HelveticaWorld-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "HeyGotcha",
+        "src":  "fonts/HeyGotcha.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "HKModular",
+        "src":  "fonts/HKModular-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Horizon",
+        "src":  "fonts/Horizon-Outlined.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Horizon",
+        "src":  "fonts/Horizon-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ImpactLTStd",
+        "src":  "fonts/ImpactLTStd.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "IntroRustBase",
+        "src":  "fonts/IntroRustBase.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Joliet",
+        "src":  "fonts/Joliet.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Jonathan",
+        "src":  "fonts/Jonathan.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Kare",
+        "src":  "fonts/Kare.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Knockout26",
+        "src":  "fonts/Knockout26.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Knockout28",
+        "src":  "fonts/Knockout28.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Knockout30",
+        "src":  "fonts/Knockout30.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Knockout32",
+        "src":  "fonts/Knockout32.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Knockout34",
+        "src":  "fonts/Knockout34.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Knockout48",
+        "src":  "fonts/Knockout48.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Knockout50",
+        "src":  "fonts/Knockout50.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Knockout52",
+        "src":  "fonts/Knockout52.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Knockout54",
+        "src":  "fonts/Knockout54.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Knockout68",
+        "src":  "fonts/Knockout68.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Knockout70",
+        "src":  "fonts/Knockout70.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Knockout72",
+        "src":  "fonts/Knockout72.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Knockout74",
+        "src":  "fonts/Knockout74.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Lancelot",
+        "src":  "fonts/Lancelot.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Lato",
+        "src":  "fonts/Lato-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Lato",
+        "src":  "fonts/Lato-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Lato",
+        "src":  "fonts/Lato.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Lato",
+        "src":  "fonts/Lato-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LatoBlack",
+        "src":  "fonts/LatoBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LatoBlack",
+        "src":  "fonts/LatoBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LatoHairline",
+        "src":  "fonts/LatoHairline-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LatoHairline",
+        "src":  "fonts/LatoHairline.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LatoLight",
+        "src":  "fonts/LatoLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LatoLight",
+        "src":  "fonts/LatoLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Lazydog",
+        "src":  "fonts/Lazydog.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LeagueGothic",
+        "src":  "fonts/LeagueGothic.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LeagueGothicItalic",
+        "src":  "fonts/LeagueGothicItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LeagueSpartan",
+        "src":  "fonts/LeagueSpartan.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LibreBaskerville",
+        "src":  "fonts/LibreBaskerville-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LibreBaskerville",
+        "src":  "fonts/LibreBaskerville.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LibreBaskerville",
+        "src":  "fonts/LibreBaskerville-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LilitaOne",
+        "src":  "fonts/LilitaOne.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "London",
+        "src":  "fonts/London.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Lora",
+        "src":  "fonts/Lora-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Lora",
+        "src":  "fonts/Lora-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Lora",
+        "src":  "fonts/Lora.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Lora",
+        "src":  "fonts/Lora-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LoveloBlack",
+        "src":  "fonts/LoveloBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "LuckyDipCaitlin",
+        "src":  "fonts/LuckyDipCaitlin.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "lulu",
+        "src":  "fonts/lulu.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "luluitalic",
+        "src":  "fonts/luluitalic-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MadelynFill",
+        "src":  "fonts/MadelynFill.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MagnoliaScript",
+        "src":  "fonts/MagnoliaScript.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Marykate",
+        "src":  "fonts/Marykate.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Montserrat",
+        "src":  "fonts/Montserrat-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Montserrat",
+        "src":  "fonts/Montserrat-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Montserrat",
+        "src":  "fonts/Montserrat.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Montserrat",
+        "src":  "fonts/Montserrat-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MontserratBlack",
+        "src":  "fonts/MontserratBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MontserratBlack",
+        "src":  "fonts/MontserratBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MontserratExtraBold",
+        "src":  "fonts/MontserratExtraBold-Italic.woff2",
+        "weight":  800,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MontserratExtraBold",
+        "src":  "fonts/MontserratExtraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MontserratExtraLight",
+        "src":  "fonts/MontserratExtraLight-Italic.woff2",
+        "weight":  200,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MontserratExtraLight",
+        "src":  "fonts/MontserratExtraLight.woff2",
+        "weight":  200,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MontserratLight",
+        "src":  "fonts/MontserratLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MontserratLight",
+        "src":  "fonts/MontserratLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MontserratMedium",
+        "src":  "fonts/MontserratMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MontserratMedium",
+        "src":  "fonts/MontserratMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MontserratSemiBold",
+        "src":  "fonts/MontserratSemiBold-Italic.woff2",
+        "weight":  600,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MontserratSemiBold",
+        "src":  "fonts/MontserratSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MontserratThin",
+        "src":  "fonts/MontserratThin-Italic.woff2",
+        "weight":  100,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MontserratThin",
+        "src":  "fonts/MontserratThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MoonTime",
+        "src":  "fonts/MoonTime.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Muli",
+        "src":  "fonts/Muli-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Muli",
+        "src":  "fonts/Muli-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Muli",
+        "src":  "fonts/Muli.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Muli",
+        "src":  "fonts/Muli-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MuliBlack",
+        "src":  "fonts/MuliBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MuliBlack",
+        "src":  "fonts/MuliBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MuliExtraBold",
+        "src":  "fonts/MuliExtraBold-Italic.woff2",
+        "weight":  800,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MuliExtraBold",
+        "src":  "fonts/MuliExtraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MuliExtraLight",
+        "src":  "fonts/MuliExtraLight-Italic.woff2",
+        "weight":  200,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MuliExtraLight",
+        "src":  "fonts/MuliExtraLight.woff2",
+        "weight":  200,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MuliLight",
+        "src":  "fonts/MuliLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MuliLight",
+        "src":  "fonts/MuliLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MuliSemiBold",
+        "src":  "fonts/MuliSemiBold-Italic.woff2",
+        "weight":  600,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "MuliSemiBold",
+        "src":  "fonts/MuliSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NF",
+        "src":  "fonts/NF-ANTIO.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NickainleyNormal",
+        "src":  "fonts/NickainleyNormal.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NixieOne",
+        "src":  "fonts/NixieOne.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Norwester",
+        "src":  "fonts/Norwester.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSans",
+        "src":  "fonts/NotoSans.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSansArabic",
+        "src":  "fonts/NotoSansArabic.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSansBold",
+        "src":  "fonts/NotoSansBold.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSansDevanagari",
+        "src":  "fonts/NotoSansDevanagari.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSansDevanagari",
+        "src":  "fonts/NotoSansDevanagari-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSansDevanagariSemiBold",
+        "src":  "fonts/NotoSansDevanagariSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSansHebrewLight",
+        "src":  "fonts/NotoSansHebrewLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSansSemiBold",
+        "src":  "fonts/NotoSansSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSerif",
+        "src":  "fonts/NotoSerif-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSerif",
+        "src":  "fonts/NotoSerif-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSerif",
+        "src":  "fonts/NotoSerif.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSerif",
+        "src":  "fonts/NotoSerif-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSerifEthiopicCondensed",
+        "src":  "fonts/NotoSerifEthiopicCondensed.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSerifEthiopicCondensed",
+        "src":  "fonts/NotoSerifEthiopicCondensed-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSerifEthiopicCondensedBlack",
+        "src":  "fonts/NotoSerifEthiopicCondensedBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSerifEthiopicCondensedExtraBold",
+        "src":  "fonts/NotoSerifEthiopicCondensedExtraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSerifEthiopicCondensedExtraLight",
+        "src":  "fonts/NotoSerifEthiopicCondensedExtraLight.woff2",
+        "weight":  200,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSerifEthiopicCondensedLight",
+        "src":  "fonts/NotoSerifEthiopicCondensedLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSerifEthiopicCondensedMedium",
+        "src":  "fonts/NotoSerifEthiopicCondensedMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSerifEthiopicCondensedSemiBold",
+        "src":  "fonts/NotoSerifEthiopicCondensedSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NotoSerifEthiopicCondensedThin",
+        "src":  "fonts/NotoSerifEthiopicCondensedThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "NTBrickSans",
+        "src":  "fonts/NTBrickSans.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OilvareBase",
+        "src":  "fonts/OilvareBase-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OilvareBase",
+        "src":  "fonts/OilvareBase.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OldStandard",
+        "src":  "fonts/OldStandard-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OldStandard",
+        "src":  "fonts/OldStandard.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OldStandard",
+        "src":  "fonts/OldStandard-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSans",
+        "src":  "fonts/OpenSans-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSans",
+        "src":  "fonts/OpenSans-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSans",
+        "src":  "fonts/OpenSans.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSans",
+        "src":  "fonts/OpenSans-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSansExtraBold",
+        "src":  "fonts/OpenSansExtraBold-Italic.woff2",
+        "weight":  800,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSansExtraBold",
+        "src":  "fonts/OpenSansExtraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSansLight",
+        "src":  "fonts/OpenSansLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSansLight",
+        "src":  "fonts/OpenSansLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSansMedium",
+        "src":  "fonts/OpenSansMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSansMedium",
+        "src":  "fonts/OpenSansMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSansSemiBold",
+        "src":  "fonts/OpenSansSemiBold-Italic.woff2",
+        "weight":  600,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSansSemiBold",
+        "src":  "fonts/OpenSansSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSauceOne",
+        "src":  "fonts/OpenSauceOne-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSauceOne",
+        "src":  "fonts/OpenSauceOne-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSauceOne",
+        "src":  "fonts/OpenSauceOne.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSauceOne",
+        "src":  "fonts/OpenSauceOne-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSauceOneBlack",
+        "src":  "fonts/OpenSauceOneBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSauceOneBlackItalic",
+        "src":  "fonts/OpenSauceOneBlackItalic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSauceOneLight",
+        "src":  "fonts/OpenSauceOneLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSauceOneLightItalic",
+        "src":  "fonts/OpenSauceOneLightItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSauceOneMedium",
+        "src":  "fonts/OpenSauceOneMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSauceOneMediumItalic",
+        "src":  "fonts/OpenSauceOneMediumItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSauceOneSemiBold",
+        "src":  "fonts/OpenSauceOneSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "OpenSauceOneSemiBoldItalic",
+        "src":  "fonts/OpenSauceOneSemiBoldItalic.woff2",
+        "weight":  600,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Oswald",
+        "src":  "fonts/Oswald.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Oswald",
+        "src":  "fonts/Oswald-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Pierson",
+        "src":  "fonts/Pierson.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PiersonLight",
+        "src":  "fonts/PiersonLight-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PinyonScript",
+        "src":  "fonts/PinyonScript.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PlayfairDisplay",
+        "src":  "fonts/PlayfairDisplay-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PlayfairDisplay",
+        "src":  "fonts/PlayfairDisplay-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PlayfairDisplay",
+        "src":  "fonts/PlayfairDisplay.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PlayfairDisplay",
+        "src":  "fonts/PlayfairDisplay-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PlayfairDisplayBlack",
+        "src":  "fonts/PlayfairDisplayBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PlayfairDisplayBlack",
+        "src":  "fonts/PlayfairDisplayBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PlayfairDisplayExtraBold",
+        "src":  "fonts/PlayfairDisplayExtraBold-Italic.woff2",
+        "weight":  800,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PlayfairDisplayExtraBold",
+        "src":  "fonts/PlayfairDisplayExtraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PlayfairDisplayMedium",
+        "src":  "fonts/PlayfairDisplayMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PlayfairDisplayMedium",
+        "src":  "fonts/PlayfairDisplayMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PlayfairDisplaySemiBold",
+        "src":  "fonts/PlayfairDisplaySemiBold-Italic.woff2",
+        "weight":  600,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PlayfairDisplaySemiBold",
+        "src":  "fonts/PlayfairDisplaySemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PLBarnumBlock",
+        "src":  "fonts/PLBarnumBlock.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Poppins",
+        "src":  "fonts/Poppins-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Poppins",
+        "src":  "fonts/Poppins-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Poppins",
+        "src":  "fonts/Poppins.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Poppins",
+        "src":  "fonts/Poppins-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PoppinsBlack",
+        "src":  "fonts/PoppinsBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PoppinsBlack",
+        "src":  "fonts/PoppinsBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PoppinsExtraBold",
+        "src":  "fonts/PoppinsExtraBold-Italic.woff2",
+        "weight":  800,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PoppinsExtraBold",
+        "src":  "fonts/PoppinsExtraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PoppinsExtraLight",
+        "src":  "fonts/PoppinsExtraLight-Italic.woff2",
+        "weight":  200,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PoppinsExtraLight",
+        "src":  "fonts/PoppinsExtraLight.woff2",
+        "weight":  200,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PoppinsLight",
+        "src":  "fonts/PoppinsLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PoppinsLight",
+        "src":  "fonts/PoppinsLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PoppinsMedium",
+        "src":  "fonts/PoppinsMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PoppinsMedium",
+        "src":  "fonts/PoppinsMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PoppinsSemiBold",
+        "src":  "fonts/PoppinsSemiBold-Italic.woff2",
+        "weight":  600,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PoppinsSemiBold",
+        "src":  "fonts/PoppinsSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PoppinsThin",
+        "src":  "fonts/PoppinsThin-Italic.woff2",
+        "weight":  100,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "PoppinsThin",
+        "src":  "fonts/PoppinsThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ProximaNova",
+        "src":  "fonts/ProximaNova-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ProximaNova",
+        "src":  "fonts/ProximaNova-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ProximaNova",
+        "src":  "fonts/ProximaNova.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ProximaNova",
+        "src":  "fonts/ProximaNova-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ProximaNovaBlack",
+        "src":  "fonts/ProximaNovaBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ProximaNovaBlack",
+        "src":  "fonts/ProximaNovaBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ProximaNovaLight",
+        "src":  "fonts/ProximaNovaLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ProximaNovaLight",
+        "src":  "fonts/ProximaNovaLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Quicksand",
+        "src":  "fonts/Quicksand.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Quicksand",
+        "src":  "fonts/Quicksand-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "QuicksandLight",
+        "src":  "fonts/QuicksandLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "QuicksandMedium",
+        "src":  "fonts/QuicksandMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "QuicksandSemiBold",
+        "src":  "fonts/QuicksandSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Recoleta",
+        "src":  "fonts/Recoleta.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RecoletaBlack",
+        "src":  "fonts/RecoletaBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RecoletaBold",
+        "src":  "fonts/RecoletaBold.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RecoletaLight",
+        "src":  "fonts/RecoletaLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RecoletaMedium",
+        "src":  "fonts/RecoletaMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RecoletaSemiBold",
+        "src":  "fonts/RecoletaSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RecoletaThin",
+        "src":  "fonts/RecoletaThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Revive80Signature",
+        "src":  "fonts/Revive80Signature.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Roboto",
+        "src":  "fonts/Roboto-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Roboto",
+        "src":  "fonts/Roboto-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Roboto",
+        "src":  "fonts/Roboto.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Roboto",
+        "src":  "fonts/Roboto-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RocaOne",
+        "src":  "fonts/RocaOne-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RocaOneBl",
+        "src":  "fonts/RocaOneBl.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RocaOneBlack",
+        "src":  "fonts/RocaOneBlack-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RocaOneBold",
+        "src":  "fonts/RocaOneBold-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RocaOneBold",
+        "src":  "fonts/RocaOneBold.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RocaOneHeavy",
+        "src":  "fonts/RocaOneHeavy-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RocaOneHv",
+        "src":  "fonts/RocaOneHv.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RocaOneLight",
+        "src":  "fonts/RocaOneLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RocaOneLt",
+        "src":  "fonts/RocaOneLt.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RocaOneRg",
+        "src":  "fonts/RocaOneRg.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RocaOneTh",
+        "src":  "fonts/RocaOneTh.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RocaOneThin",
+        "src":  "fonts/RocaOneThin-Italic.woff2",
+        "weight":  100,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RoxboroughCF",
+        "src":  "fonts/RoxboroughCF-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RoxboroughCF",
+        "src":  "fonts/RoxboroughCF.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RoxboroughCFBold",
+        "src":  "fonts/RoxboroughCFBold-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RoxboroughCFBold",
+        "src":  "fonts/RoxboroughCFBold.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RoxboroughCFDemiBold",
+        "src":  "fonts/RoxboroughCFDemiBold-Italic.woff2",
+        "weight":  600,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RoxboroughCFDemiBold",
+        "src":  "fonts/RoxboroughCFDemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RoxboroughCFHeavy",
+        "src":  "fonts/RoxboroughCFHeavy-Italic.woff2",
+        "weight":  900,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RoxboroughCFHeavy",
+        "src":  "fonts/RoxboroughCFHeavy.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RoxboroughCFLight",
+        "src":  "fonts/RoxboroughCFLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RoxboroughCFLight",
+        "src":  "fonts/RoxboroughCFLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RoxboroughCFMedium",
+        "src":  "fonts/RoxboroughCFMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RoxboroughCFMedium",
+        "src":  "fonts/RoxboroughCFMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RoxboroughCFThin",
+        "src":  "fonts/RoxboroughCFThin-Italic.woff2",
+        "weight":  100,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "RoxboroughCFThin",
+        "src":  "fonts/RoxboroughCFThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Sailors",
+        "src":  "fonts/Sailors.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Saira",
+        "src":  "fonts/Saira.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Saira",
+        "src":  "fonts/Saira-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SairaBlack",
+        "src":  "fonts/SairaBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SairaCondensed",
+        "src":  "fonts/SairaCondensed.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SairaCondensedBlack",
+        "src":  "fonts/SairaCondensedBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SairaCondensedCondensed",
+        "src":  "fonts/SairaCondensedCondensed-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SairaCondensedExtraBold",
+        "src":  "fonts/SairaCondensedExtraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SairaCondensedMedium",
+        "src":  "fonts/SairaCondensedMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SairaCondensedThin",
+        "src":  "fonts/SairaCondensedThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SairaExtraBold",
+        "src":  "fonts/SairaExtraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SairaExtraLight",
+        "src":  "fonts/SairaExtraLight.woff2",
+        "weight":  200,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SairaLight",
+        "src":  "fonts/SairaLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SairaMedium",
+        "src":  "fonts/SairaMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SairaSemiBold",
+        "src":  "fonts/SairaSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SairaThin",
+        "src":  "fonts/SairaThin.woff2",
+        "weight":  100,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Sanchez",
+        "src":  "fonts/Sanchez-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Sanchez",
+        "src":  "fonts/Sanchez.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Sansation",
+        "src":  "fonts/Sansation-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Sansation",
+        "src":  "fonts/Sansation-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Sansation",
+        "src":  "fonts/Sansation.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Sansation",
+        "src":  "fonts/Sansation-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SansationLight",
+        "src":  "fonts/SansationLight-Light.woff2",
+        "weight":  300,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Schoolbell",
+        "src":  "fonts/Schoolbell.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SensaBrushFill",
+        "src":  "fonts/SensaBrushFill.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Shrikhand",
+        "src":  "fonts/Shrikhand.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Slopes",
+        "src":  "fonts/Slopes.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SourceSerifPro",
+        "src":  "fonts/SourceSerifPro.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SourceSerifPro",
+        "src":  "fonts/SourceSerifPro-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Stoic",
+        "src":  "fonts/Stoic.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "SunbornSansOne",
+        "src":  "fonts/SunbornSansOne.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Telegraf",
+        "src":  "fonts/Telegraf.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Telegraf",
+        "src":  "fonts/Telegraf-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TelegrafBlack",
+        "src":  "fonts/TelegrafBlack.woff2",
+        "weight":  900,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TelegrafMedium",
+        "src":  "fonts/TelegrafMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TelegrafUltraBold",
+        "src":  "fonts/TelegrafUltraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TelegrafUltraLight",
+        "src":  "fonts/TelegrafUltraLight.woff2",
+        "weight":  200,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TenorSans",
+        "src":  "fonts/TenorSans.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TeXGyreTermes",
+        "src":  "fonts/TeXGyreTermes-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TeXGyreTermes",
+        "src":  "fonts/TeXGyreTermes-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TeXGyreTermes",
+        "src":  "fonts/TeXGyreTermes.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TeXGyreTermes",
+        "src":  "fonts/TeXGyreTermes-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TheSeasons",
+        "src":  "fonts/TheSeasons-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TheSeasons",
+        "src":  "fonts/TheSeasons.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TheSeasons",
+        "src":  "fonts/TheSeasons-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TheSeasonsBold",
+        "src":  "fonts/TheSeasonsBold-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TheSeasonsLight",
+        "src":  "fonts/TheSeasonsLight-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TheSeasonsLight",
+        "src":  "fonts/TheSeasonsLight.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TimesNRMTPro",
+        "src":  "fonts/TimesNRMTPro-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TimesNRMTPro",
+        "src":  "fonts/TimesNRMTPro-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TimesNRMTPro",
+        "src":  "fonts/TimesNRMTPro.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TimesNRMTPro",
+        "src":  "fonts/TimesNRMTPro-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TimesNRMTProExtraBold",
+        "src":  "fonts/TimesNRMTProExtraBold.woff2",
+        "weight":  800,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TimesNRMTProMedium",
+        "src":  "fonts/TimesNRMTProMedium-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TimesNRMTProMedium",
+        "src":  "fonts/TimesNRMTProMedium.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TimesNRMTProSemiBold",
+        "src":  "fonts/TimesNRMTProSemiBold-Italic.woff2",
+        "weight":  600,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TimesNRMTProSemiBold",
+        "src":  "fonts/TimesNRMTProSemiBold.woff2",
+        "weight":  600,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TrebuchetMS",
+        "src":  "fonts/TrebuchetMS-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TrebuchetMS",
+        "src":  "fonts/TrebuchetMS-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TrebuchetMS",
+        "src":  "fonts/TrebuchetMS.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TrebuchetMS",
+        "src":  "fonts/TrebuchetMS-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TTDrugs",
+        "src":  "fonts/TTDrugs-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TTDrugs",
+        "src":  "fonts/TTDrugs-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TTDrugs",
+        "src":  "fonts/TTDrugs.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "TTDrugs",
+        "src":  "fonts/TTDrugs-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "UniversLTPro45Light",
+        "src":  "fonts/UniversLTPro45Light-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "UniversLTPro45Light",
+        "src":  "fonts/UniversLTPro45Light-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "UniversLTPro45Light",
+        "src":  "fonts/UniversLTPro45Light.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "UniversLTPro45Light",
+        "src":  "fonts/UniversLTPro45Light-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "UniversLTPro55",
+        "src":  "fonts/UniversLTPro55-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "UniversLTPro55",
+        "src":  "fonts/UniversLTPro55-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "UniversLTPro55",
+        "src":  "fonts/UniversLTPro55.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "UniversLTPro55",
+        "src":  "fonts/UniversLTPro55-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Versailles",
+        "src":  "fonts/Versailles.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "Virtual",
+        "src":  "fonts/Virtual.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "XBNiloofar",
+        "src":  "fonts/XBNiloofar-BoldItalic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "XBNiloofar",
+        "src":  "fonts/XBNiloofar-Italic.woff2",
+        "weight":  400,
+        "style":  "italic",
+        "format":  "woff2"
+    },
+    {
+        "family":  "XBNiloofar",
+        "src":  "fonts/XBNiloofar.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "XBNiloofar",
+        "src":  "fonts/XBNiloofar-Bold.woff2",
+        "weight":  700,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "YesevaOne",
+        "src":  "fonts/YesevaOne.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    },
+    {
+        "family":  "ZingRustBase",
+        "src":  "fonts/ZingRustBase.woff2",
+        "weight":  400,
+        "style":  "normal",
+        "format":  "woff2"
+    }
+]

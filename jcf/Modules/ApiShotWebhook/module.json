@@ -1,0 +1,11 @@
+{
+    "name": "ApiShotWebhook",
+    "alias": "apishotwebhook",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ApiShotWebhook\\Providers\\ApiShotWebhookServiceProvider"
+    ],
+    "files": []
+}

@@ -1,0 +1,14 @@
+{
+    "name": "DailyPoster",
+    "alias": "dailyposter",
+    "description": "Daily Poster Maker (client-side)",
+    "keywords": ["poster","daily","tools"],
+    "priority": 0,
+    "providers": [
+        "Modules\\DailyPoster\\Providers\\DailyPosterServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
+

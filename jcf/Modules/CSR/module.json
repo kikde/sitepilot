@@ -1,0 +1,14 @@
+{
+    "name": "CSR",
+    "alias": "csr",
+    "description": "CSR Poster/Certificate tool (client-side)",
+    "keywords": ["csr","poster","tools"],
+    "priority": 0,
+    "providers": [
+        "Modules\\CSR\\Providers\\CSRServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
+

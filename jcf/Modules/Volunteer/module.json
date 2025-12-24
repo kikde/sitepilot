@@ -1,0 +1,14 @@
+{
+    "name": "Volunteer",
+    "alias": "volunteer",
+    "description": "Volunteer Recruitment Poster tool (client-side)",
+    "keywords": ["volunteer","poster","tools"],
+    "priority": 0,
+    "providers": [
+        "Modules\\Volunteer\\Providers\\VolunteerServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
+

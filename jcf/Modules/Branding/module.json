@@ -1,0 +1,14 @@
+{
+    "name": "Branding",
+    "alias": "branding",
+    "description": "Branding tool (logo/text overlay on images)",
+    "keywords": ["branding","logo","overlay","tools"],
+    "priority": 0,
+    "providers": [
+        "Modules\\Branding\\Providers\\BrandingServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
+

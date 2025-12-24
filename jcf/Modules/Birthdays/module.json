@@ -1,0 +1,14 @@
+{
+    "name": "Birthdays",
+    "alias": "birthdays",
+    "description": "Upcoming Birthday poster/tool (client-side)",
+    "keywords": ["birthday","poster","tools"],
+    "priority": 0,
+    "providers": [
+        "Modules\\Birthdays\\Providers\\BirthdaysServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
+

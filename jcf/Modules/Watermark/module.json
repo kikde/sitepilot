@@ -1,0 +1,14 @@
+{
+    "name": "Watermark",
+    "alias": "watermark",
+    "description": "Watermark tool (text watermark overlay)",
+    "keywords": ["watermark","tools"],
+    "priority": 0,
+    "providers": [
+        "Modules\\Watermark\\Providers\\WatermarkServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
+

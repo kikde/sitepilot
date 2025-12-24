@@ -1,0 +1,14 @@
+{
+    "name": "Collage",
+    "alias": "collage",
+    "description": "Image collage maker (client‑side)",
+    "keywords": ["collage","tools"],
+    "priority": 0,
+    "providers": [
+        "Modules\\Collage\\Providers\\CollageServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
+
