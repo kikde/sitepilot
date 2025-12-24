@@ -25,7 +25,10 @@ class NgoSiteServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/Routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'ngo');
 
+        // Allow resolving un-namespaced view() calls from package too
         View::addLocation(__DIR__ . '/resources/views');
+        // Also expose a convenient 'backend' namespace to package backend views
+        View::addNamespace('backend', __DIR__ . '/resources/views/backend');
 
         // Admin navigation (optional, when CoreAuth is present)
         try {
