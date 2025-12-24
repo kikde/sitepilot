@@ -14,14 +14,14 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::with('category')->orderByDesc('id')->paginate(12);
-        return view('backend.events.all-events', [
+        return view('ngo::backend.events.all-events', [
             'all_events' => $events,
         ]);
     }
 
     public function create()
     {
-        return view('backend.events.new-event', [
+        return view('ngo::backend.events.new-event', [
             'all_categories' => EventCategory::orderBy('title')->get(),
             'event' => null,
         ]);
@@ -99,7 +99,7 @@ class EventController extends Controller
     public function edit($id)
     {
         $event = Event::findOrFail((int)$id);
-        return view('backend.events.edit-event', [
+        return view('ngo::backend.events.edit-event', [
             'id' => $event->id,
             'event' => $event,
             'all_categories' => EventCategory::orderBy('title')->get(),
