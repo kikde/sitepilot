@@ -1,10 +1,18 @@
 
+@php
+  $term = $term ?? (object) ['name' => 'Terms & Conditions', 'breadcrumb' => null, 'description' => null];
+  $bg = !empty($term->breadcrumb)
+    ? asset('backend/uploads/'.$term->breadcrumb)
+    : asset('frontend/custom/breadcrump.png');
+  $title = $term->name ?? 'Terms & Conditions';
+  $body  = $term->description ?? '';
+@endphp
 <!-- Page Title -->
-<section class="page-title style-two centred" style="background-image: url({{asset('backend/uploads/'.$term->breadcrumb)}});">
+<section class="page-title style-two centred" style="background-image: url({{ $bg }});">
     <div class="auto-container">
         <div class="content-box">
             <div class="title">
-                <h1>{{$term->name }}</h1>
+                <h1>{{ $title }}</h1>
             </div>
         </div>
     </div>
@@ -18,8 +26,8 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 title-column">
                     <div class="sec-title text-left justify-content-evenly ">
                         <div class="text">
-                        <h2>{{$term->name}}</h2>
-                        <p>{!! $term->description !!}</p>
+                        <h2>{{ $title }}</h2>
+                        <p>{!! $body !!}</p>
                          </div>
 
                     </div>
@@ -71,4 +79,3 @@
     </div>
 </section>
 <!-- review-page-section end -->
-

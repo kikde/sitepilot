@@ -1,10 +1,18 @@
 
+@php
+  $privacy = $privacy ?? (object) ['name' => 'Privacy Policy', 'breadcrumb' => null, 'description' => null];
+  $bg = !empty($privacy->breadcrumb)
+    ? asset('backend/uploads/'.$privacy->breadcrumb)
+    : asset('frontend/custom/breadcrump.png');
+  $title = $privacy->name ?? 'Privacy Policy';
+  $body  = $privacy->description ?? '';
+@endphp
 <!-- Page Title -->
-<section class="page-title style-two centred" style="background-image: url({{asset('backend/uploads/'.$privacy->breadcrumb)}});">
+<section class="page-title style-two centred" style="background-image: url({{ $bg }});">
     <div class="auto-container">
         <div class="content-box">
             <div class="title">
-                <h1>{{$privacy->name }}</h1>
+                <h1>{{ $title }}</h1>
             </div>
         </div>
     </div>
@@ -17,10 +25,10 @@
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 title-column">
                     <div class="sec-title text-left justify-content-evenly ">
-                        <h4>{{$privacy->name }}</h4>
+                        <h4>{{ $title }}</h4>
                         <div class="text">
-                        <h2>{{$privacy->name}}</h2>
-                        <p>{!! $privacy->description !!}</p>
+                        <h2>{{ $title }}</h2>
+                        <p>{!! $body !!}</p>
                          </div>
 
                     </div>
@@ -72,4 +80,3 @@
     </div>
 </section>
 <!-- review-page-section end -->
-

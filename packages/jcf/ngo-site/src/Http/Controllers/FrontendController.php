@@ -246,9 +246,7 @@ class FrontendController extends Controller
         $term = Page::query()->where('types', 'TC')->first();
         if (!$term || empty($term->description)) {
             $fallback = $this->findStaticPage(['terms-and-conditions', 'terms'], ['Terms', 'Terms & Conditions']);
-            if ($fallback && !empty($fallback->description)) {
-                $term = $fallback;
-            }
+            $term = $fallback ?: $term;
         }
         $review = Testimonial::query()->latest()->limit(12)->get();
 
@@ -261,9 +259,7 @@ class FrontendController extends Controller
         $privacy = Page::query()->where('types', 'PP')->first();
         if (!$privacy || empty($privacy->description)) {
             $fallback = $this->findStaticPage(['privacy-policy', 'privacy'], ['Privacy Policy']);
-            if ($fallback && !empty($fallback->description)) {
-                $privacy = $fallback;
-            }
+            $privacy = $fallback ?: $privacy;
         }
         $review = Testimonial::query()->latest()->limit(12)->get();
 
@@ -279,9 +275,7 @@ class FrontendController extends Controller
                 ['cancellation-and-refund-policy', 'cancellations-and-refunds'],
                 ['Cancellations & Refunds Policy', 'Cancellation And Refund Policy']
             );
-            if ($fallback && !empty($fallback->description)) {
-                $term = $fallback;
-            }
+            $term = $fallback ?: $term;
         }
         $review = Testimonial::query()->latest()->limit(12)->get();
 
