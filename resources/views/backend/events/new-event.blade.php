@@ -159,12 +159,18 @@
     </p>
 
     <div id="blog-editor-wrapper" class="quill-wrapper">
+      @php
+        $__desc = old('description');
+        if ($__desc === null || $__desc === '') {
+          $__desc = $event->description ?? $event->content ?? '';
+        }
+      @endphp
       <!-- IMPORTANT: keep name="description" and use textarea to avoid length limits -->
-      <textarea name="description" id="description" class="d-none" style="display:none">{{ old('description', $event->description ?? $event->content ?? '') }}</textarea>
+      <textarea name="description" id="description" class="d-none" style="display:none">{!! $__desc !!}</textarea>
 
       <div id="blog-editor-container">
         <!-- This DIV is Quill’s host. We seed it from old()/DB for first paint -->
-        <div class="editor">{!! old('description', $event->description ?? $event->content ?? '') !!}</div>
+        <div class="editor">{!! $__desc !!}</div>
       </div>
     </div>
   </div>
@@ -575,7 +581,9 @@
 
     // Optional: auto-init Quill if available and not already initialized
     if (window.Quill && !document.querySelector('#blog-editor-container .ql-editor')) {
-      new Quill('#blog-editor-container .editor', { theme: 'snow' });
+      var q = new Quill('#blog-editor-container .editor', { theme: 'snow' });
+      const hidden = document.getElementById('description');
+      if (hidden && hidden.value) { try { q.clipboard.dangerouslyPasteHTML(hidden.value); } catch(e){} }
     }
   });
 

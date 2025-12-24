@@ -101,11 +101,17 @@
                   <a href="javascript:void(0);" id="blog-image-text">Recommended inline image 700×442, max ~10 MB.</a>
                 </p>
                 <div id="blog-editor-wrapper">
+                  @php
+                    $__desc = old('description');
+                    if ($__desc === null || $__desc === '') {
+                      $__desc = $event->description ?? $event->content ?? '';
+                    }
+                  @endphp
                   {{-- Hidden field that will receive HTML on submit (use textarea to avoid length limits) --}}
-                  <textarea name="description" id="description" class="d-none" style="display:none">{{ old('description', $event->description ?? $event->content) }}</textarea>
+                  <textarea name="description" id="description" class="d-none" style="display:none">{!! $__desc !!}</textarea>
                   {{-- Editable host (Quill will hydrate if present; otherwise contenteditable works) --}}
                   <div id="blog-editor-container">
-                    <div class="editor" contenteditable="true">{!! old('description', $event->description ?? $event->content) !!}</div>
+                    <div class="editor" contenteditable="true">{!! $__desc !!}</div>
                   </div>
                 </div>
               </div>
@@ -434,7 +440,9 @@
 
     // Optional: auto-init Quill if available and not already initialized
     if (window.Quill && !document.querySelector('#blog-editor-container .ql-editor')) {
-      new Quill('#blog-editor-container .editor', { theme: 'snow' });
+      var q = new Quill('#blog-editor-container .editor', { theme: 'snow' });
+      const hidden = document.getElementById('description');
+      if (hidden && hidden.value) { try { q.clipboard.dangerouslyPasteHTML(hidden.value); } catch(e){} }
     }
   });
 
