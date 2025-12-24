@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('ngo::layouts.app')
 @section('style')
     <x-datatable.css/>
 @endsection
@@ -88,4 +88,3 @@
         })(jQuery)
     </script>
 @endsection
-

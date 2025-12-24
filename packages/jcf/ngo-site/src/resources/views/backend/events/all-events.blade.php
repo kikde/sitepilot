@@ -1,5 +1,5 @@
 {{-- resources/views/admin/events/index.blade.php --}}
-@extends('layouts.app')
+@extends('ngo::layouts.app')
 @php
   // Normalize incoming dataset once so it is always defined
   $all_events = $all_events ?? collect();

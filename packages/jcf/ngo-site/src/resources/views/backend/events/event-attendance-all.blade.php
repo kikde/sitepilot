@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('ngo::layouts.app')
 @section('style')
     <link rel="stylesheet" href="{{asset('assets/backend/css/bootstrap-tagsinput.css')}}">
     <link rel="stylesheet" href="{{asset('assets/backend/css/summernote-bs4.css')}}">
@@ -189,4 +189,3 @@
     <script src="{{asset('assets/backend/js/dropzone.js')}}"></script>
     @include('backend.partials.media-upload.media-js')
 @endsection
-

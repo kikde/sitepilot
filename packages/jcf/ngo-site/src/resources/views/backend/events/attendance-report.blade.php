@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('ngo::layouts.app')
 @section('site-title')
     {{__('Applicant Report')}}
 @endsection
