@@ -59,6 +59,10 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        // Robust editor fallback: accept either 'description' or 'content'
+        if (!array_key_exists('description', $data) && array_key_exists('content', $data)) {
+            $data['description'] = $data['content'];
+        }
         $v = Validator::make($data, [
             'title' => 'required|string|max:255',
             'slug' => 'nullable|string|max:255|unique:events,slug',
@@ -184,7 +188,7 @@ class EventController extends Controller
                 $payload[$f] = $incoming;
             }
         }
-        // Always respect submitted description (allow clearing)
+        // Always respect submitted description/content (allow clearing)
         if (array_key_exists('description', $data)) {
             $payload['description'] = $data['description'];
             $payload['content'] = $data['description'];
