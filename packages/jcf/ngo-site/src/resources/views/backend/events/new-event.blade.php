@@ -631,18 +631,6 @@
   
 </script>
 <script>
-  // Flatpickr for combined date+time on new event form
-  document.addEventListener('DOMContentLoaded', function(){
-    if (!window.flatpickr) return;
-    try {
-      const dtOpts = { enableTime: true, dateFormat: 'Y-m-d H:i', time_24hr: true, allowInput: true };
-      window.flatpickr('#registration_deadline', dtOpts);
-      window.flatpickr('#display_from', dtOpts);
-      window.flatpickr('#display_to', dtOpts);
-    } catch (e) { /* ignore */ }
-  });
-</script>
-<script>
   document.addEventListener("DOMContentLoaded", function(){
     if (!window.flatpickr) return;
     try {
