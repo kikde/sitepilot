@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use Modules\Page\Http\Controllers\DonarsController;
+use Jcf\NgoSite\Http\Middleware\ShareNgoViewData;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,7 @@ use Modules\Page\Http\Controllers\DonarsController;
 // });
 
 // Tenant admin content routes (must be logged in, in tenant context, with content permission).
-Route::middleware(['web', 'auth', 'tenant', 'license', 'seat', 'permission:content.manage', \Jcf\NgoSite\Http\Middleware\ShareNgoViewData::class])->group(function () {
+Route::middleware(['web', 'auth', 'tenant', 'license', 'seat', 'permission:content.manage', ShareNgoViewData::class])->group(function () {
     Route::resource('/pages', 'PageController');     //objective
 
     Route::get('/pageList', 'PageController@pageList');       // create New Page
@@ -110,7 +111,7 @@ Route::post('/donation/autopay/callback', [DonarsController::class, 'autopayCall
 
     // ====== Events (admin UI only; views copied from jcf backend) ======
     // Keep these simple closures for now; replace with controller later.
-    $eventMw = ['web', 'auth', 'tenant', 'license', 'seat', 'permission:content.manage'];
+    $eventMw = ['web', 'auth', 'tenant', 'license', 'seat', 'permission:content.manage', ShareNgoViewData::class];
 
     Route::middleware($eventMw)->group(function () {
         // List pages with safe defaults so blades render without DB layer
@@ -177,7 +178,7 @@ Route::post('/donation/autopay/callback', [DonarsController::class, 'autopayCall
 
 // Route::group(['prefix'=>'success-story-page','namespace'=>'Admin'],function (){
     //contact page
-    Route::middleware(['web', 'auth', 'tenant', 'license', 'seat', 'permission:content.manage', \Jcf\NgoSite\Http\Middleware\ShareNgoViewData::class])->group(function () {
+    Route::middleware(['web', 'auth', 'tenant', 'license', 'seat', 'permission:content.manage', ShareNgoViewData::class])->group(function () {
         Route::resource('/successstory','SuccessStoryController');
         Route::resource('/succes-story-category', 'SuccessStoryCategoryController');
     });
