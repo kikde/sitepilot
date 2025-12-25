@@ -17,7 +17,7 @@ use Modules\Page\Http\Controllers\DonarsController;
 // });
 
 // Tenant admin content routes (must be logged in, in tenant context, with content permission).
-Route::middleware(['web', 'auth', 'tenant', 'license', 'seat', 'permission:content.manage', \\Jcf\\NgoSite\\Http\\Middleware\\ShareNgoViewData::class])->group(function () {
+Route::middleware(['web', 'auth', 'tenant', 'license', 'seat', 'permission:content.manage', \Jcf\NgoSite\Http\Middleware\ShareNgoViewData::class])->group(function () {
     Route::resource('/pages', 'PageController');     //objective
 
     Route::get('/pageList', 'PageController@pageList');       // create New Page
@@ -177,11 +177,13 @@ Route::post('/donation/autopay/callback', [DonarsController::class, 'autopayCall
 
 // Route::group(['prefix'=>'success-story-page','namespace'=>'Admin'],function (){
     //contact page
-    Route::middleware(['web', 'auth', 'tenant', 'license', 'seat', 'permission:content.manage', \\Jcf\\NgoSite\\Http\\Middleware\\ShareNgoViewData::class])->group(function () {
+    Route::middleware(['web', 'auth', 'tenant', 'license', 'seat', 'permission:content.manage', \Jcf\NgoSite\Http\Middleware\ShareNgoViewData::class])->group(function () {
         Route::resource('/successstory','SuccessStoryController');
         Route::resource('/succes-story-category', 'SuccessStoryCategoryController');
     });
 // });
+
+
 
 
 
