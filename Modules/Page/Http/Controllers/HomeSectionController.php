@@ -65,6 +65,11 @@ class HomeSectionController extends Controller
             $q->where('tenant_id', $tenantId);
         }
         $rows = $q->paginate(10);
+        // Prefer the JCF banner index view if present; fallback to module view
+        $altPath = base_path('jcf/resources/views/backend/home-page-manage/banner/index.blade.php');
+        if (is_file($altPath)) {
+            return \View::file($altPath, compact('rows'));
+        }
         return view('page::home.banner-list', compact('rows'));
     }
 
