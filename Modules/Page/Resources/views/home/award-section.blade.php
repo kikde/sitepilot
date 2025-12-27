@@ -43,7 +43,14 @@
               <tr>
                 <td>{{ $row->id }}</td>
                 <td>{{ $row->title }}</td>
-                <td class="text-truncate" style="max-width:240px;">{{ $row->images }}</td>
+                <td data-label="Image">
+                  @php
+                    $img = trim((string)($row->images ?? ''));
+                    $isUrl = str_starts_with($img, 'http://') || str_starts_with($img, 'https://') || str_starts_with($img, '//');
+                    $src = $img ? ($isUrl ? $img : asset('backend/home/award/'.$img)) : asset('frontend/custom/breadcrump.png');
+                  @endphp
+                  <img src="{{ $src }}" alt="{{ $row->alt_tag ?? 'Award image' }}" style="width:96px;height:64px;object-fit:cover;border-radius:12px;box-shadow:0 6px 16px rgba(2,6,23,.08);">
+                </td>
                 <td>{{ $row->status }}</td>
                 <td>
                   <a href="#" data-toggle="modal" data-target="#editAwardModal{{ $row->id }}"><i data-feather="edit"></i></a>
@@ -148,4 +155,3 @@
   </div>
 </div>
 @endsection
-
