@@ -1,137 +1,139 @@
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
-True
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<head>
+    @php
+        $setting = $setting ?? null;
+        if (! $setting) {
+            $setting = (object) [
+                'title' => config('app.name', 'Admin'),
+                'meta_author' => '',
+                'meta_description' => '',
+                'meta_keywords' => '',
+                'favicon_icon' => '',
+            ];
+        }
+    @endphp
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="{{$setting->meta_description}}">
+    <meta name="keywords" content="{{$setting->meta_keywords}}">
+    <meta name="author" content="{{$setting->meta_author}}">
+    <title>{{$setting->title}}</title>
+    <link rel="apple-touch-icon" href="{{asset('backend/app-assets/images/ico/apple-icon-120.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ $setting->favicon_icon ? asset('backend/icons/'.$setting->favicon_icon) : asset('backend/app-assets/images/ico/favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500,1,600&display=swap" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
+    {{-- Vendor CSS --}}
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/vendors.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/charts/apexcharts.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/forms/wizard/bs-stepper.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/forms/select/select2.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/editors/quill/katex.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/editors/quill/monokai-sublime.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/editors/quill/quill.snow.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/tables/datatable/rowGroup.bootstrap4.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/pickers/pickadate/pickadate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/extensions/jquery.rateyo.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/file-uploaders/dropzone.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/animate/animate.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/extensions/sweetalert2.min.css')}}">
+
+    {{-- Theme CSS --}}
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/bootstrap-extended.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/colors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/components.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/themes/dark-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/themes/bordered-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/themes/semi-dark-layout.css')}}">
+
+    {{-- Page CSS --}}
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/pages/dashboard-ecommerce.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/plugins/charts/chart-apex.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/plugins/forms/form-validation.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/plugins/forms/form-wizard.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/plugins/extensions/ext-component-sweet-alerts.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/plugins/forms/pickers/form-flat-pickr.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/plugins/forms/pickers/form-pickadate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/pages/app-invoice-list.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/plugins/extensions/ext-component-ratings.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/plugins/forms/form-file-uploader.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/pages/page-account-settings.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/pages/page-blog.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/plugins/forms/form-quill-editor.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/pages/page-blog-edit.css')}}">
+
+    {{-- Custom CSS --}}
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/assets/css/style.css')}}">
+
+    {{-- Page-level extra styles from child views --}}
+    @yield('style')
+</head>
+<body class="vertical-layout vertical-menu-modern navbar-floating footer-static" data-open="click" data-menu="vertical-menu-modern" data-col="">
+
+    @if(view()->exists('ngo::backend.partials.header'))
+      @include('ngo::backend.partials.header')
+    @elseif(view()->exists('backend.partials.header'))
+      @include('backend.partials.header')
+    @endif
+
+    @if(view()->exists('ngo::backend.partials.sidebar'))
+      @include('ngo::backend.partials.sidebar')
+    @elseif(view()->exists('backend.partials.sidebar'))
+      @include('backend.partials.sidebar')
+    @endif
+
+    <div class="app-content content">
+      <div class="content-overlay"></div>
+      <div class="header-navbar-shadow"></div>
+      <div class="content-wrapper container-xxl p-0">
+        @if(session()->has('message'))
+          <div class="alert alert-success alert-dismissible fade show mx-5" role="alert">
+            <strong>{{ session()->get('message') }}</strong>.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+        @endif
+        @if ($errors->any())
+          <div class="alert alert-danger alert-dismissible fade show mx-5" role="alert">
+            <ul>@foreach ($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+        @endif
+
+        @yield('content')
+      </div>
+    </div>
+
+    @if(view()->exists('ngo::backend.partials.footer'))
+      @include('ngo::backend.partials.footer')
+    @elseif(view()->exists('backend.partials.footer'))
+      @include('backend.partials.footer')
+    @endif
+
+    <script src="{{asset('backend/app-assets/vendors/js/vendors.min.js')}}"></script>
+    <script src="{{asset('backend/app-assets/js/core/app-menu.js')}}"></script>
+    <script src="{{asset('backend/app-assets/js/core/app.js')}}"></script>
+
+    {{-- Page Vendor JS --}}
+    <script src="{{asset('backend/app-assets/vendors/js/forms/wizard/bs-stepper.min.js')}}"></script>
+    <script src="{{asset('backend/app-assets/vendors/js/forms/select/select2.full.min.js')}}"></script>
+    <script src="{{asset('backend/app-assets/vendors/js/forms/validation/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('backend/app-assets/vendors/js/charts/apexcharts.min.js')}}"></script>
+    <script src="{{asset('backend/app-assets/vendors/js/extensions/moment.min.js')}}"></script>
+    <script src="{{asset('backend/app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js')}}"></script>
+
+    {{-- Page-level scripts from child views --}}
+    @yield('script')
+
+</body>
+</html>
 True
 True
 True
