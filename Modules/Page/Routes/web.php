@@ -123,10 +123,18 @@ Route::post('/donation/autopay/callback', [DonarsController::class, 'autopayCall
             } catch (\Throwable $e) {
                 $cats = collect();
             }
-            return \View::first([
-                'backend.events.all-events-category',
-                'ngo::backend.events.all-events-category',
-            ], ['all_category' => $cats]);
+            $data = ['all_category' => $cats];
+            if (view()->exists('backend.events.all-events-category')) {
+                return view('backend.events.all-events-category', $data);
+            }
+            if (view()->exists('ngo::backend.events.all-events-category')) {
+                return view('ngo::backend.events.all-events-category', $data);
+            }
+            $alt = base_path('packages/jcf/ngo-site/src/resources/views/backend/events/all-events-category.blade.php');
+            if (is_file($alt)) {
+                return \View::file($alt, $data);
+            }
+            abort(404, 'Events category view missing');
         })
             ->name('admin.events.category.all');
 
@@ -184,6 +192,7 @@ Route::post('/donation/autopay/callback', [DonarsController::class, 'autopayCall
         Route::resource('/succes-story-category', 'SuccessStoryCategoryController');
     });
 // });
+
 
 
 
