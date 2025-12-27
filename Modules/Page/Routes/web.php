@@ -123,9 +123,10 @@ Route::post('/donation/autopay/callback', [DonarsController::class, 'autopayCall
             } catch (\Throwable $e) {
                 $cats = collect();
             }
-            return view('backend.events.all-events-category', [
-                'all_category' => $cats,
-            ]);
+            return \View::first([
+                'backend.events.all-events-category',
+                'ngo::backend.events.all-events-category',
+            ], ['all_category' => $cats]);
         })
             ->name('admin.events.category.all');
 
