@@ -51,7 +51,9 @@
             @if (Module::has('User'))
             
 
+            {{-- Removed Edit Profile link per request
             <li class="nav-item {{Request::is('edit-profile') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{('/user-edit/'.Auth::user()->id)}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Users">Edit Profile</span></a>
+            --}}
                
             </li>
             <li class="{{Request::is('/users-add') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/users-add')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Add Member</span></a>
@@ -67,7 +69,9 @@
             <!-- MANAGER Permission-->
 
               @if ($showAdminMenu) 
+               {{-- Removed Edit Profile link per request
                <li class="nav-item {{Request::is('edit-profile') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{('/user-edit/'.Auth::user()->id)}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Users">Edit Profile</span></a>
+               --}}
                
                </li>
                 <li class="nav-item {{Request::is('home') ? 'active': ''}}"><a class="d-flex align-items-center" href="{{url('/home')}}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span></a>           
