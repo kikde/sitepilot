@@ -68,7 +68,9 @@ class HomeSectionController extends Controller
         // Prefer the JCF banner index view if present; fallback to module view
         $altPath = base_path('jcf/resources/views/backend/home-page-manage/banner/index.blade.php');
         if (is_file($altPath)) {
-            return \View::file($altPath, compact('rows'));
+            // JCF blade expects variable name `$banner`
+            $banner = $rows;
+            return \View::file($altPath, compact('banner'));
         }
         return view('page::home.banner-list', compact('rows'));
     }
